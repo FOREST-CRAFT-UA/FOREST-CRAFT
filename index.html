@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk" class="scroll-smooth scroll-pt-20">
+<html lang="uk" class="scroll-smooth scroll-pt-8">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: #f8fafc; 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
             color: #1e293b;
         }
-        h1, h2, h3, h4, .font-playfair { 
-            font-family: 'Playfair Display', serif; 
+        h1, h2, h3, h4, .font-playfair {
+            font-family: 'Playfair Display', serif;
         }
         .nav-glass {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
@@ -28,72 +28,68 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
         }
-        /* Стиль активної кнопки при натисканні */
-        .nav-btn:active {
-            transform: scale(0.95);
-        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Compact One-Row Navigation -->
-    <nav class="sticky top-0 z-50 nav-glass px-2 py-3">
-        <div class="max-w-md mx-auto">
-            <div class="flex justify-between items-center gap-1">
-                <a href="#composition" class="nav-btn flex-1 text-center py-2 px-1 bg-white border border-emerald-100 rounded-lg shadow-sm transition-all">
-                    <span class="block text-[9px] font-black uppercase tracking-tighter text-emerald-700">Склад</span>
-                </a>
-                <a href="#prep" class="nav-btn flex-1 text-center py-2 px-1 bg-white border border-amber-100 rounded-lg shadow-sm transition-all">
-                    <span class="block text-[9px] font-black uppercase tracking-tighter text-amber-700">Підготовка</span>
-                </a>
-                <a href="#steps" class="nav-btn flex-1 text-center py-2 px-1 bg-white border border-emerald-100 rounded-lg shadow-sm transition-all">
-                    <span class="block text-[9px] font-black uppercase tracking-tighter text-emerald-700">Посадка</span>
-                </a>
-                <a href="#watering" class="nav-btn flex-1 text-center py-2 px-1 bg-white border border-blue-100 rounded-lg shadow-sm transition-all">
-                    <span class="block text-[9px] font-black uppercase tracking-tighter text-blue-700">Полив</span>
-                </a>
-            </div>
+    <!-- Sticky Navigation for Quick Access -->
+    <nav class="sticky top-0 z-50 nav-glass px-4 py-3">
+        <div class="max-w-md mx-auto flex justify-between gap-2 overflow-x-auto no-scrollbar">
+            <a href="#composition" class="whitespace-nowrap px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-wider border border-emerald-100">Склад</a>
+            <a href="#prep" class="whitespace-nowrap px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-wider border border-emerald-100">Підготовка</a>
+            <a href="#steps" class="whitespace-nowrap px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-wider border border-emerald-100">Пересадка</a>
+            <a href="#watering" class="whitespace-nowrap px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-wider border border-emerald-100">Полив</a>
         </div>
     </nav>
 
     <div class="max-w-md mx-auto bg-white min-h-screen shadow-xl relative pb-20">
-        
+
         <!-- Welcome Section -->
         <header class="hero-gradient text-white pt-10 pb-12 px-8 rounded-b-[40px] shadow-lg">
             <div class="flex items-center gap-2 mb-6 opacity-80">
                 <i data-lucide="sparkles" class="w-4 h-4 text-emerald-300"></i>
-                <span class="text-[10px] font-bold tracking-[0.3em] uppercase">Forest Craft Premium Care</span>
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase">Welcome to Forest Craft family</span>
             </div>
             <h1 class="text-3xl font-bold leading-tight mb-4">Вітаємо у родині Forest Craft!</h1>
             <p class="text-sm text-emerald-50 font-light leading-relaxed">
-                Ви тримаєте професійний безторф’яний субстрат. Щоб ваші тропічні улюбленці почувалися як вдома, дотримуйтесь цієї інструкції.
+                Ви тримаєте професійний безторф’яний субстрат. Щоб ваша алоказія чи монстера почувалася як у тропіках, дотримуйтесь цієї інструкції.
             </p>
         </header>
 
         <!-- Section: Anatomy (Composition) -->
         <section id="composition" class="px-6 py-10">
             <h2 class="font-playfair text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-                <span class="text-emerald-600">01.</span> Склад субстрату
+                <span class="text-emerald-600">01.</span> Анатомія складу
             </h2>
-            
+
             <div class="space-y-6">
-                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all">
+                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:shadow-md">
                     <div class="flex items-center gap-3 mb-2">
                         <i data-lucide="layers" class="w-5 h-5 text-emerald-600"></i>
                         <h4 class="font-bold text-sm uppercase tracking-wide">Кора сосни (галтована)</h4>
                     </div>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        Забезпечує постійну аерацію коренів. Повітря — це те, що не дає корінню гнити навіть при вологому субстраті.
+                        Скелет субстрату. Не дає ґрунту злежуватися, забезпечуючи постійний доступ кисню до коренів (O₂ — запорука відсутності гнилі).
                     </p>
                 </div>
 
-                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all">
+                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:shadow-md">
                     <div class="flex items-center gap-3 mb-2">
                         <i data-lucide="droplet" class="w-5 h-5 text-blue-600"></i>
                         <h4 class="font-bold text-sm uppercase tracking-wide">Мох Sphagnum</h4>
                     </div>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        Утримує вологу і поступово її віддає. Сфагнол у складі моху працює як природний антисептик.
+                        Розумний гідробаланс. Вбирає зайву воду і поступово віддає її рослині. Містить природний антисептик — сфагнол.
+                    </p>
+                </div>
+
+                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:shadow-md">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="filter" class="w-5 h-5 text-amber-700"></i>
+                        <h4 class="font-bold text-sm uppercase tracking-wide">Цеоліт + Вугілля</h4>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Мінеральний фільтр. Цеоліт накопичує добрива, а вугілля нейтралізує токсини та підтримує стабільний pH.
                     </p>
                 </div>
 
@@ -103,7 +99,7 @@
                         <h4 class="font-bold text-sm uppercase tracking-wide text-emerald-100">Biological Shield</h4>
                     </div>
                     <p class="text-xs text-emerald-50/80 leading-relaxed">
-                        Ми додали спори <strong>Trichoderma</strong>. Вони активуються при поливі та створюють захисний бар'єр навколо коріння.
+                        Живий захист. Ми додали спори <strong>Trichoderma</strong> та <strong>Bacillus subtilis</strong>. Вони «прокинуться» при першому поливі та створять імунний бар'єр навколо коренів.
                     </p>
                 </div>
             </div>
@@ -112,22 +108,22 @@
         <!-- Section: Preparation -->
         <section id="prep" class="px-6 py-10 bg-amber-50">
             <h2 class="font-playfair text-2xl font-bold text-amber-900 mb-6 flex items-center gap-3">
-                <span class="text-amber-600">02.</span> Підготовка
+                <span class="text-amber-600">02.</span> Активація (Важливо!)
             </h2>
-            
+
             <div class="space-y-4">
                 <div class="flex gap-4">
                     <div class="step-number text-2xl text-amber-300">1</div>
                     <div>
-                        <h4 class="font-bold text-sm text-amber-900 uppercase mb-1">Перемішати</h4>
-                        <p class="text-xs text-amber-800">Висипте пакет у миску і обережно перемішайте, щоб усі компоненти розподілилися рівномірно.</p>
+                        <h4 class="font-bold text-sm text-amber-900 uppercase mb-1">Змішування</h4>
+                        <p class="text-xs text-amber-800 leading-relaxed">Оскільки ми фасуємо субстрат шарами для збереження структури, перед використанням висипте весь вміст пакета у місткість і обережно перемішайте руками.</p>
                     </div>
                 </div>
                 <div class="flex gap-4">
                     <div class="step-number text-2xl text-amber-300">2</div>
                     <div>
-                        <h4 class="font-bold text-sm text-amber-900 uppercase mb-1">Зволожити</h4>
-                        <p class="text-xs text-amber-800">Збризніть субстрат водою за 15 хвилин до посадки. Він має бути ледь вологим на дотик.</p>
+                        <h4 class="font-bold text-sm text-amber-900 uppercase mb-1">Зволоження</h4>
+                        <p class="text-xs text-amber-800 leading-relaxed">Безторф'яні субстрати краще працюють, якщо їх "завести". Збризніть суміш водою (вона має бути вологою, але не мокрою) за 15–20 хвилин до пересадки.</p>
                     </div>
                 </div>
             </div>
@@ -135,23 +131,31 @@
 
         <!-- Section: Step-by-Step Transplant -->
         <section id="steps" class="px-6 py-12">
-            <h2 class="font-playfair text-2xl font-bold text-slate-800 mb-8 text-center">Процес посадки</h2>
-            
+            <h2 class="font-playfair text-2xl font-bold text-slate-800 mb-8 text-center">Покрокова пересадка</h2>
+
             <div class="relative space-y-12 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[1px] before:bg-slate-200">
                 <div class="relative pl-10">
-                    <div class="absolute left-0 top-0 w-6 h-6 bg-white border-2 border-emerald-500 rounded-full flex items-center justify-center z-10">
+                    <div class="absolute left-0 top-0 w-6 h-6 bg-white border-2 border-emerald-500 rounded-full flex items-center justify-center z-10 shadow-sm">
                         <i data-lucide="scissors" class="w-3 h-3 text-emerald-600"></i>
                     </div>
-                    <h4 class="font-bold text-sm uppercase mb-1">Підготовка коренів</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Обережно очистіть коріння від старого ґрунту. Не бійтеся, якщо трохи торфу залишиться.</p>
+                    <h4 class="font-bold text-sm uppercase mb-2">Очищення</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Максимально обережно приберіть старий торф’яний ґрунт із коренів. Якщо є гнилі корінці — обов'язково видаліть їх стерильним інструментом.</p>
                 </div>
 
                 <div class="relative pl-10">
-                    <div class="absolute left-0 top-0 w-6 h-6 bg-emerald-600 rounded-full flex items-center justify-center z-10 shadow-md">
+                    <div class="absolute left-0 top-0 w-6 h-6 bg-white border-2 border-emerald-500 rounded-full flex items-center justify-center z-10 shadow-sm">
+                        <i data-lucide="box" class="w-3 h-3 text-emerald-600"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase mb-2">Оберіть горщик</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Використовуйте горщик з великою кількістю дренажних отворів. Розмір має бути лише на 2–3 см більшим за об'єм кореневої системи.</p>
+                </div>
+
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-0 w-6 h-6 bg-emerald-600 border-2 border-emerald-600 rounded-full flex items-center justify-center z-10 shadow-lg">
                         <i data-lucide="check" class="w-3 h-3 text-white"></i>
                     </div>
-                    <h4 class="font-bold text-sm uppercase mb-1">Фіксація</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Наповніть горщик, не притискаючи субстрат занадто сильно. Мох має "дихати".</p>
+                    <h4 class="font-bold text-sm uppercase mb-2">Посадка</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Насипте шар субстрату на дно, поставте рослину і заповніть порожнечі. <strong>Не трамбуйте мох руками!</strong> Він має залишатися пухким для циркуляції повітря.</p>
                 </div>
             </div>
         </section>
@@ -160,39 +164,84 @@
         <section id="watering" class="px-6 py-10 bg-slate-900 text-white rounded-t-[40px]">
             <h2 class="font-playfair text-2xl font-bold mb-6 flex items-center gap-3">
                 <i data-lucide="waves" class="w-6 h-6 text-blue-400"></i>
-                Полив
+                Режим поливу
             </h2>
-            
+
             <div class="space-y-6">
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-2">Перший полив</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">Через 1–2 дні, якщо коріння було пошкоджене при очищенні, або одразу, якщо це була швидка перевалка.</p>
+                </div>
+
                 <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-2">Правило "Фаланги"</h4>
-                    <p class="text-xs text-slate-300 leading-relaxed">Поливайте тільки тоді, коли верхні 2 см субстрату стали повністю сухими. Лейте воду повільно по колу.</p>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-2">Метод поливу</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">Тільки зверху. Лейте воду по краю горщика, поки вона не почне витікати з дренажних отворів. Зайву воду з піддона злийте через 15 хвилин.</p>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <i data-lucide="help-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="text-sm font-bold mb-1">Коли поливати знову?</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed text-justify">Перевіряйте субстрат пальцем. Полив потрібен, коли верхні 2–3 см стали сухими. Завдяки корі та моху ви побачите, що субстрат просихає рівномірно.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- Section: FAQ -->
         <section class="px-6 py-12">
-            <h2 class="font-playfair text-2xl font-bold text-slate-800 mb-6">FAQ</h2>
+            <h2 class="font-playfair text-2xl font-bold text-slate-800 mb-6">Питання та відповіді</h2>
+
             <div class="space-y-4">
                 <details class="group border-b border-slate-200 pb-4">
-                    <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-xs text-slate-700 uppercase">
-                        Чи можна використовувати для кактусів?
-                        <i data-lucide="plus" class="w-3 h-3 group-open:rotate-45 transition-transform"></i>
+                    <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-sm text-slate-700">
+                        Чи треба додавати добрива?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
                     </summary>
-                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Цей склад розроблений спеціально для вологолюбних тропічних рослин (ароїдні, марантові). Для кактусів він може занадто довго тримати вологу.</p>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                        У субстраті є стартовий набір мікроелементів та активований цеоліт. Ми рекомендуємо починати підгодівлю через 3–4 тижні спеціалізованими добривами для ароїдних.
+                    </p>
+                </details>
+
+                <details class="group border-b border-slate-200 pb-4">
+                    <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-sm text-slate-700">
+                        З'явився легкий білий наліт?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed font-medium text-emerald-700">
+                        Не панікуйте! Це може бути робота корисної Триходерми. Це знак, що "Біологічний щит" активний і захищає коріння від гнилі.
+                    </p>
+                </details>
+
+                <details class="group border-b border-slate-200 pb-4">
+                    <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-sm text-slate-700">
+                        Навіщо тут вугілля?
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                        Наш дубовий піролізат працює як природний фільтр: він абсорбує солі важких металів з водопровідної води та нейтралізує токсини, що виділяє рослина.
+                    </p>
                 </details>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-slate-50 py-10 px-6 text-center">
-            <div class="flex justify-center gap-6 mb-6">
-                <a href="#"><i data-lucide="instagram" class="w-5 h-5 text-slate-400"></i></a>
-                <a href="#"><i data-lucide="send" class="w-5 h-5 text-slate-400"></i></a>
+        <!-- Support Footer -->
+        <footer class="bg-slate-50 py-10 px-6 text-center border-t border-slate-200">
+            <p class="text-xs text-slate-500 mb-6 leading-relaxed">
+                Залишилися питання щодо стану рослини?<br>Ми на зв'язку!
+            </p>
+
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="#" class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center hover:bg-emerald-50 transition-colors">
+                    <i data-lucide="instagram" class="w-6 h-6 text-slate-700"></i>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center hover:bg-emerald-50 transition-colors">
+                    <i data-lucide="send" class="w-6 h-6 text-slate-700"></i>
+                </a>
             </div>
-            <div class="text-[9px] font-bold text-slate-300 uppercase tracking-[0.2em]">
-                Forest Craft Lab • 2024
+
+            <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                Forest Craft Lab • Ukraine
             </div>
         </footer>
 
