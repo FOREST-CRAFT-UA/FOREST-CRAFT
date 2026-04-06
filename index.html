@@ -17,7 +17,7 @@
             font-family: 'Playfair Display', serif;
         }
         .nav-glass {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
@@ -28,7 +28,6 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
         }
-        /* Приховуємо скроллбар для чистішого вигляду, якщо раптом не влізе на дуже вузьких екранах */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -41,12 +40,12 @@
 <body class="antialiased">
 
     <!-- Sticky Navigation for Quick Access -->
-    <nav class="sticky top-0 z-50 nav-glass px-2 py-3">
-        <div class="max-w-md mx-auto flex justify-center items-center gap-1.5 flex-nowrap overflow-x-auto no-scrollbar">
-            <a href="#composition" class="whitespace-nowrap px-2.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-tight border border-emerald-100">Склад</a>
-            <a href="#prep" class="whitespace-nowrap px-2.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-tight border border-emerald-100">Підготовка</a>
-            <a href="#steps" class="whitespace-nowrap px-2.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-tight border border-emerald-100">Пересадка</a>
-            <a href="#watering" class="whitespace-nowrap px-2.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-tight border border-emerald-100">Полив</a>
+    <nav class="sticky top-0 z-50 nav-glass px-3 py-3">
+        <div class="max-w-md mx-auto flex justify-between items-center gap-1.5 w-full">
+            <a href="#composition" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Склад</a>
+            <a href="#prep" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Підготовка</a>
+            <a href="#steps" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Пересадка</a>
+            <a href="#watering" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Полив</a>
         </div>
     </nav>
 
