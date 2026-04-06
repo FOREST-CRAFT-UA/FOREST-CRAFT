@@ -28,17 +28,25 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
         }
+        /* Приховуємо скроллбар для чистішого вигляду, якщо раптом не влізе на дуже вузьких екранах */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Sticky Navigation for Quick Access -->
-    <nav class="sticky top-0 z-50 nav-glass px-4 py-3">
-        <div class="max-w-md mx-auto flex justify-between gap-2 overflow-x-auto no-scrollbar">
-            <a href="#composition" class="whitespace-nowrap px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold uppercase tracking-wider border border-emerald-100">Склад</a>
-            <a href="#prep" class="whitespace-nowrap px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold uppercase tracking-wider border border-emerald-100">Підготовка</a>
-            <a href="#steps" class="whitespace-nowrap px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold uppercase tracking-wider border border-emerald-100">Пересадка</a>
-            <a href="#watering" class="whitespace-nowrap px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold uppercase tracking-wider border border-emerald-100">Полив</a>
+    <nav class="sticky top-0 z-50 nav-glass px-2 py-3">
+        <div class="max-w-md mx-auto flex justify-center items-center gap-1.5 flex-nowrap overflow-x-auto no-scrollbar">
+            <a href="#composition" class="whitespace-nowrap px-2.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-tight border border-emerald-100">Склад</a>
+            <a href="#prep" class="whitespace-nowrap px-2.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-tight border border-emerald-100">Підготовка</a>
+            <a href="#steps" class="whitespace-nowrap px-2.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-tight border border-emerald-100">Пересадка</a>
+            <a href="#watering" class="whitespace-nowrap px-2.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold uppercase tracking-tight border border-emerald-100">Полив</a>
         </div>
     </nav>
 
@@ -93,7 +101,6 @@
                     </p>
                 </div>
 
-                <!-- Новий блок: Сосновий опад -->
                 <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:shadow-md">
                     <div class="flex items-center gap-3 mb-2">
                         <i data-lucide="leaf" class="w-5 h-5 text-lime-700"></i>
