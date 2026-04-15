@@ -42,17 +42,17 @@
     <!-- Sticky Navigation for Quick Access -->
     <nav class="sticky top-0 z-50 nav-glass px-3 py-3">
         <div class="max-w-md mx-auto flex justify-between items-center gap-1.5 w-full">
-            <a href="#composition" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Склад</a>
             <a href="#prep" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Підготовка</a>
             <a href="#steps" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Пересадка</a>
             <a href="#watering" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Полив</a>
+            <a href="#composition" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Склад</a>
         </div>
     </nav>
 
     <div class="max-w-md mx-auto bg-white min-h-screen shadow-xl relative pb-20">
 
         <!-- Welcome Section -->
-        <header class="hero-gradient text-white pt-10 pb-12 px-8 rounded-b-[40px] shadow-lg">
+        <header class="hero-gradient text-white pt-10 pb-12 px-8 rounded-b-[40px] shadow-lg relative z-10">
             <div class="flex items-center gap-2 mb-6 opacity-80">
                 <i data-lucide="sparkles" class="w-4 h-4 text-emerald-300"></i>
                 <span class="text-xs font-bold tracking-[0.3em] uppercase">Welcome to Forest Craft family</span>
@@ -63,69 +63,10 @@
             </p>
         </header>
 
-        <!-- Section: Anatomy (Composition) -->
-        <section id="composition" class="px-6 py-10">
-            <h2 class="font-playfair text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-                <span class="text-emerald-600">1.</span> Анатомія складу
-            </h2>
-
-            <div class="space-y-6">
-                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:shadow-md">
-                    <div class="flex items-center gap-3 mb-2">
-                        <i data-lucide="layers" class="w-5 h-5 text-emerald-600"></i>
-                        <h4 class="font-bold text-base uppercase tracking-wide">Кора сосни (галтована)</h4>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Скелет субстрату. Не дає ґрунту злежуватися, забезпечуючи постійний доступ кисню до коренів (O₂ — запорука відсутності гнилі).
-                    </p>
-                </div>
-
-                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:shadow-md">
-                    <div class="flex items-center gap-3 mb-2">
-                        <i data-lucide="droplet" class="w-5 h-5 text-blue-600"></i>
-                        <h4 class="font-bold text-base uppercase tracking-wide">Мох Sphagnum</h4>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Розумний гідробаланс. Вбирає зайву воду і поступово віддає її рослині. Містить природний антисептик — сфагнол.
-                    </p>
-                </div>
-
-                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:shadow-md">
-                    <div class="flex items-center gap-3 mb-2">
-                        <i data-lucide="filter" class="w-5 h-5 text-amber-700"></i>
-                        <h4 class="font-bold text-base uppercase tracking-wide">Цеоліт + Вугілля</h4>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Мінеральний фільтр. Цеоліт накопичує добрива, а вугілля нейтралізує токсини та підтримує стабільний pH.
-                    </p>
-                </div>
-
-                <div class="group p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-all hover:shadow-md">
-                    <div class="flex items-center gap-3 mb-2">
-                        <i data-lucide="leaf" class="w-5 h-5 text-lime-700"></i>
-                        <h4 class="font-bold text-base uppercase tracking-wide">Сосновий опад (стабілізований)</h4>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Біоенергетичний ресурс. Служить природним джерелом живлення для мікроорганізмів Biological Shield та підтримує стабільну кислотність, імітуючи екосистему хвойного лісу.
-                    </p>
-                </div>
-
-                <div class="group p-4 rounded-2xl bg-emerald-900 text-white shadow-lg">
-                    <div class="flex items-center gap-3 mb-2">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
-                        <h4 class="font-bold text-base uppercase tracking-wide text-emerald-100">Biological Shield</h4>
-                    </div>
-                    <p class="text-sm text-emerald-50/90 leading-relaxed">
-                        Живий захист. Ми додали спори <strong>Trichoderma</strong> та <strong>Bacillus subtilis</strong>. Вони «прокинуться» при першому поливі та створять імунний бар'єр навколо коренів.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Preparation -->
+        <!-- Section 1: Preparation -->
         <section id="prep" class="px-6 py-10 bg-amber-50">
             <h2 class="font-playfair text-3xl font-bold text-amber-900 mb-6 flex items-center gap-3">
-                <span class="text-amber-600">2.</span> Підготовка (Важливо!)
+                <span class="text-amber-600">1.</span> Підготовка (Важливо!)
             </h2>
 
             <div class="space-y-6">
@@ -188,7 +129,7 @@
                 <div class="flex gap-4">
                     <div class="step-number text-3xl text-amber-300">4</div>
                     <div>
-                        <h4 class="font-bold text-base text-amber-900 uppercase mb-1">Перевірка</h4>
+                        <h4 class="font-bold text-base text-amber-900 uppercase mb-1">Перевірка (Squeeze Test)</h4>
                         <p class="text-sm text-amber-800 leading-relaxed text-justify">
                             Стисніть жменю субстрату в кулаці: він має бути вологим на дотик і тримати форму, але вода не повинна витікати краплями. Якщо баланс вологи та повітря дотримано — субстрат готовий до пересадки!
                         </p>
@@ -197,9 +138,11 @@
             </div>
         </section>
 
-        <!-- Section: Step-by-Step Transplant -->
-        <section id="steps" class="px-6 py-12">
-            <h2 class="font-playfair text-3xl font-bold text-slate-800 mb-8 text-center">Покрокова пересадка</h2>
+        <!-- Section 2: Step-by-Step Transplant -->
+        <section id="steps" class="px-6 py-12 bg-white">
+            <h2 class="font-playfair text-3xl font-bold text-slate-800 mb-8 flex items-center justify-center gap-3">
+                <span class="text-emerald-600">2.</span> Покрокова пересадка
+            </h2>
 
             <div class="relative space-y-12 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[1px] before:bg-slate-200">
                 <div class="relative pl-10">
@@ -228,11 +171,11 @@
             </div>
         </section>
 
-        <!-- Section: Watering Science -->
+        <!-- Section 3: Watering Science -->
         <section id="watering" class="px-6 py-10 bg-slate-900 text-white rounded-t-[40px]">
             <h2 class="font-playfair text-3xl font-bold mb-6 flex items-center gap-3">
-                <i data-lucide="waves" class="w-7 h-7 text-blue-400"></i>
-                Режим поливу
+                <span class="text-blue-400">3.</span> Режим поливу
+                <i data-lucide="waves" class="w-7 h-7 text-blue-400 ml-auto"></i>
             </h2>
 
             <div class="space-y-6">
@@ -256,8 +199,67 @@
             </div>
         </section>
 
+        <!-- Section 4: Anatomy (Composition) -->
+        <section id="composition" class="px-6 py-10 rounded-t-[40px] bg-slate-50 relative -mt-6 z-10 border-t border-slate-200">
+            <h2 class="font-playfair text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                <span class="text-emerald-600">4.</span> Анатомія складу
+            </h2>
+
+            <div class="space-y-6">
+                <div class="group p-4 rounded-2xl bg-white border border-slate-100 transition-all hover:shadow-md">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-emerald-600"></i>
+                        <h4 class="font-bold text-base uppercase tracking-wide">Кора сосни (галтована)</h4>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Скелет субстрату. Не дає ґрунту злежуватися, забезпечуючи постійний доступ кисню до коренів (O₂ — запорука відсутності гнилі).
+                    </p>
+                </div>
+
+                <div class="group p-4 rounded-2xl bg-white border border-slate-100 transition-all hover:shadow-md">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="droplet" class="w-5 h-5 text-blue-600"></i>
+                        <h4 class="font-bold text-base uppercase tracking-wide">Мох Sphagnum</h4>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Розумний гідробаланс. Вбирає зайву воду і поступово віддає її рослині. Містить природний антисептик — сфагнол.
+                    </p>
+                </div>
+
+                <div class="group p-4 rounded-2xl bg-white border border-slate-100 transition-all hover:shadow-md">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="filter" class="w-5 h-5 text-amber-700"></i>
+                        <h4 class="font-bold text-base uppercase tracking-wide">Цеоліт + Вугілля</h4>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Мінеральний фільтр. Цеоліт накопичує добрива, а вугілля нейтралізує токсини та підтримує стабільний pH.
+                    </p>
+                </div>
+
+                <div class="group p-4 rounded-2xl bg-white border border-slate-100 transition-all hover:shadow-md">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="leaf" class="w-5 h-5 text-lime-700"></i>
+                        <h4 class="font-bold text-base uppercase tracking-wide">Сосновий опад (стабілізований)</h4>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Біоенергетичний ресурс. Служить природним джерелом живлення для мікроорганізмів Biological Shield та підтримує стабільну кислотність, імітуючи екосистему хвойного лісу.
+                    </p>
+                </div>
+
+                <div class="group p-4 rounded-2xl bg-emerald-900 text-white shadow-lg">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+                        <h4 class="font-bold text-base uppercase tracking-wide text-emerald-100">Biological Shield</h4>
+                    </div>
+                    <p class="text-sm text-emerald-50/90 leading-relaxed">
+                        Живий захист. Ми додали спори <strong>Trichoderma</strong> та <strong>Bacillus subtilis</strong>. Вони «прокинуться» при першому поливі та створять імунний бар'єр навколо коренів.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Section: FAQ -->
-        <section class="px-6 py-12">
+        <section class="px-6 py-12 bg-slate-50">
             <h2 class="font-playfair text-3xl font-bold text-slate-800 mb-6">Питання та відповіді</h2>
 
             <div class="space-y-4">
