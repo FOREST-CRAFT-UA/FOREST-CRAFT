@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Craft Lab – Преміальні ботанічні субстрати</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden; /* Запобігає горизонтальному скролу на мобільному */
+        }
+        
+        h1, h2, h3, h4, .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Оновлений преміальний фон Hero секції */
+        .hero-bg {
+            background: 
+                linear-gradient(135deg, rgba(6, 78, 59, 0.95) 0%, rgba(4, 120, 87, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1597571063304-81f08190f3e1?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+            position: relative;
+        }
+        
+        /* Вимикаємо fixed фон на мобільних пристроях для кращої продуктивності iOS */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.2;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Глобальне вирівнювання тексту по ширині з переносами */
+        p.leading-relaxed {
+            text-align: justify;
+            -webkit-hyphens: auto; /* Для Safari/iPhone */
+            -ms-hyphens: auto;     /* Для старих Windows */
+            hyphens: auto;         /* Сучасний стандарт */
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-200 selection:text-emerald-900 w-full">
+
+    <nav class="nav-glass fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity" aria-label="Нагору">
+                    <img src="./pictures/logo_site.png" alt="Forest Craft Logo" class="h-10 w-10 object-contain rounded-md shadow-sm bg-slate-900">
+                    <div class="flex flex-col leading-tight">
+                        <span class="font-playfair text-xl md:text-2xl font-bold text-emerald-950 uppercase tracking-wider">
+                            FOREST CRAFT
+                        </span>
+                        <span class="text-[9.5px] md:text-[10px] font-bold text-emerald-700 uppercase tracking-[0.22em] md:tracking-[0.35em] block mr-[-0.22em] md:mr-[-0.35em]">
+                            BOTANICAL SOLUTIONS
+                        </span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#process" class="text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors uppercase tracking-widest">Виробництво</a>
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors uppercase tracking-widest">Підхід</a>
+                    <a href="#products" class="text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors uppercase tracking-widest">Магазин</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-emerald-700 focus:outline-none p-2" aria-label="Відкрити меню">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Оптимізоване мобільне меню (з напівпрозорим фоном) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="#process" class="block px-4 py-3 text-base font-medium text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-md">Виробництво</a>
+                <a href="#about" class="block px-4 py-3 text-base font-medium text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-md">Підхід</a>
+                <a href="#products" class="block px-4 py-3 text-base font-medium text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-md">Продукти</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Секція (Оптимізований розмір тексту для мобільних) -->
+    <header class="hero-bg text-white pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center">
+        <div class="relative z-20 max-w-4xl mx-auto">
+           
+            <h1 class="font-playfair text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight drop-shadow-lg">
+                Де природа <br> <span class="italic font-light text-emerald-100">зустрічається з наукою</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-emerald-50 max-w-2xl mx-auto mb-8 sm:mb-10 font-light leading-relaxed drop-shadow px-2">
+                Професійні крафтові субстрати для колекційних ароїдних. Створені з лабораторною точністю для бездоганного здоров'я ваших рослин.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 w-full sm:w-auto">
+                <a href="#products" class="bg-white text-emerald-950 hover:bg-emerald-50 px-8 py-4 rounded transition duration-300 font-bold uppercase tracking-widest text-sm w-full sm:w-auto text-center shadow-2xl hover:-translate-y-1">
+                    Обрати субстрат
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="process" class="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-16">
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block">Чесний крафтовий процес</span>
+                <h2 class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4">Як ми готуємо компоненти</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">
+                    Ніякої агресивної хімії. Тільки перевірені часом методи підготовки, що зберігають природну силу лісових компонентів.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.99 7.99 0 0120 13a7.99 7.99 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14l-1.121 2.121z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-3">Очищення теплом</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Ми виварюємо кору та опад, а мох сфагнум обшпарюємо окропом. Це природний спосіб видалити зайві смоли та личинки шкідників, не пошкоджуючи структуру волокон.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-3">Повітряна сушка</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Після термічної обробки компоненти проходять тривале просушування на свіжому повітрі, що стабілізує органіку, роблячи її ідеально сухою, легкою та безпечною для зберігання та транспортування.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-3">Калібрування</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Всі компоненти подрібнюються за допомогою ручних інструментів та калібруються через систему сит, для отримання ідеальної фракції для ваших рослин.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all group border-emerald-200 bg-emerald-50/30">
+                    <div class="w-12 h-12 bg-emerald-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-3">Жива екосистема</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Ми збагачуємо чистий субстрат спорами Trichoderma spp. та Bacillus subtilis. Це створює навколо коренів активний бар’єр проти гнилей та цвілі.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Оновлений блок Маніфесту (Підхід) -->
+    <section id="about" class="py-16 md:py-24 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center mb-16">
+                <div class="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=1000&auto=format&fit=crop" alt="Aroid environment" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/60 to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 right-8 text-white">
+                        <p class="font-playfair text-2xl italic">"Ми не створюємо ґрунт. Ми відтворюємо рідну домівку ваших рослин."</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-emerald-600 font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Наш маніфест</span>
+                    <h2 class="font-playfair text-4xl md:text-6xl font-bold text-slate-900 mb-8 leading-tight">Природа, очищена від зайвого</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                        У дикій природі ароїдні живуть не в землі. Вони ростуть у пухкому шарі лісового опаду, де коріння має нескінченний доступ до кисню. Ми прибрали торф, який стискає коріння, і замінили його на чисту, дихаючу органіку.
+                    </p>
+                    
+                   <div class="flex w-fit mx-auto items-center gap-4 bg-emerald-50 px-6 py-4 rounded-2xl border border-emerald-100">
+                        <div class="text-3xl">🌿</div>
+                        <div>
+                            <p class="text-sm font-bold text-emerald-900 uppercase tracking-wider">Peat Free Formula</p>
+                            <p class="text-xs text-emerald-700">0% торфу — 100% аерації коріння</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-colors">
+                    <div class="text-3xl mb-4">🌳</div>
+                    <h4 class="font-bold text-slate-900 mb-2 uppercase tracking-wide text-sm">Природна імітація</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Склад максимально наближений до тропічної лісової підстилки. Кора, мох та опад створюють середовище, в якому рослина відчуває себе "вдома".
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-colors">
+                    <div class="text-3xl mb-4">🧪</div>
+                    <h4 class="font-bold text-slate-900 mb-2 uppercase tracking-wide text-sm">Баланс <span class="lowercase">p</span>H (5.5 - 6.0)</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Жодної зайвої хімії. Ми контролюємо природну кислотність компонентів, ідеальну для засвоєння мікроелементів алоказіями та монстерами.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-colors">
+                    <div class="text-3xl mb-4">🛡️</div>
+                    <h4 class="font-bold text-slate-900 mb-2 uppercase tracking-wide text-sm">Протидія гнилі</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                    Завдяки великій фракції кори та відсутності дрібного торфу, субстрат працює як природний дренаж: вода проходить крізь нього, залишаючи лише необхідну вологу всередині компонентів, а корисні бактерії захищають корінь 24/7.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-emerald-200 transition-colors">
+                    <div class="text-3xl mb-4">💨</div>
+                    <h4 class="font-bold text-slate-900 mb-2 uppercase tracking-wide text-sm">Максимальна аерація</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Структура "Junior" та "Adult" міксів гарантує рух повітря всередині горщика. Коріння буквально дихає, що прискорює ріст у 2-3 рази.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Об'єднаний Блок Товарів та Інструкції з вибору -->
+    <section id="products" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block">Каталог субстратів</span>
+                <h2 class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4">Оберіть свій ідеальний мікс</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">Знайдіть саме той субстрат, який потрібен вашій рослині на її поточному етапі розвитку, та оформлюйте замовлення в один клік.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+                
+                <!-- JUNIOR CARD -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 flex flex-col group">
+                    <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&q=80" alt="Substrate JUNIOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">Фракція 0.5 - 1.5 см</div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded">pH 5.5-6.0</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-1 rounded">Gentle Root</span>
+                        </div>
+                        <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">JUNIOR MIX</h3>
+                        <p class="text-sm text-slate-500 mb-6 text-justify hyphens-auto">Оптимально для адаптації діток, живців та реанімації рослин. Утримує ідеальний баланс вологи навколо тонких коренів без ризику загнивання.</p>
+                        
+                        <!-- Блок: Кому підійде? -->
+                        <div class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100">
+                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3">Кому підійде?</h4>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start">
+                                    <span class="text-emerald-500 mr-3 text-lg leading-none">✔</span>
+                                    <span><strong class="text-slate-800">Горщики:</strong> до 2 літрів</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-emerald-500 mr-3 text-lg leading-none">✔</span>
+                                    <span><strong class="text-slate-800">Рослини:</strong> живці, підлітки та "Jewel" алоказії (Black Velvet, Dragon Scale тощо)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-emerald-500 mr-3 text-lg leading-none">✔</span>
+                                    <span><strong class="text-slate-800">Мета:</strong> капілярна вологість для тонких коренів</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Оновлена кнопка замовлення для Junior Mix -->
+                        <button onclick="selectProduct('Junior Mix')" class="w-full block text-center bg-emerald-700 text-white py-4 rounded-xl hover:bg-emerald-800 transition-all font-bold text-sm tracking-widest uppercase shadow-lg">
+                            Замовити Junior Mix
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ADULT CARD -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-orange-100 flex flex-col group">
+                    <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1620127351111-2eb209bd3cda?auto=format&fit=crop&q=80" alt="Substrate ADULT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-[#744210] text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">Фракція 1.5 - 2.5 см</div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded">pH 5.5-6.0</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-orange-50 text-orange-800 px-2 py-1 rounded">Bio-Active</span>
+                        </div>
+                        <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">ADULT MIX</h3>
+                        <p class="text-sm text-slate-500 mb-6 text-justify hyphens-auto">Для дорослих монстер, філодендронів та антуріумів. Забезпечує максимальний дренаж та аерацію, імітуючи природне середовище епіфітів.</p>
+                        
+                        <!-- Блок: Кому підійде? -->
+                        <div class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100">
+                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3">Кому підійде?</h4>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start">
+                                    <span class="text-orange-500 mr-3 text-lg leading-none">✔</span>
+                                    <span><strong class="text-slate-800">Горщики:</strong> від 2 літрів і більше</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange-500 mr-3 text-lg leading-none">✔</span>
+                                    <span><strong class="text-slate-800">Рослини:</strong> дорослі Монстери, великі Філодендрони та гігантські Алоказії (Regal Shield, Zebrina)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange-500 mr-3 text-lg leading-none">✔</span>
+                                    <span><strong class="text-slate-800">Мета:</strong> максимальна аерація у великих об'ємах ґрунту</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Оновлена кнопка замовлення для Adult Mix -->
+                        <button onclick="selectProduct('Adult Mix')" class="w-full block text-center bg-slate-900 text-white py-4 rounded-xl hover:bg-emerald-900 transition-all font-bold text-sm tracking-widest uppercase shadow-lg">
+                            Замовити Adult Mix
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Блок з порадою -->
+            <div class="mt-10 md:mt-12 bg-slate-900 text-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-xl">
+                <div class="mb-4 md:mb-0 md:mr-6 text-center md:text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Порада</p>
+                    <p class="text-base md:text-lg italic font-light text-slate-200">"Якщо рослина на межі розмірів або ви сумніваєтесь — просто змішайте Junior та Adult у пропорції 1:1 для отримання ідеального балансу."</p>
+                </div>
+                <div class="text-4xl md:text-5xl drop-shadow-md">🧪</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-playfair text-3xl font-bold text-center text-slate-900 mb-10 md:mb-12">Поширені запитання</h2>
+            
+            <div class="space-y-4 md:space-y-6">
+                <div class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">Чи потрібно додатково дезінфікувати ваші субстрати?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Категорично ні. Наші субстрати не лише проходять термічну обробку, але й заселені корисною мікрофлорою. Прожарювання або проливання марганцівкою вб'є наш Biological Shield.</p>
+                </div>
+                
+                <div class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">Як працює галтована кора?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">На відміну від звичайної гострої кори, галтована має згладжені кути. Це запобігає пошкодженню ніжних коренів (особливо в алоказій) під час росту та пересадки, а також створює більш рівномірні повітряні кишені.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Зона замовлення (Order Zone) -->
+    <section id="order-zone" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 id="order-title" class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6">Готові до посадки?</h2>
+            <p class="text-slate-600 mb-10 text-lg italic">Оберіть зручний месенджер для замовлення:</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                
+                <a id="tg-link" href="https://t.me/forestcraft_lab" target="_blank" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-500 hover:bg-emerald-50 transition-all shadow-sm hover:shadow-xl">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">✈️</div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Telegram</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-tight">Auto-message ready</p>
+                </a>
+
+                <a href="https://ig.me/m/forestcraft_lab" target="_blank" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-pink-500 hover:bg-pink-50 transition-all shadow-sm hover:shadow-xl">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📸</div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Instagram</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-tight">Direct Lab</p>
+                </a>
+
+                <a href="viber://chat?number=%2B380931234567" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-violet-500 hover:bg-violet-50 transition-all shadow-sm hover:shadow-xl">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">💜</div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Viber</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-tight">Chat with us</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Оновлений Footer -->
+    <footer class="bg-slate-950 py-12 md:py-16 border-t-4 border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            
+            <!-- Логотип -->
+            <div class="flex items-center gap-3">
+                <img src="./pictures/logo_site.png" alt="Logo" class="h-10 w-10 opacity-70 grayscale">
+                <div class="flex flex-col leading-tight">
+                    <span class="font-playfair text-xl font-bold text-white uppercase tracking-wider">
+                        FOREST CRAFT
+                    </span>
+                    <span class="text-[9px] font-bold text-slate-400 uppercase tracking-[0.28em] block mr-[-0.28em]">
+                        BOTANICAL SOLUTIONS
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Лабораторний підпис -->
+            <div class="flex flex-col items-center md:items-end text-[10px] text-slate-500 uppercase tracking-widest w-full md:w-auto space-y-2 text-center md:text-right">
+                <span>© 2026 FOREST CRAFT LAB. Зроблено в Україні.</span>
+                <span class="text-emerald-500/50 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Bio-Active Protocol Active
+                </span>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Закриваємо меню при кліку на посилання
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Логіка для вибору товару
+        function selectProduct(productName) {
+            // 1. Оновлюємо заголовок, щоб клієнт бачив свій вибір
+            const title = document.getElementById('order-title');
+            title.innerText = "Замовити " + productName;
+            title.classList.add('text-emerald-700');
+
+            // 2. Налаштовуємо Telegram (підставляємо нік та текст)
+            const tgNick = "forestcraft_lab"; // ЗАМІНИ НА СВІЙ НІК БЕЗ @
+            const message = encodeURIComponent("Привіт! Я хочу замовити професійний субстрат " + productName);
+            const tgLink = document.getElementById('tg-link');
+            tgLink.href = `https://t.me/${tgNick}?text=${message}`;
+
+            // 3. Плавно скролимо до вибору месенджерів
+            document.getElementById('order-zone').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    </script>
+</body>
+</html>
