@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS (Для максимальної швидкості в майбутньому краще скомпілювати цей файл) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
@@ -60,7 +60,6 @@
         <!-- Welcome Section -->
         <header class="hero-gradient text-white pt-10 pb-12 px-8 rounded-b-[40px] shadow-lg relative z-10">
             <div class="flex items-center gap-2 mb-6 opacity-80">
-                <!-- ОПТИМІЗАЦІЯ: Вбудовані SVG іконки замість зовнішнього скрипта -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-300"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><path d="M20.5 3.5.5 23.5"/></svg>
                 <span class="text-xs font-bold tracking-[0.3em] uppercase">Welcome to Forest Craft family</span>
             </div>
@@ -93,7 +92,7 @@
                     <div class="step-number text-3xl text-amber-300">2</div>
                     <div class="w-full">
                         <h4 class="font-bold text-base text-amber-900 uppercase mb-1">Насичення вологою</h4>
-                        <p class="text-sm text-amber-800 leading-relaxed mb-3">
+                        <p class="text-sm text-amber-800 leading-relaxed mb-3 text-justify">
                             Безторф’яні субстрати вимагають точного зволоження для запуску капілярної системи компонентів. Додавайте воду поступово, постійно перемішуючи суміш:
                         </p>
                         
@@ -186,45 +185,76 @@
             </h2>
 
             <div class="space-y-6">
+                <!-- Вступ про перший полив -->
                 <div>
                     <h4 class="text-sm font-bold uppercase tracking-widest text-blue-300 mb-2">Перший полив</h4>
-                    <p class="text-sm text-slate-300 leading-relaxed italic">Перший полив: Зачекайте 1–2 дні після посадки. Це необхідно для адаптації кореневої системи та загоєння мікротравм. При швидкій перевалці без очищення коріння — можна полити одразу.</p>
+                    <p class="text-sm text-slate-300 leading-relaxed italic">Зачекайте 1–2 дні після посадки. Це необхідно для адаптації кореневої системи та загоєння мікротравм. При швидкій перевалці без пошкодження коріння — можна полити одразу.</p>
                 </div>
 
-                <!-- Оновлений блок з методами поливу -->
+                <!-- Основні методи поливу -->
                 <div class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow-inner">
-                    <h4 class="text-sm font-bold uppercase tracking-widest text-blue-300 mb-4">Основний метод поливу</h4>
+                    <h4 class="text-sm font-bold uppercase tracking-widest text-blue-300 mb-4">Основні методи поливу</h4>
                     
-                    <div class="space-y-4">
+                    <div class="space-y-5">
+                        <!-- Класичний метод -->
                         <div>
                             <h5 class="text-emerald-400 font-bold text-sm mb-1.5 flex items-center gap-2">
-                                <!-- Іконка краплі води (Класичний) -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-                                Класичний
+                                Класичний (Верхній)
                             </h5>
                             <p class="text-sm text-slate-300 leading-relaxed">
-                                Поливайте повільно по всьому краю горщика. Через 15 хвилин <strong class="text-white">обов’язково злийте</strong> залишки води з піддона.
+                                Поливайте повільно по всьому краю горщика. Через 15–20 хвилин <strong class="text-white">обов’язково злийте</strong> залишки води з піддона, щоб коріння не задихалося.
                             </p>
                         </div>
                         
-                        <div class="flex items-start gap-3 pt-4 border-t border-slate-700/80">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                            <div>
-                                <h6 class="text-sm font-bold mb-1 text-white">Коли поливати знову?</h6>
-                                <p class="text-sm text-slate-300 leading-relaxed text-justify">Орієнтуйтеся на вагу горщика або колір кори. Якщо компоненти стали світлими, а горщик — відчутно легким, настав час для води. Склад Forest Craft просихає рівномірно, що запобігає «закисанню» нижніх шарів.</p>
-                            </div>
+                        <!-- Метод замочування -->
+                        <div class="pt-4 border-t border-slate-700/80">
+                            <h5 class="text-blue-400 font-bold text-sm mb-1.5 flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                Замочування (Нижній)
+                            </h5>
+                            <p class="text-sm text-slate-300 leading-relaxed mb-2">
+                                Помістіть горщик у ємність із водою. Сфагнум та цеоліт капілярно підтягнуть ідеальну кількість вологи.
+                            </p>
+                            <ul class="space-y-1.5 mb-3 text-sm text-slate-300">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-400 font-bold mt-0.5">•</span>
+                                    <span><strong class="text-white">Adult Mix:</strong> занурте на 1/3 висоти горщика на 15–20 хвилин.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-400 font-bold mt-0.5">•</span>
+                                    <span><strong class="text-white">Junior Mix:</strong> занурте на 1/4 висоти на 10–15 хвилин (дрібна фракція швидше тягне воду).</span>
+                                </li>
+                            </ul>
+                            <p class="text-sm text-amber-200/90 leading-relaxed font-medium">
+                                Після процедури обов'язково дайте всій зайвій воді повністю стекти!
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow-inner mt-4">
-                    <h5 class="text-blue-400 font-bold text-sm mb-1.5 flex items-center gap-2">
-                        <!-- Іконка хвиль / резервуара (Автополив) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5 2 2.3 0 2.3-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5 2 2.3 0 2.3-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5 2 2.3 0 2.3-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
-                        Гнітовий / Автополив
+                <!-- Коли поливати знову -->
+                <div class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow-inner">
+                    <div class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                        <div>
+                            <h6 class="text-sm font-bold mb-1 text-white uppercase tracking-wider">Коли поливати знову?</h6>
+                            <p class="text-sm text-slate-300 leading-relaxed text-justify">
+                                Орієнтуйтеся на <strong class="text-emerald-300">вагу горщика</strong> або <strong class="text-emerald-300">колір кори</strong>. 
+                                Якщо компоненти стали світлими, а горщик — відчутно легким, настав час для поливу. Склад Forest Craft просихає рівномірно, запобігаючи закисанню нижніх шарів.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Застереження щодо автополиву (Новий блок) -->
+                <div class="bg-amber-900/20 p-5 rounded-xl border border-amber-800/40 shadow-inner mt-4">
+                    <h5 class="text-amber-400 font-bold text-sm mb-2 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        Важливо: Системи автополиву
                     </h5>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Завдяки капілярній структурі моху та Mineral Matrix, субстрат ідеально працює в системах автополиву. Перші 2 тижні поливайте рослину зверху, поки коріння не адаптується до нового середовища, після чого можна переходити до наповнення резервуара.
+                    <p class="text-sm text-amber-200/80 leading-relaxed text-justify">
+                        Наш субстрат створений для природного циклу «рясний полив ➡️ просихання ➡️ дихання». Він категорично <strong class="text-amber-300 font-semibold">не підходить для напівгідропоніки та постійного гнітового поливу</strong>. Безперервна волога неминуче призведе до гниття органічних компонентів.
                     </p>
                 </div>
             </div>
@@ -310,7 +340,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform group-open:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
                     </summary>
                     <p class="text-sm text-slate-500 mt-3 leading-relaxed font-medium text-emerald-700">
-                        Не панікуйте! Це може бути робота корисної Триходерми. Це знак, що "Біологічний щит" активний і захищає коріння від гнилі.
+                        Не панікуйте! Це може бути робота корисної Триходерми. Корисний міцелій зазвичай має вигляд тонкого білого павутиння або окремих крапок і не має неприємного гнильного запаху.
                     </p>
                 </details>
 
