@@ -515,6 +515,10 @@
                 hint.innerText = "Текст замовлення скопійовано! Оберіть месенджер та просто вставте його у чат.";
                 hint.classList.replace('text-slate-600', 'text-emerald-600');
                 hint.classList.replace('italic', 'font-bold');
+                
+                // Ефект "миготіння", щоб привернути увагу
+                hint.classList.add('animate-bounce'); 
+                setTimeout(() => hint.classList.remove('animate-bounce'), 2000);
             };
 
             // Запасний варіант (Fallback) для iframe або старих браузерів
