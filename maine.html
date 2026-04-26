@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="uk" class="scroll-smooth">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWM37ERMQ3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WWM37ERMQ3');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forest Craft Lab – Преміальні ботанічні субстрати</title>
@@ -74,7 +84,7 @@
     <nav class="nav-glass fixed w-full z-50 top-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#" class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity" aria-label="Нагору">
+                <a href="#top" onclick="jumpToTop(event)" class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity" aria-label="Нагору">
                     <img src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png" alt="Forest Craft Logo" class="h-10 w-10 object-contain rounded-md shadow-sm bg-slate-900">
                     <div class="flex flex-col leading-tight">
                         <span class="font-playfair text-xl md:text-2xl font-bold text-emerald-950 uppercase tracking-wider">
@@ -113,7 +123,7 @@
     </nav>
 
     <!-- Hero Секція -->
-    <header class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center border-b border-slate-200">
+    <header id="top" class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center border-b border-slate-200">
         <div class="relative z-20 max-w-5xl mx-auto">
             <span class="text-emerald-600 font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-4 block">Сила лісу, активована наукою</span>
             <h1 class="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-slate-900 leading-tight">
@@ -442,7 +452,7 @@
                 </div>
                 <div class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100">
                     <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">Як працює галтована кора?</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Вона має згладжені кути, що запобігає пошкодженню ніжних коренів під час росту та пересадки.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Вона має згладжені кути, що запобігає пошкодженню ніжних коренів под час росту та пересадки.</p>
                 </div>
             </div>
         </div>
@@ -453,7 +463,6 @@
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 id="order-title" class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6">Готові до посадки?</h2>
             
-            <!-- Оновлений елемент підказки з інлайн-блоком для трансформацій -->
             <p id="order-hint" class="text-slate-600 mb-10 text-lg italic transition-all duration-300 transform inline-block">Оберіть зручний месенджер для замовлення:</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -500,8 +509,17 @@
         const mobileLinks = menu.querySelectorAll('a');
         mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); }); });
 
+        // Функція для гарантованого миттєвого скролу нагору
+        function jumpToTop(e) {
+            e.preventDefault();
+            document.documentElement.style.scrollBehavior = 'auto';
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                document.documentElement.style.scrollBehavior = '';
+            }, 50);
+        }
+
         function selectProduct(productName) {
-            // Одразу запускаємо плавний скрол до блоку замовлення
             document.getElementById('order-zone').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             const title = document.getElementById('order-title');
@@ -515,29 +533,23 @@
             document.getElementById('tg-link').href = `https://t.me/${tgNick}?text=${encodedMessage}`;
             document.getElementById('viber-link').href = `viber://chat?number=%2B380931234567&text=${encodedMessage}`;
 
-            // Оновлена функція з затримкою, щоб дочекатися завершення скролу
             const showSuccessMessage = () => {
                 setTimeout(() => {
                     const hint = document.getElementById('order-hint');
                     hint.innerText = "Текст замовлення скопійовано! Оберіть месенджер та просто вставте його у чат.";
                     hint.classList.replace('text-slate-600', 'text-emerald-600');
                     hint.classList.replace('italic', 'font-bold');
-                    
-                    // Додаємо плавне збільшення (scale-105)
                     hint.classList.add('scale-105', 'drop-shadow-md'); 
-                    
-                    // Знімаємо збільшення, створюючи "м'який" імпульс
                     setTimeout(() => {
                         hint.classList.remove('scale-105', 'drop-shadow-md');
                     }, 300);
-                }, 600); // 500мс затримки – якраз час, поки сторінка плавно їде вниз
+                }, 600);
             };
 
-            // Запасний варіант (Fallback)
             const copyFallback = () => {
                 const textArea = document.createElement("textarea");
                 textArea.value = message;
-                textArea.style.position = "fixed"; // Уникаємо скролу
+                textArea.style.position = "fixed";
                 textArea.style.opacity = "0";
                 document.body.appendChild(textArea);
                 textArea.select();
@@ -550,7 +562,6 @@
                 document.body.removeChild(textArea);
             };
 
-            // Сучасний метод копіювання
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(message)
                     .then(showSuccessMessage)
