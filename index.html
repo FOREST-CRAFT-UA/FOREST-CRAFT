@@ -1,49 +1,75 @@
 <!DOCTYPE html>
-<html lang="uk" class="scroll-smooth scroll-pt-8">
+<html lang="uk" class="scroll-smooth">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WWM37ERMQ3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWM37ERMQ3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-WWM37ERMQ3');
-</script>
+      gtag('config', 'G-WWM37ERMQ3');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forest Craft — Ваш персональний гід по догляду</title>
+    <title>Forest Craft Lab – Преміальні ботанічні субстрати</title>
+
+    <!-- SEO та Open Graph теги для соцмереж -->
+    <meta name="description" content="Преміальні крафтові субстрати без торфу для ароїдних. Лабораторний підхід Forest Craft для ідеального коріння ваших монстер та алоказій.">
+    <meta property="og:title" content="Forest Craft Lab – Преміальні ботанічні субстрати">
+    <meta property="og:description" content="Професійні крафтові субстрати без торфу. Зроблено в Україні.">
+    <meta property="og:image" content="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png">
     
-    <!-- ОПТИМІЗАЦІЯ: Попереднє підключення до шрифтів для миттєвого завантаження тексту -->
+    <!-- Favicon (Іконка у вкладці браузера) -->
+    <link rel="icon" type="image/png" href="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #f8fafc;
             color: #1e293b;
+            overflow-x: hidden;
         }
+        
         h1, h2, h3, h4, .font-playfair {
             font-family: 'Playfair Display', serif;
         }
+
         .nav-glass {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+
+        .hero-bg {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 250, 252, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+            position: relative;
         }
-        .step-number {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
+        
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
         }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.5;
+        }
+
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -53,362 +79,518 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-emerald-200 selection:text-emerald-900 w-full">
 
-    <!-- Sticky Navigation for Quick Access -->
-    <nav class="sticky top-0 z-50 nav-glass px-3 py-3">
-        <div class="max-w-md mx-auto flex justify-between items-center gap-1.5 w-full">
-            <a href="#prep" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Підготовка</a>
-            <a href="#steps" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Пересадка</a>
-            <a href="#watering" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Полив</a>
-            <a href="#care" class="flex-1 text-center whitespace-nowrap py-2.5 bg-emerald-600 text-white rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-md transition-all hover:bg-emerald-700 active:scale-95 active:bg-emerald-800">Догляд</a>
+    <nav class="nav-glass fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#top" onclick="jumpToTop(event)" class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity" aria-label="Нагору">
+                    <img src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png" alt="Forest Craft Logo" class="h-10 w-10 object-contain rounded-md shadow-sm bg-slate-900">
+                    <div class="flex flex-col leading-tight">
+                        <span class="font-playfair text-xl md:text-2xl font-bold text-emerald-950 uppercase tracking-wider">
+                            FOREST CRAFT
+                        </span>
+                        <span class="text-[9.5px] md:text-[10px] font-bold text-emerald-700 uppercase tracking-[0.22em] md:tracking-[0.35em] block mr-[-0.22em] md:mr-[-0.35em]">
+                            BOTANICAL SOLUTIONS
+                        </span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#process" class="text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors uppercase tracking-widest">Виробництво</a>
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors uppercase tracking-widest">Підхід</a>
+                    <a href="#products" class="text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors uppercase tracking-widest">Магазин</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-emerald-700 focus:outline-none p-2" aria-label="Відкрити меню">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Мобільне меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="#process" class="block px-4 py-3 text-base font-medium text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-md">Виробництво</a>
+                <a href="#about" class="block px-4 py-3 text-base font-medium text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-md">Підхід</a>
+                <a href="#products" class="block px-4 py-3 text-base font-medium text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-md">Продукти</a>
+            </div>
         </div>
     </nav>
 
-    <div class="max-w-md mx-auto bg-white min-h-screen shadow-xl relative pb-20">
-
-        <!-- Welcome Section -->
-        <header class="hero-gradient text-white pt-10 pb-12 px-8 rounded-b-[40px] shadow-lg relative z-10">
-            <div class="flex items-center gap-2 mb-6 opacity-80">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-300"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><path d="M20.5 3.5.5 23.5"/></svg>
-                <span class="text-xs font-bold tracking-[0.3em] uppercase">Welcome to Forest Craft family</span>
-            </div>
-            <h1 class="text-4xl font-bold leading-tight mb-4">Вітаємо у родині Forest Craft!</h1>
-            <p class="text-base text-emerald-50 font-light leading-relaxed">
-                Ви тримаєте в руках професійний безторф’яний субстрат. Щоб ваша алоказія або монстера почувалися як у справжніх тропіках, дотримуйтесь цієї інструкції.
+    <!-- Hero Секція -->
+    <header id="top" class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center border-b border-slate-200">
+        <div class="relative z-20 max-w-5xl mx-auto">
+            <span class="text-emerald-800 font-extrabold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4 block">Сила лісу, активована наукою</span>
+            <h1 class="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-slate-900 leading-tight">
+                Безкомпромісна якість <br> <span class="italic font-medium text-emerald-900">для ідеального коріння.</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-8 sm:mb-10 font-normal leading-relaxed px-2 text-justify md:text-center">
+                Професійні безторф’яні субстрати для колекційних ароїдних. Для бездоганного здоров'я ваших рослин.
             </p>
-        </header>
-
-        <!-- Section 1: Preparation -->
-        <section id="prep" class="px-6 py-10 bg-amber-50">
-            <h2 class="font-playfair text-3xl font-bold text-amber-900 mb-6 flex items-center gap-3">
-                <span class="text-amber-600">1.</span> Підготовка (Важливо!)
-            </h2>
-
-            <div class="space-y-6">
-                <!-- Step 1 -->
-                <div class="flex gap-4">
-                    <div class="step-number text-3xl text-amber-300">1</div>
-                    <div>
-                        <h4 class="font-bold text-base text-amber-900 uppercase mb-1">Змішування</h4>
-                        <div class="space-y-3 text-sm text-amber-800 leading-relaxed text-justify">
-                            <p>
-                                Ми фасуємо субстрат шарами, щоб зберегти його структуру та запобігти осіданню дрібних фракцій під час транспортування. Перед використанням обов’язково висипте весь вміст пакета у суху місткість і обережно перемішайте руками. Це допоможе Mineral Matrix (вугіллю та цеоліту) рівномірно розподілитися по всьому об'єму.
-                            </p>
-                            <div class="bg-amber-100/50 p-3.5 rounded-xl border border-amber-200/50">
-                                <strong class="text-amber-900 block mb-1">Якщо ви використовуєте субстрат частково:</strong>
-                                <p>Після перемішування відсипте лише необхідну для посадки кількість суміші, а решту поверніть у пакет сухою. Зберігайте залишки в закритому пакеті у сухому місці.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="flex gap-4">
-                    <div class="step-number text-3xl text-amber-300">2</div>
-                    <div class="w-full">
-                        <h4 class="font-bold text-base text-amber-900 uppercase mb-1">Насичення вологою</h4>
-                        <p class="text-sm text-amber-800 leading-relaxed mb-3 text-justify">
-                            Безторф’яні субстрати вимагають точного зволоження для запуску капілярної системи компонентів. Додавайте воду поступово, постійно перемішуючи суміш:
-                        </p>
-                        
-                        <ul class="space-y-2 mb-4 bg-amber-100/40 p-3 rounded-xl border border-amber-200/50">
-                            <li class="flex items-start gap-2 text-sm text-amber-900">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-                                <span><strong>Загальна норма:</strong> 130–150 мл чистої води на кожний 1 літр субстрату.</span>
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-amber-900">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-                                <span><strong>Junior Mix (2.0 L):</strong> близько 250–300 мл води.</span>
-                            </li>
-                            <li class="flex items-start gap-2 text-sm text-amber-900">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5"><path d="M16 16h6"/><path d="M19 13v6"/><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-                                <span><strong>Adult Mix (3.0 L):</strong> близько 400–450 мл води.</span>
-                            </li>
-                        </ul>
-
-                        <div class="bg-amber-100 p-3 rounded-xl border border-amber-300 flex items-start gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-                            <p class="text-xs text-amber-900 leading-relaxed">
-                                <strong class="uppercase tracking-wider text-sm">Порада:</strong> Використовуйте воду температури 22–25°C — це забезпечує миттєвий старт мікробіологічних процесів.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="flex gap-4">
-                    <div class="step-number text-3xl text-amber-300">3</div>
-                    <div>
-                        <h4 class="font-bold text-base text-amber-900 uppercase mb-1">Активація Biological Shield</h4>
-                        <p class="text-sm text-amber-800 leading-relaxed text-justify">
-                            Після зволоження залиште субстрат на 15–20 хвилин для повного біологічного розгортання компонентів. За цей час спори корисних бактерій (Trichoderma spp. та Bacillus subtilis) поглинають вологу та активують свою життєдіяльність, готуючись до формування імунного бар’єру навколо коренів рослини.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="flex gap-4">
-                    <div class="step-number text-3xl text-amber-300">4</div>
-                    <div>
-                        <h4 class="font-bold text-base text-amber-900 uppercase mb-1">Перевірка</h4>
-                        <p class="text-sm text-amber-800 leading-relaxed text-justify">
-                            Субстрат готовий, коли він набуває кольору «мокрого лісу», стає прохолодним на дотик і відчутно важчим. Якщо компоненти залишаються світлими або занадто легкими — додайте 50 мл води та зачекайте ще 10 хвилин для завершення активації.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: Step-by-Step Transplant -->
-        <section id="steps" class="px-6 py-12 bg-white">
-            <h2 class="font-playfair text-3xl font-bold text-slate-800 mb-8 flex items-center justify-center gap-3">
-                <span class="text-emerald-600">2.</span> Покрокова пересадка
-            </h2>
-
-            <div class="relative space-y-12 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[1px] before:bg-slate-200">
-                <div class="relative pl-10">
-                    <div class="absolute left-0 top-0 w-6 h-6 bg-white border-2 border-emerald-500 rounded-full flex items-center justify-center z-10 shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-emerald-600"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" x2="8.12" y1="4" y2="15.88"/><line x1="14.47" x2="20" y1="14.48" y2="20"/><line x1="8.12" x2="12" y1="8.12" y2="12"/></svg>
-                    </div>
-                    <h4 class="font-bold text-base uppercase mb-2">Очищення</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Максимально обережно звільніть коріння від старого субстрату. Якщо помітите пошкоджені або підгнилі корінці — обов'язково видаліть їх стерильним інструментом.</p>
-                </div>
-
-                <div class="relative pl-10">
-                    <div class="absolute left-0 top-0 w-6 h-6 bg-white border-2 border-emerald-500 rounded-full flex items-center justify-center z-10 shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-emerald-600"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-                    </div>
-                    <h4 class="font-bold text-base uppercase mb-2">Оберіть горщик</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Використовуйте ємність із великою кількістю дренажних отворів. Новий горщик має бути лише на 2–3 см ширшим за об'єм кореневої системи — це забезпечить швидке освоєння субстрату та стимулює ріст нового листя, а не тільки коріння.</p>
-                </div>
-
-                <div class="relative pl-10">
-                    <div class="absolute left-0 top-0 w-6 h-6 bg-emerald-600 border-2 border-emerald-600 rounded-full flex items-center justify-center z-10 shadow-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-white"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <h4 class="font-bold text-base uppercase mb-2">Посадка</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Насипте шар субстрату на дно, поставте рослину та заповніть порожнечі. <strong>Не трамбуйте субстрат пальцями!</strong> Щоб компоненти рівномірно розподілилися між корінням, обережно постукайте по стінках горщика — це допоможе суміші влягтися природним чином, зберігаючи структуру пухкою для вільної циркуляції повітря.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Watering Science -->
-        <section id="watering" class="px-6 py-10 bg-slate-900 text-white rounded-t-[40px]">
-            <h2 class="font-playfair text-3xl font-bold mb-6 flex items-center gap-3">
-                <span class="text-blue-400">3.</span> Режим поливу
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-blue-400 ml-auto"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5 2 2.3 0 2.3-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5 2 2.3 0 2.3-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.6 2 5 2 2.3 0 2.3-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
-            </h2>
-
-            <div class="space-y-6">
-                <!-- Вступ про перший полив -->
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-widest text-blue-300 mb-2">Перший полив</h4>
-                    <p class="text-sm text-slate-300 leading-relaxed italic text-justify">Повноцінний полив знадобиться не раніше ніж через 5–10 днів після посадки. Точний час залежить від вологості та температури у вашому домі. Орієнтуйтесь виключно на фізичні показники: горщик має стати відчутно легким, а компоненти субстрату на поверхні — набути світлого відтінку.<br><br>Використовуйте ці індикатори і при всіх подальших поливах. Якщо ваша рослина росте у прозорому горщику, додатковим надійним сигналом є повне зникнення конденсату на його внутрішніх стінках.</p>
-                </div>
-
-                <!-- Основні методи поливу -->
-                <div class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow-inner">
-                    <h4 class="text-sm font-bold uppercase tracking-widest text-blue-300 mb-4">Основні методи поливу</h4>
-                    
-                    <div class="space-y-5">
-                        <!-- Класичний метод -->
-                        <div>
-                            <h5 class="text-emerald-400 font-bold text-sm mb-1.5 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-                                Класичний (Верхній)
-                            </h5>
-                            <p class="text-sm text-slate-300 leading-relaxed">
-                                Поливайте повільно по всьому краю горщика. Через 15–20 хвилин <strong class="text-white">обов’язково злийте</strong> залишки води з піддона, щоб коріння не задихалося.
-                            </p>
-                        </div>
-                        
-                        <!-- Метод замочування -->
-                        <div class="pt-4 border-t border-slate-700/80">
-                            <h5 class="text-blue-400 font-bold text-sm mb-1.5 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                                Замочування (Нижній)
-                            </h5>
-                            <p class="text-sm text-slate-300 leading-relaxed mb-2">
-                                Помістіть горщик у ємність із водою. Сфагнум та цеоліт капілярно підтягнуть ідеальну кількість вологи.
-                            </p>
-                            <ul class="space-y-1.5 mb-3 text-sm text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-emerald-400 font-bold mt-0.5">•</span>
-                                    <span><strong class="text-white">Adult Mix:</strong> занурте на 1/3 висоти горщика на 15–20 хвилин.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-emerald-400 font-bold mt-0.5">•</span>
-                                    <span><strong class="text-white">Junior Mix:</strong> занурте на 1/4 висоти на 10–15 хвилин (дрібна фракція швидше тягне воду).</span>
-                                </li>
-                            </ul>
-                            <p class="text-sm text-amber-200/90 leading-relaxed font-medium">
-                                Після процедури обов'язково дайте всій зайвій воді повністю стекти!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Застереження щодо автополиву (Новий блок) -->
-                <div class="bg-amber-900/20 p-5 rounded-xl border border-amber-800/40 shadow-inner mt-4">
-                    <h5 class="text-amber-400 font-bold text-sm mb-2 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                        Важливо: Системи автополиву
-                    </h5>
-                    <p class="text-sm text-amber-200/80 leading-relaxed text-justify">
-                        Наш субстрат створений для природного циклу «рясний полив ➡️ просихання ➡️ дихання». Він категорично <strong class="text-amber-300 font-semibold">не підходить для напівгідропоніки та постійного гнітового поливу</strong>. Безперервна волога неминуче призведе до гниття органічних компонентів.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 4: Care & Lifecycle -->
-        <section id="care" class="px-6 py-10 rounded-t-[40px] bg-slate-50 relative -mt-6 z-10 border-t border-slate-200">
-            <h2 class="font-playfair text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-                <span class="text-emerald-600">4.</span> Догляд
-            </h2>
-
-            <div class="space-y-6">
-                <!-- Система живлення -->
-                <div class="group p-5 rounded-2xl bg-white border border-slate-100 transition-all hover:shadow-md">
-                    <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-emerald-600"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-                        <h4 class="font-bold text-lg uppercase tracking-wide text-slate-900">Система живлення (Добрива)</h4>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-4 text-justify">
-                        Наш безторф'яний субстрат потребує усвідомленого підходу до підгодівлі:
-                    </p>
-                    
-                    <div class="space-y-3">
-                        <div class="flex items-start gap-3">
-                            <span class="text-amber-500 font-bold mt-0.5 text-lg leading-none">•</span>
-                            <p class="text-sm text-slate-600 leading-relaxed text-justify">
-                                <strong class="text-slate-800">Адаптація (перші 3–4 тижні):</strong> Не використовуйте жодних добрив! Рослина витрачає сили на вкорінення та використовує природну енергію підготовленого соснового опаду.
-                            </p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-emerald-500 font-bold mt-0.5 text-lg leading-none">•</span>
-                            <p class="text-sm text-slate-600 leading-relaxed text-justify">
-                                <strong class="text-slate-800">Подальший догляд:</strong> Вносьте комплексні мінеральні добрива для ароїдних при кожному другому поливі. Активований цеоліт у нашому складі вбере надлишок солей і буде безпечно віддавати їх корінню, повністю виключаючи ризик хімічного опіку.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Життєвий цикл субстрату -->
-                <div class="group p-5 rounded-2xl bg-white border border-slate-100 transition-all hover:shadow-md">
-                    <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-blue-600"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <h4 class="font-bold text-lg uppercase tracking-wide text-slate-900">Життєвий цикл субстрату</h4>
-                    </div>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-4 text-justify">
-                        Кора сосни та дубовий піролізат формують жорсткий «скелет», який не злежується і не перетворюється на труху.
-                    </p>
-                    
-                    <div class="space-y-3">
-                        <div class="flex items-start gap-3">
-                            <span class="text-blue-500 font-bold mt-0.5 text-lg leading-none">•</span>
-                            <p class="text-sm text-slate-600 leading-relaxed text-justify">
-                                <strong class="text-slate-800">Термін служби:</strong> Структура Forest Craft стабільно працює і забезпечує вільний доступ кисню до 2 років.
-                            </p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-blue-500 font-bold mt-0.5 text-lg leading-none">•</span>
-                            <p class="text-sm text-slate-600 leading-relaxed text-justify">
-                                <strong class="text-slate-800">Коли пересаджувати знову:</strong> Плануйте наступну пересадку лише тоді, коли коренева система щільно заповнить увесь об'єм горщика, витісняючи субстрат, а темпи росту нового листя почнуть помітно сповільнюватися.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: FAQ -->
-        <section class="px-6 py-12 bg-slate-50">
-            <h2 class="font-playfair text-3xl font-bold text-slate-800 mb-6">Питання та відповіді</h2>
-
-            <div class="space-y-4">
-                <details class="group border-b border-slate-200 pb-4">
-                    <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-base text-slate-700">
-                        З'явився легкий білий наліт?
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform group-open:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
-                    </summary>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed font-medium text-emerald-700">
-                        Не панікуйте! Це ознака активної роботи корисної Триходерми (Biological Shield). Такий міцелій схожий на тонке біле павутиння, він не має неприємного запаху і є найкращим доказом того, що ваш субстрат «живий» і захищає коріння.
-                    </p>
-                </details>
-
-                <details class="group border-b border-slate-200 pb-4">
-                    <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-base text-slate-700">
-                        Чи будуть заводитися мошки (сціариди)?
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform group-open:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
-                    </summary>
-                    <div class="mt-3 text-sm text-slate-500 leading-relaxed">
-                        <p class="mb-3">Ні. Forest Craft — це чиста екосистема, де кожен компонент проходить багаторівневу підготовку, що виключає появу шкідників:</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-2">
-                                <span class="text-emerald-500 font-bold mt-0.5">•</span>
-                                <span><strong class="text-slate-700">Термічна стерилізація:</strong> Кора та сосновий опад проходять тривале виварювання, а мох Sphagnum — ретельне пропарювання. Це знищує будь-яких личинок чи яйця комах на етапі виробництва.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-emerald-500 font-bold mt-0.5">•</span>
-                                <span><strong class="text-slate-700">Крафтовий піролізат:</strong> Ми використовуємо дубове вугілля власного виробництва, отримане в реторті без доступу кисню. Це робить його ідеально чистим антисептиком, що абсорбує токсини, а не створює середовище для гниття.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-emerald-500 font-bold mt-0.5">•</span>
-                                <span><strong class="text-slate-700">Чистота мінералів:</strong> Цеоліт проходить обов’язкове промивання від пилу, що гарантує вільне дихання коренів.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-emerald-500 font-bold mt-0.5">•</span>
-                                <span><strong class="text-slate-700">Відсутність торфу:</strong> Оскільки в складі немає торфу та гнильної органіки, личинкам сціарид просто немає чим харчуватися.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="group border-b border-slate-200 pb-4">
-                    <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-base text-slate-700">
-                        Чи підійде субстрат іншим рослинам?
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform group-open:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
-                    </summary>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">
-                        Наші мікси ідеальні для Ароїдних (монстер, алоказій, філодендронів), але вони також стануть розкішним домом для будь-яких тропічних рослин, що люблять дихати: хойї, папороті, орхідеї цимбідіум та епіфітні кактуси.
-                    </p>
-                </details>
-
-                <details class="group border-b border-slate-200 pb-4">
-                    <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-base text-slate-700">
-                        Який термін придатності у сухої суміші?
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform group-open:rotate-180"><polyline points="6 9 12 15 18 9"/></svg>
-                    </summary>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">
-                        У сухому закритому пакеті субстрат може зберігатися понад 1 рік. Корисні спори бактерій знаходяться в стані анабіозу і активуються лише тоді, коли ви вирішите додати воду для наступної пересадки.
-                    </p>
-                </details>
-            </div>
-        </section>
-
-        <!-- Support Footer -->
-        <footer class="bg-slate-50 py-10 px-6 text-center border-t border-slate-200">
-            <p class="text-sm text-slate-500 mb-6 leading-relaxed">
-                Залишилися питання щодо стану рослини?<br>Ми на зв'язку!
-            </p>
-
-            <div class="flex justify-center mb-8">
-                <a href="https://www.instagram.com/forestcraft_lab?igsh=eWR4YWxtam94Zjds" target="_blank" rel="noopener noreferrer" class="p-4 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center hover:bg-emerald-50 transition-colors group">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-700 group-hover:text-emerald-600 transition-colors">
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                    </svg>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 w-full sm:w-auto">
+                <a href="#products" class="bg-emerald-700 text-white hover:bg-emerald-800 px-8 py-4 rounded-xl transition duration-300 font-bold uppercase tracking-widest text-sm w-full sm:w-auto text-center shadow-lg hover:-translate-y-1">
+                    Обрати субстрат
                 </a>
             </div>
+        </div>
+    </header>
 
-            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                Forest Craft Lab • Ukraine
+    <!-- Протокол підготовки -->
+    <section id="process" class="py-16 md:py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 md:mb-20">
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block">Лабораторна точність</span>
+                <h2 class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6">Секрети створення субстрату</h2>
+                <p class="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                    Ми не просто змішуємо інгредієнти. Кожен компонент проходить окремий цикл гідротермічної, мінеральної та біологічної обробки.
+                </p>
             </div>
-        </footer>
 
-    </div>
+            <div class="relative border-l border-emerald-200 ml-4 md:ml-0 md:border-none space-y-16 md:space-y-24">
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-emerald-200 -translate-x-1/2"></div>
+
+                <!-- Етап 1 -->
+                <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+                    <div class="hidden md:block md:w-5/12 pr-12 text-right">
+                        <img src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Кора" class="w-full max-w-[320px] h-56 object-cover rounded-2xl ml-auto shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
+                    </div>
+                    <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-white border-4 border-emerald-100 rounded-full flex items-center justify-center z-10 group-hover:border-emerald-500 transition-colors shadow-sm">
+                        <span class="text-emerald-700 text-lg">🌳</span>
+                    </div>
+                    <div class="md:w-5/12 pl-8 md:pl-12 mt-2 md:mt-0">
+                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">01</span>
+                        <img src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Кора" class="md:hidden w-full h-48 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
+                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Структурний каркас</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed text-justify mb-2">
+                            <strong class="text-slate-800">Реліктова кора:</strong> Збирається етично, виключно з всохлих дерев, не шкодячи лісу. 
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                            Кожна фракція проходить ручне калібрування та глибоке <strong class="text-emerald-700">виварювання</strong>. Це розм'якшує лігнін, вимиває зайві смоли та залишає пористий «скелет» для коренів.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Етап 2 -->
+                <div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
+                    <div class="hidden md:block md:w-5/12 pl-12 text-left">
+                        <img src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Опад" class="w-full max-w-[320px] h-56 object-cover rounded-2xl mr-auto shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
+                    </div>
+                    <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-white border-4 border-emerald-100 rounded-full flex items-center justify-center z-10 group-hover:border-emerald-500 transition-colors shadow-sm">
+                        <span class="text-emerald-700 text-lg">🍂</span>
+                    </div>
+                    <div class="md:w-5/12 pl-8 md:pr-12 md:pl-0 md:text-right mt-2 md:mt-0">
+                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">02</span>
+                        <img src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Опад" class="md:hidden w-full h-48 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
+                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Енергетична матриця</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed md:text-right text-justify">
+                            <strong class="text-slate-800">Сосновий опад:</strong> Після очищення ми проводимо <strong class="text-emerald-700">азотну стабілізацію</strong>. Опад збагачується 0.5% розчином карбаміду. Це вирівнює баланс вуглецю та азоту (C:N), гарантуючи повноцінне живлення з перших днів адаптації.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Етап 3 -->
+                <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+                    <div class="hidden md:block md:w-5/12 pr-12 text-right">
+                        <img src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Мох" class="w-full max-w-[320px] h-56 object-cover rounded-2xl ml-auto shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
+                    </div>
+                    <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-white border-4 border-emerald-100 rounded-full flex items-center justify-center z-10 group-hover:border-emerald-500 transition-colors shadow-sm">
+                        <span class="text-emerald-700 text-lg">🌿</span>
+                    </div>
+                    <div class="md:w-5/12 pl-8 md:pl-12 mt-2 md:mt-0">
+                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">03</span>
+                        <img src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Мох" class="md:hidden w-full h-48 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
+                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Капілярний насос</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                            <strong class="text-slate-800">Мох Sphagnum:</strong> Проходить жорсткий відбір та <strong class="text-emerald-700">термічний шок</strong> (обшпарювання окропом). Це повністю стерилізує волокна від личинок, зберігаючи його феноменальну здатність рівномірно розподіляти вологу по всьому горщику.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Етап 4 -->
+                <div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
+                    <div class="hidden md:block md:w-5/12 pl-12 text-left">
+                        <img src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Вугілля" class="w-full max-w-[320px] h-56 object-cover rounded-2xl mr-auto shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
+                    </div>
+                    <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-white border-4 border-emerald-100 rounded-full flex items-center justify-center z-10 group-hover:border-emerald-500 transition-colors shadow-sm">
+                        <span class="text-emerald-700 text-lg">🔥</span>
+                    </div>
+                    <div class="md:w-5/12 pl-8 md:pr-12 md:pl-0 md:text-right mt-2 md:mt-0">
+                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">04</span>
+                        <img src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Вугілля" class="md:hidden w-full h-48 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
+                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Вуглецевий фільтр</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed md:text-right text-justify mb-2">
+                            <strong class="text-slate-800">Крафтовий піролізат:</strong> Ми виготовляємо дубове вугілля у власних закритих ретортах при температурі 450°C без доступу кисню. На відміну від промислового вугілля, наш піролізат зберігає ідеальну мікропористу структуру дерева, працюючи як потужний абсорбент токсинів.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Етап 5 -->
+                <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+                    <div class="hidden md:block md:w-5/12 pr-12 text-right">
+                        <img src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Цеоліт" class="w-full max-w-[320px] h-56 object-cover rounded-2xl ml-auto shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
+                    </div>
+                    <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-white border-4 border-emerald-100 rounded-full flex items-center justify-center z-10 group-hover:border-emerald-500 transition-colors shadow-sm">
+                        <span class="text-emerald-700 text-lg">🪨</span>
+                    </div>
+                    <div class="md:w-5/12 pl-8 md:pl-12 mt-2 md:mt-0">
+                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">05</span>
+                        <img src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Цеоліт" class="md:hidden w-full h-48 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
+                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Іонообмінний буфер</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                            <strong class="text-slate-800">Природний цеоліт:</strong> Проходить обов'язкове багаторазове промивання від мікродрібного пилу, який міг би забити пори коріння. Після цього він висушується та термічно активується. У субстраті цеоліт працює як інтелектуальний акумулятор: вбирає надлишок солей з добрив і поступово віддає їх рослині.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Етап 6 -->
+                <div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
+                    <div class="hidden md:block md:w-5/12 pl-12 text-left">
+                        <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Мікробіом" class="w-full max-w-[320px] h-56 object-cover rounded-2xl mr-auto shadow-md border border-emerald-500/50 group-hover:shadow-lg transition-all duration-300">
+                    </div>
+                    <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-emerald-600 border-4 border-emerald-200 rounded-full flex items-center justify-center z-10 shadow-lg shadow-emerald-500/40">
+                        <span class="text-white text-sm">🧬</span>
+                    </div>
+                    <div class="md:w-5/12 pl-8 md:pr-12 md:pl-0 md:text-right mt-2 md:mt-0">
+                        <span class="text-emerald-600 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">06</span>
+                        <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Мікробіом" class="md:hidden w-full h-48 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-500/50 mt-4">
+                        <h3 class="font-bold text-emerald-800 text-xl mb-3 uppercase tracking-wide">Біологічний імунітет</h3>
+                        <div class="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl shadow-sm text-justify md:text-right">
+                            <p class="text-slate-700 text-sm leading-relaxed">
+                                <strong class="text-slate-900">Мікробіологічна інокуляція:</strong> Фінальний штрих — заселення симбіотичною мікрофлорою. Ми використовуємо мікрокапсульовані спори <strong class="text-emerald-800 italic">Bacillus subtilis</strong> та <strong class="text-emerald-800 italic">Trichoderma spp.</strong> Потрапляючи у вологе середовище, їхній міцелій огортає кожен корінець невидимою захисною сіткою (Biological Shield), яка виділяє природні антибіотики та витісняє патогенну гниль.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Лабораторний паспорт -->
+    <section id="about" class="py-16 md:py-24 bg-white border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block">Quality Control</span>
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-slate-900 mb-4">Лабораторний паспорт</h2>
+                <p class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                    Кожна партія субстрату проходить фізико-хімічний контроль. Ми гарантуємо стабільність показників, які є критичними для здоров'я епіфітних коренів.
+                </p>
+            </div>
+
+            <!-- Мобільна підказка про свайп -->
+            <div class="flex justify-end items-center gap-2 mb-3 md:hidden text-[10px] font-bold uppercase tracking-widest text-emerald-500 animate-pulse">
+                <span>Свайпніть таблицю</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </div>
+
+            <!-- Обгортка таблиці з градієнтною тінню -->
+            <div class="relative">
+                <!-- Градієнтна тінь справа (імітація продовження контенту) -->
+                <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden z-10 rounded-r-2xl border-r border-slate-200"></div>
+                
+                <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm no-scrollbar bg-white relative z-0">
+                    <table class="w-full text-left border-collapse min-w-[600px]">
+                        <thead>
+                            <tr class="bg-slate-900 text-white">
+                                <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm w-2/5">Показник досліджень</th>
+                                <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm text-center w-1/4 border-l border-slate-700">Junior Mix</th>
+                                <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm text-center w-1/4 border-l border-slate-700">Adult Mix</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 bg-white">
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6">
+                                    <div class="font-bold text-slate-900">Кислотність (pH)</div>
+                                    <div class="text-xs text-slate-500 mt-1">Оптимальний рівень для засвоєння мікроелементів</div>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-emerald-700 font-medium border-l border-slate-100">5.5 – 6.0</td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-emerald-700 font-medium border-l border-slate-100">5.5 – 6.0</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6">
+                                    <div class="font-bold text-slate-900">Електропровідність (EC)</div>
+                                    <div class="text-xs text-slate-500 mt-1">Рівень солей. Захист від хімічних опіків</div>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 border-l border-slate-100">&lt; 0.2 mS/cm</td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 border-l border-slate-100">&lt; 0.2 mS/cm</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6">
+                                    <div class="font-bold text-slate-900">Повітромісткість</div>
+                                    <div class="text-xs text-slate-500 mt-1">Об'єм кисневих кишень після стікання води</div>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-blue-600 font-bold border-l border-slate-100">35 – 40 %</td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-blue-600 font-bold border-l border-slate-100">45 – 50 %</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6">
+                                    <div class="font-bold text-slate-900">Вологоємність</div>
+                                    <div class="text-xs text-slate-500 mt-1">Здатність утримувати вологу</div>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-bold border-l border-slate-100">60 – 65 %</td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-bold border-l border-slate-100">45 – 50 %</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6">
+                                    <div class="font-bold text-slate-900">Швидкість змочування</div>
+                                    <div class="text-xs text-slate-500 mt-1">Час капілярного насичення</div>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 border-l border-slate-100">&lt; 15 сек</td>
+                                <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 border-l border-slate-100">&lt; 20 сек</td>
+                            </tr>
+
+                            <!-- Рядок Біологічна активність -->
+                            <tr class="bg-emerald-50/40">
+                                <td class="py-4 px-6 border-b border-slate-100">
+                                    <div class="font-bold text-emerald-900 flex items-center gap-2">
+                                        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22a10 10 0 110-20 10 10 0 010 20zm0-2a8 8 0 100-16 8 8 0 000 16z"></path>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+                                        </svg>
+                                        Біологічна активність
+                                    </div>
+                                    <div class="text-[10px] text-emerald-700 uppercase tracking-tight mt-1 leading-tight max-w-[200px]">
+                                        Сумарна концентрація життєздатних спор на 1 літр об'єму
+                                    </div>
+                                </td>
+                                <td colspan="2" class="py-4 px-6 text-center border-l border-emerald-100 border-b border-slate-100">
+                                    <div class="font-mono text-sm text-emerald-700 font-medium leading-tight mb-1">
+                                        не менше 10<sup>9</sup> <span class="text-[10px] font-sans text-emerald-600 font-normal uppercase">КУО/л</span>
+                                    </div>
+                                    <div class="flex justify-center gap-3 border-t border-emerald-200/50 pt-1.5 mb-2">
+                                        <div class="text-[8px] text-emerald-600 uppercase font-bold tracking-widest italic opacity-80">Trichoderma spp.</div>
+                                        <div class="text-[8px] text-emerald-600 uppercase font-bold tracking-widest border-l border-emerald-200 pl-3 italic opacity-80">Bacillus subtilis</div>
+                                    </div>
+                                    <div class="inline-block border border-emerald-600/40 text-emerald-700 text-[8px] font-bold px-2 py-0.5 rounded tracking-wider uppercase bg-white/50 shadow-sm">
+                                        Powered by Enzym Biotech
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mt-4 text-right">
+                <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">* Дані отримані на основі контрольних замірів Forest Craft Lab</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Каталог -->
+    <section id="products" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block">Каталог субстратів</span>
+                <h2 class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4">Оберіть свій ідеальний мікс</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">Оптимальні рішення для професійного вирощування колекційних рослин.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+                <!-- JUNIOR CARD -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 flex flex-col group">
+                    <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&q=80" loading="lazy" alt="Substrate JUNIOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">Фракція 8 - 15 мм</div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded">pH 5.5-6.0</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-1 rounded">Gentle Root</span>
+                        </div>
+                        <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">JUNIOR MIX</h3>
+                        <p class="text-sm text-slate-500 mb-6 text-justify">Оптимально для молодих рослин та активного росту. Утримує ідеальний баланс вологи навколо зростаючої кореневої системи.</p>
+                        <div class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100">
+                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3">Кому підійде?</h4>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start"><span class="text-emerald-500 mr-3 text-lg leading-none">✔</span><span>Горщики від 0,5 до 2 літрів</span></li>
+                                <li class="flex items-start"><span class="text-emerald-500 mr-3 text-lg leading-none">✔</span><span>Молоді рослини та активний ріст</span></li>
+                            </ul>
+                        </div>
+                        <button onclick="selectProduct('Junior Mix')" class="w-full bg-emerald-700 text-white py-4 rounded-xl hover:bg-emerald-800 transition-all font-bold text-sm tracking-widest uppercase shadow-lg">Замовити Junior Mix</button>
+                    </div>
+                </div>
+
+                <!-- ADULT CARD -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-orange-100 flex flex-col group">
+                    <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1620127351111-2eb209bd3cda?auto=format&fit=crop&q=80" loading="lazy" alt="Substrate ADULT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-[#744210] text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">Фракція 15 - 25 мм</div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded">pH 5.5-6.0</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider bg-orange-50 text-orange-800 px-2 py-1 rounded">Bio-Active</span>
+                        </div>
+                        <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">ADULT MIX</h3>
+                        <p class="text-sm text-slate-500 mb-6 text-justify">Для дорослих монстер та антуріумів. Забезпечує максимальний дренаж та аерацію великих коренів.</p>
+                        <div class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100">
+                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3">Кому підійде?</h4>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start"><span class="text-orange-500 mr-3 text-lg leading-none">✔</span><span>Горщики від 2 літрів і більше</span></li>
+                                <li class="flex items-start"><span class="text-orange-500 mr-3 text-lg leading-none">✔</span><span>Великі Монстери та Філодендрони</span></li>
+                            </ul>
+                        </div>
+                        <button onclick="selectProduct('Adult Mix')" class="w-full bg-[#744210] text-white py-4 rounded-xl hover:bg-[#59320c] transition-all font-bold text-sm tracking-widest uppercase shadow-lg">Замовити Adult Mix</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-playfair text-3xl font-bold text-center text-slate-900 mb-10 md:mb-12">Поширені запитання</h2>
+            <div class="space-y-4 md:space-y-6">
+                <div class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">Чи потрібно дезінфікувати ваші субстрати?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Категорично ні. Наші субстрати заселені корисною мікрофлорою. Прожарювання вб'є наш Biological Shield.</p>
+                </div>
+                <div class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">Як працює галтована кора?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Вона має згладжені кути, що запобігає пошкодженню ніжних коренів под час росту та пересадки.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Zone -->
+    <section id="order-zone" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 id="order-title" class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6">Готові до посадки?</h2>
+            
+            <p id="order-hint" class="text-slate-600 mb-10 text-lg italic transition-all duration-300 transform inline-block">Оберіть зручний месенджер для замовлення:</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <a id="tg-link" href="https://t.me/forestcraft_lab" target="_blank" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-500 transition-all shadow-sm hover:shadow-xl">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">✈️</div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Telegram</h4>
+                </a>
+                <a id="ig-link" href="https://ig.me/m/forestcraft_lab" target="_blank" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-pink-500 transition-all shadow-sm hover:shadow-xl">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📸</div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Instagram</h4>
+                </a>
+                <a id="viber-link" href="viber://chat?number=%2B380931234567" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-violet-500 transition-all shadow-sm hover:shadow-xl">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">💜</div>
+                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Viber</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 py-16 border-t-4 border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            
+            <div class="flex flex-col items-center md:items-start gap-3">
+                <div class="flex items-center gap-3">
+                    <img src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png" alt="Logo" class="h-12 w-12 opacity-80 grayscale brightness-200">
+                    <div class="flex flex-col leading-tight">
+                        <span class="font-playfair text-2xl font-bold text-white uppercase tracking-wider">FOREST CRAFT</span>
+                        <span class="text-[10px] font-bold text-emerald-500 uppercase tracking-[0.3em]">BOTANICAL SOLUTIONS</span>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-xs mt-4 max-w-xs text-center md:text-left">
+                    Професійні субстрати для тих, хто цінує здоров'я кожної рослини.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center gap-4">
+                <span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Ми в соцмережах</span>
+                <div class="flex gap-6">
+                    <a href="https://instagram.com/forestcraft_lab" target="_blank" class="text-slate-400 hover:text-pink-500 transition-all transform hover:scale-110">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://t.me/forestcraft_lab" target="_blank" class="text-slate-400 hover:text-sky-500 transition-all transform hover:scale-110">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.414 17.157c-.201.21-.497.35-.806.35-.201 0-.394-.044-.575-.123l-3.321-1.458-1.722 1.653c-.15.143-.356.223-.57.223-.11 0-.22-.022-.323-.066-.316-.135-.514-.442-.514-.784v-2.316l-3.83-1.681c-.412-.18-.679-.588-.679-1.037 0-.447.265-.853.674-1.035l11.455-5.068c.389-.172.842-.089 1.144.208.303.297.398.749.24 1.143l-4.148 10.021-.034.07z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end text-[10px] uppercase tracking-widest space-y-4 mt-6 md:mt-0">
+                <a href="privacy.html" class="text-slate-400 hover:text-emerald-500 transition-colors font-bold relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-emerald-500 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Політика конфіденційності</a>
+                
+                <div class="text-center md:text-right">
+                    <span class="text-slate-600 block">© 2026 FOREST CRAFT LAB</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); }); });
+
+        // Функція для гарантованого миттєвого скролу нагору
+        function jumpToTop(e) {
+            e.preventDefault();
+            document.documentElement.style.scrollBehavior = 'auto';
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                document.documentElement.style.scrollBehavior = '';
+            }, 50);
+        }
+
+        function selectProduct(productName) {
+            document.getElementById('order-zone').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            const title = document.getElementById('order-title');
+            title.innerText = "Замовити " + productName;
+            title.classList.add('text-emerald-700');
+            
+            const message = "Привіт! Я хочу замовити професійний субстрат " + productName;
+            const encodedMessage = encodeURIComponent(message);
+            
+            const tgNick = "forestcraft_lab";
+            document.getElementById('tg-link').href = `https://t.me/${tgNick}?text=${encodedMessage}`;
+            document.getElementById('viber-link').href = `viber://chat?number=%2B380931234567&text=${encodedMessage}`;
+
+            const showSuccessMessage = () => {
+                setTimeout(() => {
+                    const hint = document.getElementById('order-hint');
+                    hint.innerText = "Текст замовлення скопійовано! Оберіть месенджер та просто вставте його у чат.";
+                    hint.classList.replace('text-slate-600', 'text-emerald-600');
+                    hint.classList.replace('italic', 'font-bold');
+                    hint.classList.add('scale-105', 'drop-shadow-md'); 
+                    setTimeout(() => {
+                        hint.classList.remove('scale-105', 'drop-shadow-md');
+                    }, 300);
+                }, 600);
+            };
+
+            const copyFallback = () => {
+                const textArea = document.createElement("textarea");
+                textArea.value = message;
+                textArea.style.position = "fixed";
+                textArea.style.opacity = "0";
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showSuccessMessage();
+                } catch (err) {
+                    console.error('Fallback copy failed', err);
+                }
+                document.body.removeChild(textArea);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(message)
+                    .then(showSuccessMessage)
+                    .catch(err => {
+                        console.warn('Clipboard API failed, using fallback', err);
+                        copyFallback();
+                    });
+            } else {
+                copyFallback();
+            }
+        }
+    </script>
 </body>
 </html>
