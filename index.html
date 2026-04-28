@@ -87,47 +87,41 @@
 
 <body class="antialiased selection:bg-emerald-200 selection:text-emerald-900 w-full">
 
-  <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-[#fcfbf7]/30 backdrop-blur border-b border-white/40 shadow-sm">
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                
-                <a href="#top" onclick="jumpToTop(event)" class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity" aria-label="Нагору">
-                    <img src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png" alt="Forest Craft Logo" class="h-10 w-10 object-contain rounded-md shadow-sm bg-slate-900 translate-y-[2px]">
-                    <div class="flex flex-col leading-tight">
-                        <span class="font-playfair text-xl md:text-2xl font-bold text-emerald-950 uppercase tracking-wider">
-                            FOREST CRAFT
-                        </span>
-                        <span class="text-[9.5px] md:text-[10px] font-bold text-emerald-700 uppercase tracking-[0.23em] md:tracking-[0.36em] block mr-[-0.22em] md:mr-[-0.35em]">
-                            BOTANICAL SOLUTIONS
-                        </span>
-                    </div>
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#process" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Виробництво</a>
-                    <a href="#about" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Підхід</a>
-                    <a href="#products" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Магазин</a>
+ <nav id="main-nav" class="fixed w-full z-50 top-0 transition-all duration-300 bg-[#fcfbf7]/50 backdrop-blur border-b border-white/40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="#top" onclick="jumpToTop(event)" class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity">
+                <img src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png" alt="Logo" class="h-10 w-10 object-contain rounded-md shadow-sm bg-slate-900 translate-y-[2px]">
+                <div class="flex flex-col leading-tight">
+                    <span class="font-playfair text-xl md:text-2xl font-bold text-emerald-950 uppercase tracking-wider">FOREST CRAFT</span>
+                    <span class="text-[9.5px] md:text-[10px] font-bold text-emerald-700 uppercase tracking-[0.23em] block mr-[-0.22em]">BOTANICAL SOLUTIONS</span>
                 </div>
+            </a>
 
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-emerald-700 focus:outline-none p-2" aria-label="Відкрити меню">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#process" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Виробництво</a>
+                <a href="#about" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Підхід</a>
+                <a href="#products" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Магазин</a>
+            </div>
+
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-slate-600 hover:text-emerald-700 p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
+    </div>
 
-        <div id="mobile-menu" class="hidden md:hidden w-full">
-            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col border-t border-white/20">
-                <a href="#process" class="block px-4 py-3 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/40 rounded-xl transition-all">Виробництво</a>
-                <a href="#about" class="block px-4 py-3 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/40 rounded-xl transition-all">Підхід</a>
-                <a href="#products" class="block px-4 py-3 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/40 rounded-xl transition-all">Продукти</a>
-            </div>
+    <div id="mobile-menu" class="hidden md:hidden w-full">
+        <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+            <a href="#process" class="block px-4 py-3 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/40 rounded-xl transition-all">Виробництво</a>
+            <a href="#about" class="block px-4 py-3 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/40 rounded-xl transition-all">Підхід</a>
+            <a href="#products" class="block px-4 py-3 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/40 rounded-xl transition-all">Продукти</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Секція -->
     <header id="top" class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center border-b border-slate-200">
@@ -523,76 +517,98 @@
     </footer>
 
     <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
-        const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); }); });
+    // Основні елементи навігації
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const nav = document.getElementById('main-nav');
 
-        // Функція для гарантованого миттєвого скролу нагору
-        function jumpToTop(e) {
-            e.preventDefault();
-            document.documentElement.style.scrollBehavior = 'auto';
-            window.scrollTo(0, 0);
+    // Логіка мобільного меню з підтримкою Aero Glass ефекту
+    btn.addEventListener('click', () => {
+        const isOpen = !menu.classList.toggle('hidden');
+        
+        if (isOpen) {
+            // Коли меню ВІДКРИТЕ: прибираємо рамку та тінь для цілісності скла
+            nav.classList.remove('border-b', 'border-white/40', 'shadow-sm');
+        } else {
+            // Коли меню ЗАКРИТЕ: повертаємо "зріз скла" знизу
+            nav.classList.add('border-b', 'border-white/40', 'shadow-sm');
+        }
+    });
+
+    // Закриття меню при кліку на посилання
+    const mobileLinks = menu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            nav.classList.add('border-b', 'border-white/40', 'shadow-sm');
+        });
+    });
+
+    // Функція для гарантованого миттєвого скролу нагору
+    function jumpToTop(e) {
+        e.preventDefault();
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+            document.documentElement.style.scrollBehavior = '';
+        }, 50);
+    }
+
+    // Логіка вибору продукту та підготовки месенджерів
+    function selectProduct(productName) {
+        document.getElementById('order-zone').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        const title = document.getElementById('order-title');
+        title.innerText = "Замовити " + productName;
+        title.classList.add('text-emerald-700');
+        
+        const message = "Привіт! Я хочу замовити професійний субстрат " + productName;
+        const encodedMessage = encodeURIComponent(message);
+        
+        const tgNick = "forestcraft_lab";
+        document.getElementById('tg-link').href = `https://t.me/${tgNick}?text=${encodedMessage}`;
+        document.getElementById('viber-link').href = `viber://chat?number=%2B380931234567&text=${encodedMessage}`;
+
+        const showSuccessMessage = () => {
             setTimeout(() => {
-                document.documentElement.style.scrollBehavior = '';
-            }, 50);
-        }
-
-        function selectProduct(productName) {
-            document.getElementById('order-zone').scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-            const title = document.getElementById('order-title');
-            title.innerText = "Замовити " + productName;
-            title.classList.add('text-emerald-700');
-            
-            const message = "Привіт! Я хочу замовити професійний субстрат " + productName;
-            const encodedMessage = encodeURIComponent(message);
-            
-            const tgNick = "forestcraft_lab";
-            document.getElementById('tg-link').href = `https://t.me/${tgNick}?text=${encodedMessage}`;
-            document.getElementById('viber-link').href = `viber://chat?number=%2B380931234567&text=${encodedMessage}`;
-
-            const showSuccessMessage = () => {
+                const hint = document.getElementById('order-hint');
+                hint.innerText = "Текст замовлення скопійовано! Оберіть месенджер та просто вставте його у чат.";
+                hint.classList.replace('text-slate-600', 'text-emerald-600');
+                hint.classList.replace('italic', 'font-bold');
+                hint.classList.add('scale-105', 'drop-shadow-md'); 
                 setTimeout(() => {
-                    const hint = document.getElementById('order-hint');
-                    hint.innerText = "Текст замовлення скопійовано! Оберіть месенджер та просто вставте його у чат.";
-                    hint.classList.replace('text-slate-600', 'text-emerald-600');
-                    hint.classList.replace('italic', 'font-bold');
-                    hint.classList.add('scale-105', 'drop-shadow-md'); 
-                    setTimeout(() => {
-                        hint.classList.remove('scale-105', 'drop-shadow-md');
-                    }, 300);
-                }, 600);
-            };
+                    hint.classList.remove('scale-105', 'drop-shadow-md');
+                }, 300);
+            }, 600);
+        };
 
-            const copyFallback = () => {
-                const textArea = document.createElement("textarea");
-                textArea.value = message;
-                textArea.style.position = "fixed";
-                textArea.style.opacity = "0";
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    showSuccessMessage();
-                } catch (err) {
-                    console.error('Fallback copy failed', err);
-                }
-                document.body.removeChild(textArea);
-            };
-
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(message)
-                    .then(showSuccessMessage)
-                    .catch(err => {
-                        console.warn('Clipboard API failed, using fallback', err);
-                        copyFallback();
-                    });
-            } else {
-                copyFallback();
+        const copyFallback = () => {
+            const textArea = document.createElement("textarea");
+            textArea.value = message;
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showSuccessMessage();
+            } catch (err) {
+                console.error('Fallback copy failed', err);
             }
+            document.body.removeChild(textArea);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(message)
+                .then(showSuccessMessage)
+                .catch(err => {
+                    console.warn('Clipboard API failed, using fallback', err);
+                    copyFallback();
+                });
+        } else {
+            copyFallback();
         }
-    </script>
+    }
+</script>
 </body>
 </html>
