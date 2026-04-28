@@ -45,7 +45,9 @@
         h1, h2, h3, h4, .font-playfair {
             font-family: 'Playfair Display', serif;
         }
-
+        #mobile-menu {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+         }
 
         .hero-bg {
             background: 
@@ -116,13 +118,14 @@
         </div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden w-full">
-        <div class="px-4 pt-2 pb-8 space-y-1 flex flex-col">
-            <a href="#process" class="block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/30 rounded-2xl transition-all">Виробництво</a>
-            <a href="#about" class="block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/30 rounded-2xl transition-all">Підхід</a>
-            <a href="#products" class="block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-white/30 rounded-2xl transition-all">Продукти</a>
-        </div>
+    <div id="mobile-menu" 
+     class="md:hidden w-full max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out relative z-10">
+    <div class="px-4 pt-2 pb-8 space-y-2 flex flex-col">
+        <a href="#process" class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700">Виробництво</a>
+        <a href="#about" class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700">Підхід</a>
+        <a href="#products" class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700">Продукти</a>
     </div>
+</div>
 </nav>
     <!-- Hero Секція -->
     <header id="top" class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center border-b border-slate-200">
@@ -522,32 +525,59 @@
 const btn = document.getElementById('mobile-menu-btn');
 const menu = document.getElementById('mobile-menu');
 const nav = document.getElementById('main-nav');
+const mobileLinks = document.querySelectorAll('.mobile-link');
 
-// Винесемо класи в масиви, щоб код був чистішим
+// Наші адаптивні класи для заокруглення та рамки
 const roundingClasses = ['rounded-b-lg', 'md:rounded-b-2xl'];
 const borderClasses = ['border-b', 'border-emerald-400/20'];
 
 btn.addEventListener('click', () => {
-    const isOpened = !menu.classList.toggle('hidden');
-    
-    if (isOpened) {
-        // Коли меню ВІДКРИТО: прибираємо адаптивні кути та рамку
+    // Перевіряємо, чи меню зараз закрите (висота 0)
+    const isOpening = menu.style.maxHeight === '0px' || menu.style.maxHeight === '';
+
+    if (isOpening) {
+        // 1. Анімація шапки (прибираємо кути)
         nav.classList.remove(...roundingClasses, ...borderClasses);
+        
+        // 2. Відкриваємо контейнер меню
+        menu.style.maxHeight = '400px'; // Достатня висота для контенту
+        menu.classList.remove('opacity-0');
+        menu.classList.add('opacity-100');
+
+        // 3. Каскадна анімація посилань (з’являються одне за одним)
+        mobileLinks.forEach((link, index) => {
+            setTimeout(() => {
+                link.classList.remove('opacity-0', 'translate-y-4');
+                link.classList.add('opacity-100', 'translate-y-0');
+            }, 100 * (index + 1)); 
+        });
+
     } else {
-        // Коли меню ЗАКРИТО: повертаємо адаптивні кути та рамку назад
-        nav.classList.add(...roundingClasses, ...borderClasses);
+        closeMenu();
     }
 });
 
-// Закриття при кліку на посилання
-menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        // Повертаємо початковий вигляд шапки (з кутами)
-        nav.classList.add(...roundingClasses, ...borderClasses);
-    });
-});
+// Функція для плавного закриття
+function closeMenu() {
+    // 1. Повертаємо кути шапці
+    nav.classList.add(...roundingClasses, ...borderClasses);
+    
+    // 2. Закриваємо контейнер
+    menu.style.maxHeight = '0px';
+    menu.classList.remove('opacity-100');
+    menu.classList.add('opacity-0');
 
+    // 3. Скидаємо стан посилань для наступного разу
+    mobileLinks.forEach(link => {
+        link.classList.add('opacity-0', 'translate-y-4');
+        link.classList.remove('opacity-100', 'translate-y-0');
+    });
+}
+
+// Закриття при кліку на будь-яке посилання
+mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
     // Функція для гарантованого миттєвого скролу нагору
     function jumpToTop(e) {
         e.preventDefault();
