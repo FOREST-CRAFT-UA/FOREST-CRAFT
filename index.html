@@ -1,651 +1,1340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk" class="scroll-smooth">
-<head>
+  <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWM37ERMQ3"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WWM37ERMQ3"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-WWM37ERMQ3');
+      gtag("config", "G-WWM37ERMQ3");
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forest Craft Lab – Преміальні ботанічні субстрати</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forest Craft Lab – Преміальні субстрати для ароїдних</title>
 
     <!-- SEO та Open Graph теги для соцмереж -->
-    <meta name="description" content="Преміальні крафтові субстрати без торфу для ароїдних. Лабораторний підхід Forest Craft для ідеального коріння ваших монстер та алоказій.">
-    <meta property="og:title" content="Forest Craft Lab – Преміальні ботанічні субстрати">
-    <meta property="og:description" content="Професійні крафтові субстрати без торфу. Зроблено в Україні.">
-    <meta property="og:image" content="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png">
-    
-    <!-- Favicon (Іконка у вкладці браузера) -->
-    <link rel="icon" type="image/png" href="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png">
+    <meta
+      name="description"
+      content="Преміальні крафтові субстрати без торфу. Лабораторний підхід Forest Craft для ідеального коріння ваших монстер та алоказій."
+    />
+    <meta
+      property="og:title"
+      content="Forest Craft Lab – Преміальні субстрати для ароїдних"
+    />
+    <meta
+      property="og:description"
+      content="Преміальні крафтові субстрати без торфу. Зроблено в Україні."
+    />
+    <meta
+      property="og:image"
+      content="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Favicon (Іконка у вкладці браузера) -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* Оновлено для кращого блокування горизонтального скролу */
-        html, body {
-            max-width: 100vw;
-            overflow-x: hidden;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fcfbf7;
-            color: #1e293b;
-        }
-        
-        h1, h2, h3, h4, .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
-        #mobile-menu {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-         }
+      /* Оновлено для кращого блокування горизонтального скролу */
+      html,
+      body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #fcfbf7;
+        color: #1e293b;
+      }
 
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-playfair {
+        font-family: "Playfair Display", serif;
+      }
+      #mobile-menu {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .hero-bg {
+        background:
+          linear-gradient(
+            135deg,
+            rgba(252, 251, 247, 0.85) 0%,
+            /* Молочний колір, 85% непрозорості */ rgba(252, 251, 247, 0.96)
+              100% /* Більш щільний молочний внизу */
+          ),
+          url("https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop")
+            center/cover no-repeat fixed;
+        position: relative;
+      }
+
+      @media (max-width: 768px) {
         .hero-bg {
-            background: 
-                linear-gradient(
-                    135deg, 
-                    rgba(252, 251, 247, 0.85) 0%,   /* Молочний колір, 85% непрозорості */
-                    rgba(252, 251, 247, 0.96) 100%  /* Більш щільний молочний внизу */
-                ),
-                url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop') 
-                center/cover no-repeat fixed;
-            position: relative;
+          background-attachment: scroll;
         }
-        
-        @media (max-width: 768px) {
-            .hero-bg {
-                background-attachment: scroll;
-            }
-        }
-        
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.5;
-        }
+      }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+          rgba(16, 185, 129, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+        opacity: 0.5;
+      }
 
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
-</head>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@graph": [
+          {
+            "@type": "Product",
+            "name": "JUNIOR MIX - Преміальний ботанічний субстрат",
+            "image": "https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&q=80",
+            "description": "Професійний безторф'яний субстрат для молодих рослин та активного росту. Утримує ідеальний баланс вологи. Фракція 8-15 мм, pH 5.5-6.0.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Forest Craft Lab"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://forest-craft-ua.github.io/FOREST-CRAFT/#products",
+              "priceCurrency": "UAH",
+              "price": "250",
+              "availability": "https://schema.org/InStock",
+              "seller": {
+                "@type": "Organization",
+                "name": "Forest Craft Lab"
+              }
+            }
+          },
+          {
+            "@type": "Product",
+            "name": "ADULT MIX - Преміальний ботанічний субстрат",
+            "image": "https://images.unsplash.com/photo-1620127351111-2eb209bd3cda?auto=format&fit=crop&q=80",
+            "description": "Субстрат для дорослих монстер та антуріумів. Забезпечує максимальний дренаж та аерацію великих коренів. Фракція 15-25 мм, pH 5.5-6.0.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Forest Craft Lab"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://forest-craft-ua.github.io/FOREST-CRAFT/#products",
+              "priceCurrency": "UAH",
+              "price": "350",
+              "availability": "https://schema.org/InStock",
+              "seller": {
+                "@type": "Organization",
+                "name": "Forest Craft Lab"
+              }
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
 
-<body class="antialiased selection:bg-emerald-200 selection:text-emerald-900 w-full">
-
- <nav id="main-nav" class="fixed w-full z-50 top-0 transition-all duration-500 bg-white/10 backdrop-blur-xl backdrop-saturate-150 border-b border-white/30 shadow-xl rounded-b-lg md:rounded-b-2xl overflow-hidden" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <body
+    class="antialiased selection:bg-emerald-200 selection:text-emerald-900 w-full"
+  >
+    <nav
+      id="main-nav"
+      class="fixed w-full z-50 top-0 transition-all duration-500 bg-white/10 backdrop-blur-xl backdrop-saturate-150 border-b border-white/30 shadow-xl rounded-b-lg md:rounded-b-2xl overflow-hidden"
+      style="
+        box-shadow:
+          inset 0 1px 1px rgba(255, 255, 255, 0.3),
+          0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
-            
-            <a href="#top" onclick="jumpToTop(event)" class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity">
-                <img src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png" alt="Logo" class="h-10 w-10 object-contain rounded-md shadow-sm bg-slate-900 translate-y-[2px]">
-                <div class="flex flex-col leading-tight">
-                    <span class="font-playfair text-xl md:text-2xl font-bold text-emerald-950 tracking-wider">FOREST CRAFT</span>
-                    <span class="text-[9.5px] md:text-[10px] font-bold text-emerald-700 uppercase tracking-[0.23em] md:tracking-[0.36em] block mr-[-0.22em] md:mr-[-0.35em]">BOTANICAL SOLUTIONS</span>
-                </div>
-            </a>
-
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#process" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Виробництво</a>
-                <a href="#about" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Підхід</a>
-                <a href="#products" class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest">Магазин</a>
+          <a
+            href="#top"
+            onclick="jumpToTop(event)"
+            class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity"
+          >
+            <img
+              src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png"
+              alt="Logo"
+              class="h-10 w-10 object-contain rounded-md shadow-sm bg-slate-900 translate-y-[2px]"
+            />
+            <div class="flex flex-col leading-tight">
+              <span
+                class="font-playfair text-xl md:text-2xl font-bold text-emerald-950 tracking-wider"
+                >FOREST CRAFT</span
+              >
+              <span
+                class="text-[9.5px] md:text-[10px] font-bold text-emerald-700 uppercase tracking-[0.23em] md:tracking-[0.36em] block mr-[-0.22em] md:mr-[-0.35em]"
+                >BOTANICAL SOLUTIONS</span
+              >
             </div>
+          </a>
 
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-btn" class="text-slate-700 hover:text-emerald-800 p-3 bg-transparent rounded-xl transition-all focus:outline-none active:scale-95">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#process"
+              class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest"
+              >Виробництво</a
+            >
+            <a
+              href="#about"
+              class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest"
+              >Підхід</a
+            >
+            <a
+              href="#products"
+              class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest"
+              >Магазин</a
+            >
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-slate-700 hover:text-emerald-800 p-4 bg-transparent rounded-xl transition-all focus:outline-none active:scale-95"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div id="mobile-menu" 
-     class="md:hidden w-full max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out relative z-10">
-    <div class="px-4 pt-2 pb-8 space-y-2 flex flex-col">
-        <a href="#process" class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700">Виробництво</a>
-        <a href="#about" class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700">Підхід</a>
-        <a href="#products" class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700">Продукти</a>
-    </div>
-</div>
-</nav>
+      <div
+        id="mobile-menu"
+        class="md:hidden w-full max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out relative z-10"
+      >
+        <div class="px-4 pt-2 pb-8 space-y-2 flex flex-col">
+          <a
+            href="#process"
+            class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700"
+            >Виробництво</a
+          >
+          <a
+            href="#about"
+            class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700"
+            >Підхід</a
+          >
+          <a
+            href="#products"
+            class="mobile-link translate-y-4 opacity-0 block px-4 py-4 text-base font-medium text-slate-800 hover:text-emerald-700 hover:bg-emerald-900/5 rounded-2xl transition-all duration-700"
+            >Продукти</a
+          >
+        </div>
+      </div>
+    </nav>
     <!-- Hero Секція -->
-    <header id="top" class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center border-b border-slate-200">
-        <div class="relative z-20 max-w-5xl mx-auto">
-            <!-- Оновлено класи трекінгу для span -->
-            <span class="text-emerald-800 font-extrabold tracking-wider sm:tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 block">Сила лісу, активована наукою</span>
-            <!-- Оновлено h1: менший шрифт для мобільних, break-words та м'який дефіс (&shy;) -->
-            <h1 class="font-playfair text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-slate-900 leading-tight break-words">
-                Безкомпро&shy;місна якість <br> 
-                <span class="italic font-medium text-emerald-900">для ідеального коріння.</span>
-            </h1>
-            <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-8 sm:mb-10 font-normal leading-relaxed px-2 text-justify md:text-center">
-                Професійні безторф’яні субстрати для колекційних ароїдних. Для бездоганного здоров'я ваших рослин.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 w-full sm:w-auto">
-                <a href="#products" class="bg-emerald-700 text-white hover:bg-emerald-800 px-8 py-4 rounded-xl transition duration-300 font-bold uppercase tracking-widest text-sm w-full sm:w-auto text-center shadow-lg hover:-translate-y-1">
-                    Обрати субстрат
-                </a>
-            </div>
+    <header
+      id="top"
+      class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center border-b border-slate-200"
+    >
+      <div class="relative z-20 max-w-5xl mx-auto">
+        <!-- Оновлено класи трекінгу для span -->
+        <span
+          class="text-emerald-800 font-extrabold tracking-wider sm:tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 block"
+          >Сила лісу, активована наукою</span
+        >
+        <!-- Оновлено h1: менший шрифт для мобільних, break-words та м'який дефіс (&shy;) -->
+        <h1
+          class="font-playfair text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-slate-900 leading-tight break-words"
+        >
+          Безкомпро&shy;місна якість <br />
+          <span class="italic font-medium text-emerald-900"
+            >для ідеального коріння.</span
+          >
+        </h1>
+        <p
+          class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-8 sm:mb-10 font-normal leading-relaxed px-2 text-justify md:text-center"
+        >
+          Професійні безторф’яні субстрати для колекційних ароїдних. Для
+          бездоганного здоров'я ваших рослин.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 w-full sm:w-auto"
+        >
+          <a
+            href="#products"
+            class="bg-emerald-700 text-white hover:bg-emerald-800 px-8 py-4 rounded-xl transition duration-300 font-bold uppercase tracking-widest text-sm w-full sm:w-auto text-center shadow-lg hover:-translate-y-1"
+          >
+            Обрати субстрат
+          </a>
         </div>
+      </div>
     </header>
 
-  <section id="process" class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12">
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 m-2 sm:m-4 md:m-0">
-            
-            <div class="text-center mb-16 md:mb-20">
-                <span class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block">Manufacturing Protocol</span>
-                <h2 class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6">Від сировини до біо-активного субстрату</h2>
-                <p class="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                    Ми не просто змішуємо інгредієнти. Ми готуємо кожен компонент на молекулярному та біологічному рівнях, щоб ви отримали передбачуваний результат.
-                </p>
-            </div>
-
-            <div class="relative space-y-12 md:space-y-20 max-w-5xl mx-auto">
-                
-                <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
-                    <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-                        <img src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Кора" class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
-                    </div>
-                    <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
-                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">01</span>
-                        <img src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Кора" class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
-                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Гідротермічна підготовка кори</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed text-justify mb-2">
-                            Замість звичайної сухої кори ми використовуємо <strong>екстракцію виварюванням</strong>. 
-                        </p>
-                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                            Тривала термічна обробка розм'якшує важкий лігнін і вимиває зайві смоли та дубильні речовини, які в сирому стані пригнічують ріст коріння. Ви отримуєте чистий «дихаючий» каркас.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
-                    <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-                        <img src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Опад" class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
-                    </div>
-                    <div class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full">
-                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">02</span>
-                        <img src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Опад" class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
-                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Азотна стабілізація опаду</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed md:text-right text-justify">
-                            Будь-яка лісова органіка при розкладанні забирає азот із ґрунту. Ми запобігаємо цьому шляхом <strong>превентивного насичення</strong> опаду розчином карбаміду. Це вирівнює баланс C:N (вуглець/азот), роблячи субстрат безпечним для живлення з першої секунди.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
-                    <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-                        <img src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Мох" class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
-                    </div>
-                    <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
-                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">03</span>
-                        <img src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Мох" class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
-                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Термічна стерилізація моху</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                            Мох Sphagnum — ідеальний акумулятор вологи, але він часто приховує личинки шкідників. Ми застосовуємо метод <strong>керованого термічного шоку</strong> (обробка окропом). Це гарантує стерильність волокон без руйнування їхньої капілярної структури.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
-                    <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-                        <img src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Вугілля" class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
-                    </div>
-                    <div class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full">
-                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">04</span>
-                        <img src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Вугілля" class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
-                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Реторний піроліз вугілля</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed md:text-right text-justify">
-                            Замість звичайного паливного вугілля ми використовуємо <strong>крафтовий піролізат дуба</strong>. Випалювання при 450°C без доступу кисню створює мільйони мікропор. Це потужний адсорбент, що поглинає продукти метаболізму рослин і очищує зону коріння.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
-                    <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-                        <img src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Цеоліт" class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
-                    </div>
-                    <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
-                        <span class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">05</span>
-                        <img src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Цеоліт" class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4">
-                        <h3 class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide">Активація іонообмінного буфера</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                            Ми використовуємо активований мінерал — цеоліт. Він проходить <strong>багаторазову деспірацію</strong> (промивання від мікропилу) та термічну сушку. Це дозволяє йому працювати як «інтелектуальний акумулятор» добрив, віддаючи іони металів саме тоді, коли рослина їх потребує.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
-                    <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-                        <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Мікробіом" class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-500/50 group-hover:shadow-lg transition-all duration-300">
-                    </div>
-                    <div class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full">
-                        <span class="text-emerald-600 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden">06</span>
-                        <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop" loading="lazy" alt="Мікробіом" class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-500/50 mt-4">
-                        <h3 class="font-bold text-emerald-800 text-xl mb-3 uppercase tracking-wide">Біо-інокуляція (Biological Shield)</h3>
-                        <div class="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl shadow-sm text-justify md:text-right">
-                            <p class="text-slate-700 text-sm leading-relaxed">
-                                Фінальний і найскладніший крок. Кожна порція субстрату заселяється живими спорами <strong>Bacillus subtilis</strong> та <strong>Trichoderma spp.</strong> Ми створюємо активну біо-мережу, яка захищає коріння від гнилі на біологічному рівні. Це не просто ґрунт, це <strong>імунна система</strong> вашої рослини.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="process"
+      class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 m-2 sm:m-4 md:m-0"
+      >
+        <div class="text-center mb-16 md:mb-20">
+          <span
+            class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block"
+            >Manufacturing Protocol</span
+          >
+          <h2
+            class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+          >
+            Від сировини до біо-активного субстрату
+          </h2>
+          <p
+            class="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
+          >
+            Ми не просто змішуємо інгредієнти. Ми готуємо кожен компонент на
+            молекулярному та біологічному рівнях, щоб ви отримали передбачуваний
+            результат.
+          </p>
         </div>
+
+        <div class="relative space-y-12 md:space-y-20 max-w-5xl mx-auto">
+          <div
+            class="relative flex flex-col md:flex-row items-center md:justify-between group"
+          >
+            <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
+              <img
+                src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Кора"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
+            </div>
+            <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
+              <span
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
+                >01</span
+              >
+              <img
+                src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Кора"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
+              <h3
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+              >
+                Гідротермічна підготовка кори
+              </h3>
+              <p
+                class="text-slate-600 text-sm leading-relaxed text-justify mb-2"
+              >
+                Замість звичайної сухої кори ми використовуємо
+                <strong>екстракцію виварюванням</strong>.
+              </p>
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                Тривала термічна обробка розм'якшує важкий лігнін і вимиває
+                зайві смоли та дубильні речовини, які в сирому стані пригнічують
+                ріст коріння. Ви отримуєте чистий «дихаючий» каркас.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
+          >
+            <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
+              <img
+                src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Опад"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
+            </div>
+            <div
+              class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
+            >
+              <span
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
+                >02</span
+              >
+              <img
+                src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Опад"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
+              <h3
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+              >
+                Азотна стабілізація опаду
+              </h3>
+              <p
+                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify"
+              >
+                Будь-яка лісова органіка при розкладанні забирає азот із ґрунту.
+                Ми запобігаємо цьому шляхом
+                <strong>превентивного насичення</strong> опаду розчином
+                карбаміду. Це вирівнює баланс C:N (вуглець/азот), роблячи
+                субстрат безпечним для живлення з першої секунди.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col md:flex-row items-center md:justify-between group"
+          >
+            <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
+              <img
+                src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Мох"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
+            </div>
+            <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
+              <span
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
+                >03</span
+              >
+              <img
+                src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Мох"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
+              <h3
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+              >
+                Термічна стерилізація моху
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                Мох Sphagnum — ідеальний акумулятор вологи, але він часто
+                приховує личинки шкідників. Ми застосовуємо метод
+                <strong>керованого термічного шоку</strong> (обробка окропом).
+                Це гарантує стерильність волокон без руйнування їхньої
+                капілярної структури.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
+          >
+            <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
+              <img
+                src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Вугілля"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
+            </div>
+            <div
+              class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
+            >
+              <span
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
+                >04</span
+              >
+              <img
+                src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Вугілля"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
+              <h3
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+              >
+                Реторний піроліз вугілля
+              </h3>
+              <p
+                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify"
+              >
+                Замість звичайного паливного вугілля ми використовуємо
+                <strong>крафтовий піролізат дуба</strong>. Випалювання при 450°C
+                без доступу кисню створює мільйони мікропор. Це потужний
+                адсорбент, що поглинає продукти метаболізму рослин і очищує зону
+                коріння.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col md:flex-row items-center md:justify-between group"
+          >
+            <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
+              <img
+                src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Цеоліт"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
+            </div>
+            <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
+              <span
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
+                >05</span
+              >
+              <img
+                src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Цеоліт"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
+              <h3
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+              >
+                Активація іонообмінного буфера
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                Ми використовуємо активований мінерал — цеоліт. Він проходить
+                <strong>багаторазову деспірацію</strong> (промивання від
+                мікропилу) та термічну сушку. Це дозволяє йому працювати як
+                «інтелектуальний акумулятор» добрив, віддаючи іони металів саме
+                тоді, коли рослина їх потребує.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
+          >
+            <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
+              <img
+                src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Мікробіом"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-500/50 group-hover:shadow-lg transition-all duration-300"
+              />
+            </div>
+            <div
+              class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
+            >
+              <span
+                class="text-emerald-600 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
+                >06</span
+              >
+              <img
+                src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Мікробіом"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-500/50 mt-4"
+              />
+              <h3
+                class="font-bold text-emerald-800 text-xl mb-3 uppercase tracking-wide"
+              >
+                Біо-інокуляція (Biological Shield)
+              </h3>
+              <div
+                class="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl shadow-sm text-justify md:text-right"
+              >
+                <p class="text-slate-700 text-sm leading-relaxed">
+                  Фінальний і найскладніший крок. Кожна порція субстрату
+                  заселяється живими спорами
+                  <strong>Bacillus subtilis</strong> та
+                  <strong>Trichoderma spp.</strong> Ми створюємо активну
+                  біо-мережу, яка захищає коріння від гнилі на біологічному
+                  рівні. Це не просто ґрунт, це
+                  <strong>імунна система</strong> вашої рослини.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    
-    <section id="about" class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12">
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 m-2 sm:m-4 md:m-0">
-            
-            <div class="max-w-5xl mx-auto w-full">
-                
-                <div class="text-center mb-12">
-                    <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block">Quality Control</span>
-                    <h2 class="font-playfair text-3xl md:text-4xl font-bold text-slate-900 mb-4">Лабораторний паспорт</h2>
-                    <p class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-                        Кожна партія субстрату проходить фізико-хімічний контроль. Ми гарантуємо стабільність показників, які є критичними для здоров'я епіфітних коренів.
-                    </p>
-                </div>
+    <section
+      id="about"
+      class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 m-2 sm:m-4 md:m-0"
+      >
+        <div class="max-w-5xl mx-auto w-full">
+          <div class="text-center mb-12">
+            <span
+              class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block"
+              >Quality Control</span
+            >
+            <h2
+              class="font-playfair text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+            >
+              Лабораторний паспорт
+            </h2>
+            <p
+              class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto"
+            >
+              Кожна партія субстрату проходить фізико-хімічний контроль. Ми
+              гарантуємо стабільність показників, які є критичними для здоров'я
+              епіфітних коренів.
+            </p>
+          </div>
 
-                <div class="flex justify-end items-center gap-2 mb-3 md:hidden text-[10px] font-bold uppercase tracking-widest text-emerald-500 animate-pulse">
-                    <span>Свайпніть таблицю</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </div>
+          <div
+            class="flex justify-end items-center gap-2 mb-3 md:hidden text-[10px] font-bold uppercase tracking-widest text-emerald-500 animate-pulse"
+          >
+            <span>Свайпніть таблицю</span>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </div>
 
-                <div class="relative">
-                    <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none md:hidden z-10 rounded-r-2xl"></div>
-                    
-                    <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-inner no-scrollbar bg-slate-50 relative z-0">
-                        <table class="w-full text-left border-collapse min-w-[600px]">
-                            <thead>
-                                <tr class="bg-slate-900 text-white">
-                                    <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm w-2/5">Показник досліджень</th>
-                                    <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm text-center w-1/4 border-l border-slate-700">Junior Mix</th>
-                                    <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm text-center w-1/4 border-l border-slate-700">Adult Mix</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-200/60">
-                                <tr class="hover:bg-white transition-colors">
-                                    <td class="py-4 px-6">
-                                        <div class="font-bold text-slate-900">Кислотність (pH)</div>
-                                        <div class="text-xs text-slate-500 mt-1">Оптимальний рівень для засвоєння мікроелементів</div>
-                                    </td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">5.5 – 6.0</td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">5.5 – 6.0</td>
-                                </tr>
-                                <tr class="hover:bg-white transition-colors">
-                                    <td class="py-4 px-6">
-                                        <div class="font-bold text-slate-900">Електропровідність (EC)</div>
-                                        <div class="text-xs text-slate-500 mt-1">Рівень солей. Захист від хімічних опіків</div>
-                                    </td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">&lt; 0.2 mS/cm</td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">&lt; 0.2 mS/cm</td>
-                                </tr>
-                                <tr class="hover:bg-white transition-colors">
-                                    <td class="py-4 px-6">
-                                        <div class="font-bold text-slate-900">Повітромісткість</div>
-                                        <div class="text-xs text-slate-500 mt-1">Об'єм кисневих кишень після стікання води</div>
-                                    </td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">35 – 40 %</td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">45 – 50 %</td>
-                                </tr>
-                                <tr class="hover:bg-white transition-colors">
-                                    <td class="py-4 px-6">
-                                        <div class="font-bold text-slate-900">Вологоємність</div>
-                                        <div class="text-xs text-slate-500 mt-1">Здатність утримувати вологу</div>
-                                    </td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">60 – 65 %</td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">45 – 50 %</td>
-                                </tr>
-                                <tr class="hover:bg-white transition-colors">
-                                    <td class="py-4 px-6">
-                                        <div class="font-bold text-slate-900">Швидкість змочування</div>
-                                        <div class="text-xs text-slate-500 mt-1">Час капілярного насичення</div>
-                                    </td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">&lt; 15 сек</td>
-                                    <td class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60">&lt; 20 сек</td>
-                                </tr>
-                                <tr class="hover:bg-white transition-colors">
-                                    <td class="py-4 px-6 border-b border-slate-100">
-                                        <div class="font-bold text-slate-900 flex items-center gap-2">
-                                            Біологічна активність
-                                        </div>
-                                        <div class="text-xs text-slate-500 mt-1">
-                                            Сумарна концентрація життєздатних спор на 1 літр об'єму
-                                        </div>
-                                    </td>
-                                    <td colspan="2" class="py-4 px-6 text-center border-l border-slate-200/60 border-b border-slate-100">
-                                        <div class="font-mono text-sm text-slate-700 font-medium leading-tight mb-1">
-                                            не менше 10<sup>9</sup> <span class="text-[10px] font-sans text-slate-500 font-normal uppercase">КУО/л</span>
-                                        </div>
-                                        <div class="flex justify-center gap-3 border-t border-slate-200/60 pt-1.5 mb-2">
-                                            <div class="text-[8px] text-slate-500 uppercase font-bold tracking-widest italic opacity-80">Trichoderma spp.</div>
-                                            <div class="text-[8px] text-slate-500 uppercase font-bold tracking-widest border-l border-slate-200/60 pl-3 italic opacity-80">Bacillus subtilis</div>
-                                        </div>
-                                        <div class="inline-block border border-slate-200 text-slate-500 text-[8px] font-bold px-2 py-0.5 rounded tracking-wider uppercase bg-white shadow-sm">
-                                            Powered by Enzym Biotech
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-                <div class="mt-4 text-right">
-                    <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">* Дані отримані на основі контрольних замірів Forest Craft Lab</span>
-                </div>
-                
+          <div class="relative">
+            <div
+              class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none md:hidden z-10 rounded-r-2xl"
+            ></div>
+
+            <div
+              class="overflow-x-auto rounded-2xl border border-slate-200 shadow-inner no-scrollbar bg-slate-50 relative z-0"
+            >
+              <table class="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr class="bg-slate-900 text-white">
+                    <th
+                      class="py-4 px-6 font-bold uppercase tracking-wider text-sm w-2/5"
+                    >
+                      Показник досліджень
+                    </th>
+                    <th
+                      class="py-4 px-6 font-bold uppercase tracking-wider text-sm text-center w-1/4 border-l border-slate-700"
+                    >
+                      Junior Mix
+                    </th>
+                    <th
+                      class="py-4 px-6 font-bold uppercase tracking-wider text-sm text-center w-1/4 border-l border-slate-700"
+                    >
+                      Adult Mix
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200/60">
+                  <tr class="hover:bg-white transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-bold text-slate-900">
+                        Кислотність (pH)
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        Оптимальний рівень для засвоєння мікроелементів
+                      </div>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      5.5 – 6.0
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      5.5 – 6.0
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-white transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-bold text-slate-900">
+                        Електропровідність (EC)
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        Рівень солей. Захист від хімічних опіків
+                      </div>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      &lt; 0.2 mS/cm
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      &lt; 0.2 mS/cm
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-white transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-bold text-slate-900">
+                        Повітромісткість
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        Об'єм кисневих кишень після стікання води
+                      </div>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      35 – 40 %
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      45 – 50 %
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-white transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-bold text-slate-900">Вологоємність</div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        Здатність утримувати вологу
+                      </div>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      60 – 65 %
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      45 – 50 %
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-white transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="font-bold text-slate-900">
+                        Швидкість змочування
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        Час капілярного насичення
+                      </div>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      &lt; 15 сек
+                    </td>
+                    <td
+                      class="py-4 px-6 text-center font-mono text-sm text-slate-700 font-medium border-l border-slate-200/60"
+                    >
+                      &lt; 20 сек
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-white transition-colors">
+                    <td class="py-4 px-6 border-b border-slate-100">
+                      <div
+                        class="font-bold text-slate-900 flex items-center gap-2"
+                      >
+                        Біологічна активність
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        Сумарна концентрація життєздатних спор на 1 літр об'єму
+                      </div>
+                    </td>
+                    <td
+                      colspan="2"
+                      class="py-4 px-6 text-center border-l border-slate-200/60 border-b border-slate-100"
+                    >
+                      <div
+                        class="font-mono text-sm text-slate-700 font-medium leading-tight mb-1"
+                      >
+                        не менше 10<sup>9</sup>
+                        <span
+                          class="text-[10px] font-sans text-slate-500 font-normal uppercase"
+                          >КУО/л</span
+                        >
+                      </div>
+                      <div
+                        class="flex justify-center gap-3 border-t border-slate-200/60 pt-1.5 mb-2"
+                      >
+                        <div
+                          class="text-[8px] text-slate-500 uppercase font-bold tracking-widest italic opacity-80"
+                        >
+                          Trichoderma spp.
+                        </div>
+                        <div
+                          class="text-[8px] text-slate-500 uppercase font-bold tracking-widest border-l border-slate-200/60 pl-3 italic opacity-80"
+                        >
+                          Bacillus subtilis
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block border border-slate-200 text-slate-500 text-[8px] font-bold px-2 py-0.5 rounded tracking-wider uppercase bg-white shadow-sm"
+                      >
+                        Powered by Enzym Biotech
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+          </div>
+
+          <div class="mt-4 text-right">
+            <span
+              class="text-[10px] uppercase tracking-widest text-slate-400 font-bold"
+              >* Дані отримані на основі контрольних замірів Forest Craft
+              Lab</span
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Каталог -->
-    <section id="products" class="scroll-mt-0 py-16 md:py-24 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 md:mb-16">
-                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block">Каталог субстратів</span>
-                <h2 class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4">Оберіть свій ідеальний мікс</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">Оптимальні рішення для професійного вирощування колекційних рослин.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 md:gap-10">
-                <!-- JUNIOR CARD -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 flex flex-col group">
-                    <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&q=80" loading="lazy" alt="Substrate JUNIOR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">Фракція 8 - 15 мм</div>
-                    </div>
-                    <div class="p-6 md:p-8 flex flex-col flex-grow">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded">pH 5.5-6.0</span>
-                            <span class="text-[11px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-1 rounded">Gentle Root</span>
-                        </div>
-                        <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">JUNIOR MIX</h3>
-                        <p class="text-sm text-slate-500 mb-6 text-justify">Оптимально для молодих рослин та активного росту. Утримує ідеальний баланс вологи навколо зростаючої кореневої системи.</p>
-                        <div class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100">
-                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3">Кому підійде?</h4>
-                            <ul class="space-y-3 text-sm text-slate-600">
-                                <li class="flex items-start"><span class="text-emerald-500 mr-3 text-lg leading-none">✔</span><span>Горщики від 0,5 до 2 літрів</span></li>
-                                <li class="flex items-start"><span class="text-emerald-500 mr-3 text-lg leading-none">✔</span><span>Молоді рослини та активний ріст</span></li>
-                            </ul>
-                        </div>
-                        <button onclick="selectProduct('Junior Mix')" class="w-full bg-emerald-700 text-white py-4 rounded-xl hover:bg-emerald-800 transition-all font-bold text-sm tracking-widest uppercase shadow-lg">Замовити Junior Mix</button>
-                    </div>
-                </div>
-
-                <!-- ADULT CARD -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-orange-100 flex flex-col group">
-                    <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1620127351111-2eb209bd3cda?auto=format&fit=crop&q=80" loading="lazy" alt="Substrate ADULT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-[#744210] text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">Фракція 15 - 25 мм</div>
-                    </div>
-                    <div class="p-6 md:p-8 flex flex-col flex-grow">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded">pH 5.5-6.0</span>
-                            <span class="text-[11px] font-bold uppercase tracking-wider bg-orange-50 text-orange-800 px-2 py-1 rounded">Bio-Active</span>
-                        </div>
-                        <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">ADULT MIX</h3>
-                        <p class="text-sm text-slate-500 mb-6 text-justify">Для дорослих монстер та антуріумів. Забезпечує максимальний дренаж та аерацію великих коренів.</p>
-                        <div class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100">
-                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3">Кому підійде?</h4>
-                            <ul class="space-y-3 text-sm text-slate-600">
-                                <li class="flex items-start"><span class="text-orange-500 mr-3 text-lg leading-none">✔</span><span>Горщики від 2 літрів і більше</span></li>
-                                <li class="flex items-start"><span class="text-orange-500 mr-3 text-lg leading-none">✔</span><span>Великі Монстери та Філодендрони</span></li>
-                            </ul>
-                        </div>
-                        <button onclick="selectProduct('Adult Mix')" class="w-full bg-[#744210] text-white py-4 rounded-xl hover:bg-[#59320c] transition-all font-bold text-sm tracking-widest uppercase shadow-lg">Замовити Adult Mix</button>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="products"
+      class="scroll-mt-0 py-16 md:py-24 bg-slate-50 border-t border-slate-200"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 md:mb-16">
+          <span
+            class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block"
+            >Каталог субстратів</span
+          >
+          <h2
+            class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4"
+          >
+            Оберіть свій ідеальний мікс
+          </h2>
+          <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">
+            Оптимальні рішення для професійного вирощування колекційних рослин.
+          </p>
         </div>
+
+        <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+          <!-- JUNIOR CARD -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 flex flex-col group"
+          >
+            <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&q=80"
+                loading="lazy"
+                alt="Substrate JUNIOR"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md"
+              >
+                Фракція 8 - 15 мм
+              </div>
+            </div>
+            <div class="p-6 md:p-8 flex flex-col flex-grow">
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded"
+                  >pH 5.5-6.0</span
+                >
+                <span
+                  class="text-[11px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-1 rounded"
+                  >Gentle Root</span
+                >
+              </div>
+              <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">
+                JUNIOR MIX
+              </h3>
+              <p class="text-sm text-slate-500 mb-6 text-justify">
+                Оптимально для молодих рослин та активного росту. Утримує
+                ідеальний баланс вологи навколо зростаючої кореневої системи.
+              </p>
+              <div
+                class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100"
+              >
+                <h4
+                  class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3"
+                >
+                  Кому підійде?
+                </h4>
+                <ul class="space-y-3 text-sm text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-3 text-lg leading-none"
+                      >✔</span
+                    ><span>Горщики від 0,5 до 2 літрів</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-3 text-lg leading-none"
+                      >✔</span
+                    ><span>Молоді рослини та активний ріст</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                onclick="selectProduct('Junior Mix')"
+                class="w-full bg-emerald-700 text-white py-4 rounded-xl hover:bg-emerald-800 transition-all font-bold text-sm tracking-widest uppercase shadow-lg"
+              >
+                Замовити Junior Mix
+              </button>
+            </div>
+          </div>
+
+          <!-- ADULT CARD -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-orange-100 flex flex-col group"
+          >
+            <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1620127351111-2eb209bd3cda?auto=format&fit=crop&q=80"
+                loading="lazy"
+                alt="Substrate ADULT"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute top-4 left-4 bg-[#744210] text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md"
+              >
+                Фракція 15 - 25 мм
+              </div>
+            </div>
+            <div class="p-6 md:p-8 flex flex-col flex-grow">
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded"
+                  >pH 5.5-6.0</span
+                >
+                <span
+                  class="text-[11px] font-bold uppercase tracking-wider bg-orange-50 text-orange-800 px-2 py-1 rounded"
+                  >Bio-Active</span
+                >
+              </div>
+              <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">
+                ADULT MIX
+              </h3>
+              <p class="text-sm text-slate-500 mb-6 text-justify">
+                Для дорослих монстер та антуріумів. Забезпечує максимальний
+                дренаж та аерацію великих коренів.
+              </p>
+              <div
+                class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100"
+              >
+                <h4
+                  class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3"
+                >
+                  Кому підійде?
+                </h4>
+                <ul class="space-y-3 text-sm text-slate-600">
+                  <li class="flex items-start">
+                    <span class="text-orange-500 mr-3 text-lg leading-none"
+                      >✔</span
+                    ><span>Горщики від 2 літрів і більше</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-orange-500 mr-3 text-lg leading-none"
+                      >✔</span
+                    ><span>Великі Монстери та Філодендрони</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                onclick="selectProduct('Adult Mix')"
+                class="w-full bg-[#744210] text-white py-4 rounded-xl hover:bg-[#59320c] transition-all font-bold text-sm tracking-widest uppercase shadow-lg"
+              >
+                Замовити Adult Mix
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- FAQ -->
     <section class="py-16 md:py-24 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="font-playfair text-3xl font-bold text-center text-slate-900 mb-10 md:mb-12">Поширені запитання</h2>
-            <div class="space-y-4 md:space-y-6">
-                <div class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100">
-                    <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">Чи потрібно дезінфікувати ваші субстрати?</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Категорично ні. Наші субстрати заселені корисною мікрофлорою. Прожарювання вб'є наш Biological Shield.</p>
-                </div>
-                <div class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100">
-                    <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">Як працює галтована кора?</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Вона має згладжені кути, що запобігає пошкодженню ніжних коренів под час росту та пересадки.</p>
-                </div>
-            </div>
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="font-playfair text-3xl font-bold text-center text-slate-900 mb-10 md:mb-12"
+        >
+          Поширені запитання
+        </h2>
+        <div class="space-y-4 md:space-y-6">
+          <div
+            class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100"
+          >
+            <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">
+              Чи потрібно дезінфікувати ваші субстрати?
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Категорично ні. Наші субстрати заселені корисною мікрофлорою.
+              Прожарювання вб'є наш Biological Shield.
+            </p>
+          </div>
+          <div
+            class="bg-slate-50 p-5 md:p-6 rounded-xl border border-slate-100"
+          >
+            <h3 class="font-bold text-slate-900 mb-2 text-base md:text-lg">
+              Як працює галтована кора?
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Вона має згладжені кути, що запобігає пошкодженню ніжних коренів
+              под час росту та пересадки.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Order Zone -->
     <section id="order-zone" class="py-20 bg-white border-t border-slate-100">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 id="order-title" class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6">Готові до посадки?</h2>
-            
-            <p id="order-hint" class="text-slate-600 mb-10 text-lg italic transition-all duration-300 transform inline-block">Оберіть зручний месенджер для замовлення:</p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <a id="tg-link" href="https://t.me/forestcraft_lab" target="_blank" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-500 transition-all shadow-sm hover:shadow-xl">
-                    <div class="mb-4 flex justify-center group-hover:scale-110 transition-transform">
-                        <svg class="w-12 h-12 text-[#2AABEE]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.443c.538-.196.988.131.833.925z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Telegram</h4>
-                </a>
-                <a id="ig-link" href="https://ig.me/m/forestcraft_lab" target="_blank" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-pink-500 transition-all shadow-sm hover:shadow-xl">
-                    <div class="mb-4 flex justify-center group-hover:scale-110 transition-transform">
-                        <svg class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="ig-grad-order" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#f09433" />
-                                    <stop offset="25%" stop-color="#e6683c" />
-                                    <stop offset="50%" stop-color="#dc2743" />
-                                    <stop offset="75%" stop-color="#cc2366" />
-                                    <stop offset="100%" stop-color="#bc1888" />
-                                </linearGradient>
-                            </defs>
-                            <path fill="url(#ig-grad-order)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Instagram</h4>
-                </a>
-                <a id="viber-link" href="viber://chat?number=%2B380931234567" class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-violet-500 transition-all shadow-sm hover:shadow-xl">
-                    <div class="mb-4 flex justify-center group-hover:scale-110 transition-transform">
-                        <svg class="w-12 h-12 text-[#7360F2]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm7.782 13.918l-.513-.342c-.896-.597-2.039-.427-2.738.406l-.666.792c-.171.205-.436.265-.67.145-2.016-1.03-4.032-2.613-5.226-4.833-.12-.222-.052-.495.145-.666l.783-.675c.829-.717 1.008-1.884.41-2.78l-.342-.512c-.597-.896-1.861-1.042-2.757-.427l-.597.409c-.58.393-.974 1.102-1.008 1.879-.051 1.187.316 3.655 2.058 6.441 2.05 3.28 4.706 5.517 6.421 6.098.154.051.316.085.478.085.649 0 1.255-.324 1.588-.879l.41-.598c.615-.896.47-2.152-.427-2.753l.453.218zM21.132 10.37c-.12-.897-.504-1.742-1.127-2.417-1.392-1.494-3.527-1.896-5.183-1.63-.444.068-.76.47-.692.905.06.418.435.734.862.709.051 0 .103-.008.145-.008 1.11-.188 2.553.076 3.475 1.067.41.444.666 1.016.743 1.622.06.444.435.76.88.709.435-.068.751-.478.683-.922h.214zM16.582 7.74c.265.282.427.649.47 1.033.06.444.435.76.88.709.435-.068.751-.478.683-.922-.094-.658-.367-1.281-.803-1.75-.769-.828-1.87-1.161-2.826-1.016-.444.068-.76.47-.692.905.06.418.435.734.862.709.051 0 .103-.008.145-.008.624-.094 1.341.051 1.836.59z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2">Viber</h4>
-                </a>
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2
+          id="order-title"
+          class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+        >
+          Готові до посадки?
+        </h2>
+
+        <p
+          id="order-hint"
+          class="text-slate-600 mb-10 text-lg italic transition-all duration-300 transform inline-block"
+        >
+          Оберіть зручний месенджер для замовлення:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <a
+            id="tg-link"
+            href="https://t.me/forestcraft_lab"
+            target="_blank"
+            class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-500 transition-all shadow-sm hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex justify-center group-hover:scale-110 transition-transform"
+            >
+              <svg
+                class="w-12 h-12 text-[#2AABEE]"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.443c.538-.196.988.131.833.925z"
+                />
+              </svg>
             </div>
+            <h4
+              class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2"
+            >
+              Telegram
+            </h4>
+          </a>
+          <a
+            id="ig-link"
+            href="https://ig.me/m/forestcraft_lab"
+            target="_blank"
+            class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-pink-500 transition-all shadow-sm hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex justify-center group-hover:scale-110 transition-transform"
+            >
+              <svg
+                class="w-12 h-12"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="ig-grad-order"
+                    x1="2"
+                    y1="22"
+                    x2="22"
+                    y2="2"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0%" stop-color="#f09433" />
+                    <stop offset="25%" stop-color="#e6683c" />
+                    <stop offset="50%" stop-color="#dc2743" />
+                    <stop offset="75%" stop-color="#cc2366" />
+                    <stop offset="100%" stop-color="#bc1888" />
+                  </linearGradient>
+                </defs>
+                <path
+                  fill="url(#ig-grad-order)"
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </div>
+            <h4
+              class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2"
+            >
+              Instagram
+            </h4>
+          </a>
+          <a
+            id="viber-link"
+            href="viber://chat?number=%2B380931234567"
+            class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-violet-500 transition-all shadow-sm hover:shadow-xl"
+          >
+            <div
+              class="mb-4 flex justify-center group-hover:scale-110 transition-transform"
+            >
+              <svg
+                class="w-12 h-12 text-[#7360F2]"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm7.782 13.918l-.513-.342c-.896-.597-2.039-.427-2.738.406l-.666.792c-.171.205-.436.265-.67.145-2.016-1.03-4.032-2.613-5.226-4.833-.12-.222-.052-.495.145-.666l.783-.675c.829-.717 1.008-1.884.41-2.78l-.342-.512c-.597-.896-1.861-1.042-2.757-.427l-.597.409c-.58.393-.974 1.102-1.008 1.879-.051 1.187.316 3.655 2.058 6.441 2.05 3.28 4.706 5.517 6.421 6.098.154.051.316.085.478.085.649 0 1.255-.324 1.588-.879l.41-.598c.615-.896.47-2.152-.427-2.753l.453.218zM21.132 10.37c-.12-.897-.504-1.742-1.127-2.417-1.392-1.494-3.527-1.896-5.183-1.63-.444.068-.76.47-.692.905.06.418.435.734.862.709.051 0 .103-.008.145-.008 1.11-.188 2.553.076 3.475 1.067.41.444.666 1.016.743 1.622.06.444.435.76.88.709.435-.068.751-.478.683-.922h.214zM16.582 7.74c.265.282.427.649.47 1.033.06.444.435.76.88.709.435-.068.751-.478.683-.922-.094-.658-.367-1.281-.803-1.75-.769-.828-1.87-1.161-2.826-1.016-.444.068-.76.47-.692.905.06.418.435.734.862.709.051 0 .103-.008.145-.008.624-.094 1.341.051 1.836.59z"
+                />
+              </svg>
+            </div>
+            <h4
+              class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-2"
+            >
+              Viber
+            </h4>
+          </a>
         </div>
+      </div>
     </section>
 
     <footer class="bg-slate-950 py-16 border-t-4 border-emerald-800">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-            
-            <div class="flex flex-col items-center md:items-start gap-3">
-                <div class="flex items-center gap-3">
-                    <img src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png" alt="Logo" class="h-10 w-10 object-contain rounded-md opacity-80 grayscale brightness-200 translate-y-[2px]">
-                    <div class="flex flex-col leading-tight">
-                        <span class="font-playfair text-xl md:text-2xl font-bold text-white uppercase tracking-wider">FOREST CRAFT</span>
-                       <span class="text-[9.5px] md:text-[10px] font-bold text-emerald-500 uppercase tracking-[0.23em] md:tracking-[0.36em] block mr-[-0.22em] md:mr-[-0.35em]">BOTANICAL SOLUTIONS</span>
-                    </div>
-                </div>
-                <p class="text-slate-500 text-xs mt-4 max-w-xs text-center md:text-left">
-                    Професійні субстрати для тих, хто цінує здоров'я кожної рослини.
-                </p>
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center"
+      >
+        <div class="flex flex-col items-center md:items-start gap-3">
+          <div class="flex items-center gap-3">
+            <img
+              src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png"
+              alt="Logo"
+              class="h-10 w-10 object-contain rounded-md opacity-80 grayscale brightness-200 translate-y-[2px]"
+            />
+            <div class="flex flex-col leading-tight">
+              <span
+                class="font-playfair text-xl md:text-2xl font-bold text-white uppercase tracking-wider"
+                >FOREST CRAFT</span
+              >
+              <span
+                class="text-[9.5px] md:text-[10px] font-bold text-emerald-500 uppercase tracking-[0.23em] md:tracking-[0.36em] block mr-[-0.22em] md:mr-[-0.35em]"
+                >BOTANICAL SOLUTIONS</span
+              >
             </div>
-
-            <div class="flex flex-col items-center gap-4">
-                <span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Ми в соцмережах</span>
-                <div class="flex gap-6">
-                    <a href="https://instagram.com/forestcraft_lab" target="_blank" class="text-slate-400 hover:text-pink-500 transition-all transform hover:scale-110">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                    <a href="https://t.me/forestcraft_lab" target="_blank" class="text-slate-400 hover:text-sky-500 transition-all transform hover:scale-110">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.414 17.157c-.201.21-.497.35-.806.35-.201 0-.394-.044-.575-.123l-3.321-1.458-1.722 1.653c-.15.143-.356.223-.57.223-.11 0-.22-.022-.323-.066-.316-.135-.514-.442-.514-.784v-2.316l-3.83-1.681c-.412-.18-.679-.588-.679-1.037 0-.447.265-.853.674-1.035l11.455-5.068c.389-.172.842-.089 1.144.208.303.297.398.749.24 1.143l-4.148 10.021-.034.07z"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center md:items-end text-[10px] uppercase tracking-widest space-y-4 mt-6 md:mt-0">
-                <a href="privacy.html" class="text-slate-400 hover:text-emerald-500 transition-colors font-bold relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-emerald-500 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Політика конфіденційності</a>
-                
-                <div class="text-center md:text-right">
-                    <span class="text-slate-600 block">© 2026 FOREST CRAFT LAB</span>
-                </div>
-            </div>
+          </div>
+          <p
+            class="text-slate-500 text-xs mt-4 max-w-xs text-center md:text-left"
+          >
+            Професійні субстрати для тих, хто цінує здоров'я кожної рослини.
+          </p>
         </div>
+
+        <div class="flex flex-col items-center gap-4">
+          <span
+            class="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-2"
+            >Ми в соцмережах</span
+          >
+          <div class="flex gap-6">
+            <a
+              href="https://instagram.com/forestcraft_lab"
+              target="_blank"
+              class="text-slate-400 hover:text-pink-500 transition-all transform hover:scale-110"
+            >
+              <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://t.me/forestcraft_lab"
+              target="_blank"
+              class="text-slate-400 hover:text-sky-500 transition-all transform hover:scale-110"
+            >
+              <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.414 17.157c-.201.21-.497.35-.806.35-.201 0-.394-.044-.575-.123l-3.321-1.458-1.722 1.653c-.15.143-.356.223-.57.223-.11 0-.22-.022-.323-.066-.316-.135-.514-.442-.514-.784v-2.316l-3.83-1.681c-.412-.18-.679-.588-.679-1.037 0-.447.265-.853.674-1.035l11.455-5.068c.389-.172.842-.089 1.144.208.303.297.398.749.24 1.143l-4.148 10.021-.034.07z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-center md:items-end text-[10px] uppercase tracking-widest space-y-4 mt-6 md:mt-0"
+        >
+          <a
+            href="privacy.html"
+            class="text-slate-400 hover:text-emerald-500 transition-colors font-bold relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-emerald-500 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >Політика конфіденційності</a
+          >
+
+          <div class="text-center md:text-right">
+            <span class="text-slate-600 block">© 2026 FOREST CRAFT LAB</span>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script>
-   // Елементи управління Aero-меню
-const btn = document.getElementById('mobile-menu-btn');
-const menu = document.getElementById('mobile-menu');
-const nav = document.getElementById('main-nav');
-const mobileLinks = document.querySelectorAll('.mobile-link');
+      // Елементи управління Aero-меню
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      const nav = document.getElementById("main-nav");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
 
-const roundingClasses = ['rounded-b-lg', 'md:rounded-b-2xl'];
-const borderClasses = ['border-b', 'border-emerald-400/20'];
-// Клас фону для кнопки, коли меню відкрите
-const btnActiveClass = 'bg-emerald-900/10'; 
+      const roundingClasses = ["rounded-b-lg", "md:rounded-b-2xl"];
+      const borderClasses = ["border-b", "border-emerald-400/20"];
+      // Клас фону для кнопки, коли меню відкрите
+      const btnActiveClass = "bg-emerald-900/10";
 
-btn.addEventListener('click', () => {
-    const isOpening = menu.style.maxHeight === '0px' || menu.style.maxHeight === '';
+      btn.addEventListener("click", () => {
+        const isOpening =
+          menu.style.maxHeight === "0px" || menu.style.maxHeight === "";
 
-    if (isOpening) {
-        nav.classList.remove(...roundingClasses, ...borderClasses);
-        
-        // Додаємо фон кнопці при відкритті
-        btn.classList.add(btnActiveClass);
+        if (isOpening) {
+          nav.classList.remove(...roundingClasses, ...borderClasses);
 
-        menu.style.maxHeight = '400px';
-        menu.classList.remove('opacity-0');
-        menu.classList.add('opacity-100');
+          // Додаємо фон кнопці при відкритті
+          btn.classList.add(btnActiveClass);
 
-        mobileLinks.forEach((link, index) => {
-            setTimeout(() => {
-                link.classList.remove('opacity-0', 'translate-y-4');
-                link.classList.add('opacity-100', 'translate-y-0');
-            }, 100 * (index + 1)); 
+          menu.style.maxHeight = "400px";
+          menu.classList.remove("opacity-0");
+          menu.classList.add("opacity-100");
+
+          mobileLinks.forEach((link, index) => {
+            setTimeout(
+              () => {
+                link.classList.remove("opacity-0", "translate-y-4");
+                link.classList.add("opacity-100", "translate-y-0");
+              },
+              100 * (index + 1),
+            );
+          });
+        } else {
+          closeMenu();
+        }
+      });
+
+      function closeMenu() {
+        nav.classList.add(...roundingClasses, ...borderClasses);
+
+        // ПРИМУСОВО ВИДАЛЯЄМО ФОН КНОПКИ ПРИ ЗАКРИТТІ
+        btn.classList.remove(btnActiveClass);
+        btn.blur(); // Знімаємо фокус для надійності
+
+        menu.style.maxHeight = "0px";
+        menu.classList.remove("opacity-100");
+        menu.classList.add("opacity-0");
+
+        mobileLinks.forEach((link) => {
+          link.classList.add("opacity-0", "translate-y-4");
+          link.classList.remove("opacity-100", "translate-y-0");
         });
-    } else {
-        closeMenu();
-    }
-});
+      }
 
-function closeMenu() {
-    nav.classList.add(...roundingClasses, ...borderClasses);
-    
-    // ПРИМУСОВО ВИДАЛЯЄМО ФОН КНОПКИ ПРИ ЗАКРИТТІ
-    btn.classList.remove(btnActiveClass);
-    btn.blur(); // Знімаємо фокус для надійності
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
 
-    menu.style.maxHeight = '0px';
-    menu.classList.remove('opacity-100');
-    menu.classList.add('opacity-0');
-
-    mobileLinks.forEach(link => {
-        link.classList.add('opacity-0', 'translate-y-4');
-        link.classList.remove('opacity-100', 'translate-y-0');
-    });
-}
-
-mobileLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-});
-
-// Закриття при кліку на будь-яке посилання
-mobileLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-});
-    // Функція для гарантованого миттєвого скролу нагору
-    function jumpToTop(e) {
+      // Закриття при кліку на будь-яке посилання
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+      // Функція для гарантованого миттєвого скролу нагору
+      function jumpToTop(e) {
         e.preventDefault();
-        document.documentElement.style.scrollBehavior = 'auto';
+        document.documentElement.style.scrollBehavior = "auto";
         window.scrollTo(0, 0);
         setTimeout(() => {
-            document.documentElement.style.scrollBehavior = '';
+          document.documentElement.style.scrollBehavior = "";
         }, 50);
-    }
+      }
 
-    // Логіка вибору продукту та підготовки месенджерів
-    function selectProduct(productName) {
-        document.getElementById('order-zone').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Логіка вибору продукту та підготовки месенджерів
+      function selectProduct(productName) {
+        document
+          .getElementById("order-zone")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
 
-        const title = document.getElementById('order-title');
+        const title = document.getElementById("order-title");
         title.innerText = "Замовити " + productName;
-        title.classList.add('text-emerald-700');
-        
-        const message = "Привіт! Я хочу замовити професійний субстрат " + productName;
+        title.classList.add("text-emerald-700");
+
+        const message =
+          "Привіт! Я хочу замовити професійний субстрат " + productName;
         const encodedMessage = encodeURIComponent(message);
-        
+
         const tgNick = "forestcraft_lab";
-        document.getElementById('tg-link').href = `https://t.me/${tgNick}?text=${encodedMessage}`;
-        document.getElementById('viber-link').href = `viber://chat?number=%2B380931234567&text=${encodedMessage}`;
+        document.getElementById("tg-link").href =
+          `https://t.me/${tgNick}?text=${encodedMessage}`;
+        document.getElementById("viber-link").href =
+          `viber://chat?number=%2B380931234567&text=${encodedMessage}`;
 
         const showSuccessMessage = () => {
+          setTimeout(() => {
+            const hint = document.getElementById("order-hint");
+            hint.innerText =
+              "Текст замовлення скопійовано! Оберіть месенджер та просто вставте його у чат.";
+            hint.classList.replace("text-slate-600", "text-emerald-600");
+            hint.classList.replace("italic", "font-bold");
+            hint.classList.add("scale-105", "drop-shadow-md");
             setTimeout(() => {
-                const hint = document.getElementById('order-hint');
-                hint.innerText = "Текст замовлення скопійовано! Оберіть месенджер та просто вставте його у чат.";
-                hint.classList.replace('text-slate-600', 'text-emerald-600');
-                hint.classList.replace('italic', 'font-bold');
-                hint.classList.add('scale-105', 'drop-shadow-md'); 
-                setTimeout(() => {
-                    hint.classList.remove('scale-105', 'drop-shadow-md');
-                }, 300);
-            }, 600);
+              hint.classList.remove("scale-105", "drop-shadow-md");
+            }, 300);
+          }, 600);
         };
 
         const copyFallback = () => {
-            const textArea = document.createElement("textarea");
-            textArea.value = message;
-            textArea.style.position = "fixed";
-            textArea.style.opacity = "0";
-            document.body.appendChild(textArea);
-            textArea.select();
-            try {
-                document.execCommand('copy');
-                showSuccessMessage();
-            } catch (err) {
-                console.error('Fallback copy failed', err);
-            }
-            document.body.removeChild(textArea);
+          const textArea = document.createElement("textarea");
+          textArea.value = message;
+          textArea.style.position = "fixed";
+          textArea.style.opacity = "0";
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand("copy");
+            showSuccessMessage();
+          } catch (err) {
+            console.error("Fallback copy failed", err);
+          }
+          document.body.removeChild(textArea);
         };
 
         if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(message)
-                .then(showSuccessMessage)
-                .catch(err => {
-                    console.warn('Clipboard API failed, using fallback', err);
-                    copyFallback();
-                });
+          navigator.clipboard
+            .writeText(message)
+            .then(showSuccessMessage)
+            .catch((err) => {
+              console.warn("Clipboard API failed, using fallback", err);
+              copyFallback();
+            });
         } else {
-            copyFallback();
+          copyFallback();
         }
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>
