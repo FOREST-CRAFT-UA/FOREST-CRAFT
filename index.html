@@ -119,8 +119,29 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
-      
+
+      /* Стилі для преміального фонового слайдера */
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out, transform 8s linear;
+        z-index: 0;
+      }
+
+      .hero-slide.active {
+        opacity: 1;
+        transform: scale(1.1); /* Ефект повільного наближення (Ken Burns) */
+      }
+
+      /* Робимо контент завжди поверх слайдів */
+      .hero-content {
+        position: relative;
+        z-index: 20;
+      }
+
     </style>
+    
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
@@ -272,44 +293,53 @@
         </div>
       </div>
     </nav>
-    <!-- Hero Секція -->
-    <header
-      id="top"
-      class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[85vh] text-center border-b border-slate-200"
-    >
-      <div class="relative z-20 max-w-5xl mx-auto">
-        <!-- Оновлено класи трекінгу для span -->
-        <span
-          class="text-emerald-800 font-extrabold tracking-wider sm:tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 block"
-          >Сила лісу, активована наукою</span
-        >
-        <!-- Оновлено h1: менший шрифт для мобільних, break-words та м'який дефіс (&shy;) -->
-        <h1
-          class="font-playfair text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-slate-900 leading-tight break-words"
-        >
-          Безкомпро&shy;місна якість <br />
-          <span class="italic font-medium text-emerald-900"
-            >для ідеального коріння.</span
-          >
-        </h1>
-        <p
-          class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-8 sm:mb-10 font-normal leading-relaxed px-2 text-justify md:text-center"
-        >
-          Професійні безторф’яні субстрати для колекційних ароїдних. Для
-          бездоганного здоров'я ваших рослин.
-        </p>
-        <div
-          class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 w-full sm:w-auto"
-        >
-          <a
-            href="#products"
-            class="bg-emerald-700 text-white hover:bg-emerald-800 px-8 py-4 rounded-xl transition duration-300 font-bold uppercase tracking-widest text-sm w-full sm:w-auto text-center shadow-lg hover:-translate-y-1"
-          >
-            Обрати субстрат
-          </a>
-        </div>
-      </div>
-    </header>
+
+    <header id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1a1714]">
+  
+  <!-- Фонові слайди -->
+  <div id="hero-slider" class="absolute inset-0">
+    <!-- Слайд 1 (Ліс) -->
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Forest">
+    </div>
+    <!-- Слайд 2 (Макро листя) -->
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Monstera Close-up">
+    </div>
+    <!-- Слайд 3 (Текстура субстрату/природи) -->
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Nature Texture">
+    </div>
+
+    <!-- Градієнти для злиття -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#fcfbf7]/40 via-transparent to-[#fcfbf7] z-10"></div>
+    <div class="absolute inset-0 vignette-overlay z-10"></div>
+  </div>
+
+  <!-- Контент (залишається нерухомим) -->
+  <div class="hero-content max-w-6xl mx-auto px-4 text-center">
+    <div class="animate-reveal delay-1 inline-flex items-center gap-3 backdrop-blur-xl bg-white/30 px-5 py-2 rounded-full border border-white/50 shadow-sm mb-10">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+      <span class="text-emerald-950 font-bold tracking-[0.35em] uppercase text-[9px] sm:text-[11px]">Сила лісу, активована наукою</span>
+    </div>
+
+    <h1 class="animate-reveal delay-2 font-playfair text-5xl sm:text-7xl md:text-8xl lg:text-[105px] font-bold mb-8 text-slate-900 leading-[0.95] tracking-tighter">
+      Безкомпромісна якість <br />
+      <span class="italic font-normal text-emerald-900/80">для ідеального коріння</span>
+    </h1>
+
+    <p class="animate-reveal delay-3 text-base md:text-xl text-slate-800 max-w-2xl mx-auto mb-12 font-medium leading-relaxed tracking-tight">
+      Професійні безторф’яні субстрати, створені для тих, хто цінує здоров'я кожної клітини своєї колекції.
+    </p>
+
+    <div class="animate-reveal delay-3 flex justify-center">
+      <a href="#products" class="glass-premium group relative inline-flex items-center justify-center px-12 py-5 rounded-2xl transition-all duration-700 font-bold uppercase tracking-[0.3em] text-[11px] text-white bg-emerald-950/90 backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(6,78,59,0.35)] hover:bg-emerald-900 hover:px-14 active:scale-95">
+        <span class="relative z-10">Почати досвід</span>
+        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </a>
+    </div>
+  </div>
+</header>
 
     <section
       id="process"
@@ -817,216 +847,374 @@
       </div>
     </section>
 
-   <section id="products" class="scroll-mt-0 py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12">
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 m-2 sm:m-4 md:m-0">
-    
-    <div class="max-w-6xl mx-auto w-full">
-      
-      <div class="text-center mb-12 md:mb-16">
-        <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block">Каталог субстратів</span>
-        <h2 class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4">Оберіть свій ідеальний мікс</h2>
-        <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">Оптимальні рішення для професійного вирощування колекційних рослин.</p>
-      </div>
+    <section
+      id="products"
+      class="scroll-mt-0 py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 m-2 sm:m-4 md:m-0"
+      >
+        <div class="max-w-6xl mx-auto w-full">
+          <div class="text-center mb-12 md:mb-16">
+            <span
+              class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block"
+              >Каталог субстратів</span
+            >
+            <h2
+              class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4"
+            >
+              Оберіть свій ідеальний мікс
+            </h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">
+              Оптимальні рішення для професійного вирощування колекційних
+              рослин.
+            </p>
+          </div>
 
-      <div class="grid md:grid-cols-2 gap-8 md:gap-10">
-        
-        <!-- Картка JUNIOR MIX -->
-        <div class="relative h-full">
-          <!-- ЗМІНЕНО: rgba(16,185,129,0.75) для hover та is-active -->
-          <div class="product-card bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(52,211,153,0.35)] hover:shadow-[0_0_60px_rgba(16,185,129,0.75)] [&.is-active]:shadow-[0_0_60px_rgba(16,185,129,0.75)] transition-shadow duration-500 border border-emerald-100 flex flex-col h-full group relative z-10">
-            <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&q=80"
-                loading="lazy"
-                alt="Substrate JUNIOR"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">
-                Фракція 8 - 15 мм
+          <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+            <!-- Картка JUNIOR MIX -->
+            <div class="relative h-full">
+              <!-- ЗМІНЕНО: rgba(16,185,129,0.75) для hover та is-active -->
+              <div
+                class="product-card bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(52,211,153,0.35)] hover:shadow-[0_0_60px_rgba(16,185,129,0.75)] [&.is-active]:shadow-[0_0_60px_rgba(16,185,129,0.75)] transition-shadow duration-500 border border-emerald-100 flex flex-col h-full group relative z-10"
+              >
+                <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&q=80"
+                    loading="lazy"
+                    alt="Substrate JUNIOR"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md"
+                  >
+                    Фракція 8 - 15 мм
+                  </div>
+                </div>
+                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span
+                      class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded"
+                      >pH 5.5-6.0</span
+                    >
+                    <span
+                      class="text-[11px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-1 rounded"
+                      >Gentle Root</span
+                    >
+                  </div>
+                  <h3
+                    class="font-playfair text-2xl font-bold text-slate-900 mb-3"
+                  >
+                    JUNIOR MIX
+                  </h3>
+                  <p class="text-sm text-slate-500 mb-6 text-justify">
+                    Оптимально для молодих рослин та активного росту. Утримує
+                    ідеальний баланс вологи навколо зростаючої кореневої
+                    системи.
+                  </p>
+                  <div
+                    class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100"
+                  >
+                    <h4
+                      class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3"
+                    >
+                      Кому підійде?
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                      <li class="flex items-start">
+                        <span class="text-emerald-500 mr-3 text-lg leading-none"
+                          >✔</span
+                        >
+                        <span
+                          ><b>Горщики:</b> Діаметром до 15 см (об'ємом до 2
+                          літрів)</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-emerald-500 mr-3 text-lg leading-none"
+                          >✔</span
+                        >
+                        <span
+                          ><b>Рослини:</b> Молоді Алоказії, Антуріуми, невеликі
+                          Монстери (Adansonii, Siltepecana) та підлітки
+                          Філодендронів.</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="flex items-center gap-2 mb-4 px-1">
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-widest text-orange-700"
+                      >Очікується</span
+                    >
+                  </div>
+
+                  <button
+                    onclick="selectProduct('Junior Mix')"
+                    class="w-full bg-emerald-700 text-white py-4 rounded-xl hover:bg-emerald-800 transition-all font-bold text-sm tracking-widest uppercase shadow-lg"
+                  >
+                    Замовити Junior Mix
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="p-6 md:p-8 flex flex-col flex-grow">
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded">pH 5.5-6.0</span>
-                <span class="text-[11px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-1 rounded">Gentle Root</span>
-              </div>
-              <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">JUNIOR MIX</h3>
-              <p class="text-sm text-slate-500 mb-6 text-justify">
-                Оптимально для молодих рослин та активного росту. Утримує ідеальний баланс вологи навколо зростаючої кореневої системи.
-              </p>
-              <div class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100">
-                <h4 class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3">Кому підійде?</h4>
-                <ul class="space-y-3 text-sm text-slate-600">
-                  <li class="flex items-start">
-                    <span class="text-emerald-500 mr-3 text-lg leading-none">✔</span>
-                    <span><b>Горщики:</b> Діаметром до 15 см (об'ємом до 2 літрів)</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-emerald-500 mr-3 text-lg leading-none">✔</span>
-                    <span><b>Рослини:</b> Молоді Алоказії, Антуріуми, невеликі Монстери (Adansonii, Siltepecana) та підлітки Філодендронів.</span>
-                  </li>
-                </ul>
-              </div>
 
-              <div class="flex items-center gap-2 mb-4 px-1">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-orange-700">Очікується</span>
-              </div>
+            <!-- Картка ADULT MIX -->
+            <div class="relative h-full">
+              <!-- Оранжевий залишається як був, бо він і так інтенсивний -->
+              <div
+                class="product-card bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(251,146,60,0.3)] hover:shadow-[0_0_60px_rgba(234,88,12,0.5)] [&.is-active]:shadow-[0_0_60px_rgba(234,88,12,0.5)] transition-shadow duration-500 border border-orange-100 flex flex-col h-full group relative z-10"
+              >
+                <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1620127351111-2eb209bd3cda?auto=format&fit=crop&q=80"
+                    loading="lazy"
+                    alt="Substrate ADULT"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-[#744210] text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md"
+                  >
+                    Фракція 15 - 25 мм
+                  </div>
+                </div>
+                <div class="p-6 md:p-8 flex flex-col flex-grow">
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span
+                      class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded"
+                      >pH 5.5-6.0</span
+                    >
+                    <span
+                      class="text-[11px] font-bold uppercase tracking-wider bg-orange-50 text-orange-800 px-2 py-1 rounded"
+                      >Bio-Active</span
+                    >
+                  </div>
+                  <h3
+                    class="font-playfair text-2xl font-bold text-slate-900 mb-3"
+                  >
+                    ADULT MIX
+                  </h3>
+                  <p class="text-sm text-slate-500 mb-6 text-justify">
+                    Для дорослих монстер та антуріумів. Забезпечує максимальний
+                    дренаж та аерацію великих коренів.
+                  </p>
+                  <div
+                    class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100"
+                  >
+                    <h4
+                      class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3"
+                    >
+                      Кому підійде?
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                      <li class="flex items-start">
+                        <span class="text-orange-500 mr-3 text-lg leading-none"
+                          >✔</span
+                        >
+                        <span
+                          ><b>Горщики:</b> Діаметром від 16-17 см (об'ємом від 2
+                          літрів і більше)</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-orange-500 mr-3 text-lg leading-none"
+                          >✔</span
+                        >
+                        <span
+                          ><b>Рослини:</b> Дорослі екземпляри Monstera
+                          Deliciosa, великі Філодендрони на опорах, масивні
+                          Антуріуми та інші крупноміри.</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
 
-              <button onclick="selectProduct('Junior Mix')" class="w-full bg-emerald-700 text-white py-4 rounded-xl hover:bg-emerald-800 transition-all font-bold text-sm tracking-widest uppercase shadow-lg">
-                Замовити Junior Mix
-              </button>
+                  <div class="flex items-center gap-2 mb-4 px-1">
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-widest text-orange-700"
+                      >Очікується</span
+                    >
+                  </div>
+
+                  <button
+                    onclick="selectProduct('Adult Mix')"
+                    class="w-full bg-[#744210] text-white py-4 rounded-xl hover:bg-[#59320c] transition-all font-bold text-sm tracking-widest uppercase shadow-lg"
+                  >
+                    Замовити Adult Mix
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Картка ADULT MIX -->
-        <div class="relative h-full">
-          <!-- Оранжевий залишається як був, бо він і так інтенсивний -->
-          <div class="product-card bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(251,146,60,0.3)] hover:shadow-[0_0_60px_rgba(234,88,12,0.5)] [&.is-active]:shadow-[0_0_60px_rgba(234,88,12,0.5)] transition-shadow duration-500 border border-orange-100 flex flex-col h-full group relative z-10">
-            <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1620127351111-2eb209bd3cda?auto=format&fit=crop&q=80"
-                loading="lazy"
-                alt="Substrate ADULT"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div class="absolute top-4 left-4 bg-[#744210] text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">
-                Фракція 15 - 25 мм
-              </div>
-            </div>
-            <div class="p-6 md:p-8 flex flex-col flex-grow">
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="text-[11px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-1 rounded">pH 5.5-6.0</span>
-                <span class="text-[11px] font-bold uppercase tracking-wider bg-orange-50 text-orange-800 px-2 py-1 rounded">Bio-Active</span>
-              </div>
-              <h3 class="font-playfair text-2xl font-bold text-slate-900 mb-3">ADULT MIX</h3>
-              <p class="text-sm text-slate-500 mb-6 text-justify">
-                Для дорослих монстер та антуріумів. Забезпечує максимальний дренаж та аерацію великих коренів.
-              </p>
-              <div class="bg-slate-50 rounded-xl p-5 mb-6 flex-grow border border-slate-100">
-                <h4 class="text-xs font-bold text-slate-900 uppercase tracking-widest mb-3">Кому підійде?</h4>
-                <ul class="space-y-3 text-sm text-slate-600">
-                  <li class="flex items-start">
-                    <span class="text-orange-500 mr-3 text-lg leading-none">✔</span>
-                    <span><b>Горщики:</b> Діаметром від 16-17 см (об'ємом від 2 літрів і більше)</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-orange-500 mr-3 text-lg leading-none">✔</span>
-                    <span><b>Рослини:</b> Дорослі екземпляри Monstera Deliciosa, великі Філодендрони на опорах, масивні Антуріуми та інші крупноміри.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="flex items-center gap-2 mb-4 px-1">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-orange-700">Очікується</span>
-              </div>
-
-              <button onclick="selectProduct('Adult Mix')" class="w-full bg-[#744210] text-white py-4 rounded-xl hover:bg-[#59320c] transition-all font-bold text-sm tracking-widest uppercase shadow-lg">
-                Замовити Adult Mix
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="faq" class="py-16 md:py-24 bg-[#fcfbf7]">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <div class="text-center mb-12">
-      <span class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block">Common Questions</span>
-      <h2 class="font-playfair text-3xl md:text-4xl font-bold text-slate-900">
-        Поширені запитання
-      </h2>
-    </div>
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span
+            class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block"
+            >Common Questions</span
+          >
+          <h2
+            class="font-playfair text-3xl md:text-4xl font-bold text-slate-900"
+          >
+            Поширені запитання
+          </h2>
+        </div>
 
-    <div class="space-y-4">
-      
-      <!-- Питання 1 -->
-      <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300">
-        <button class="faq-btn flex w-full items-center justify-between p-5 md:p-6 cursor-pointer focus:outline-none">
-          <h3 class="font-bold text-slate-900 text-base md:text-lg pr-4 text-left">
-            Чи потрібно дезінфікувати ваші субстрати?
-          </h3>
-          <div class="faq-icon text-emerald-600 transition-transform duration-500 shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+        <div class="space-y-4">
+          <!-- Питання 1 -->
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300"
+          >
+            <button
+              class="faq-btn flex w-full items-center justify-between p-5 md:p-6 cursor-pointer focus:outline-none"
+            >
+              <h3
+                class="font-bold text-slate-900 text-base md:text-lg pr-4 text-left"
+              >
+                Чи потрібно дезінфікувати ваші субстрати?
+              </h3>
+              <div
+                class="faq-icon text-emerald-600 transition-transform duration-500 shrink-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+            <div
+              class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500"
+            >
+              <div class="overflow-hidden">
+                <div class="px-5 md:px-6 pb-6 border-t border-slate-50 pt-4">
+                  <p
+                    class="text-slate-600 text-sm md:text-base leading-relaxed border-l-2 border-emerald-500 pl-4 text-justify"
+                  >
+                    Категорично ні. Наші субстрати вже заселені корисною
+                    мікрофлорою. Будь-яка термічна обробка (прожарювання в
+                    духовці тощо) вб'є наш
+                    <strong
+                      class="text-emerald-800 uppercase text-xs tracking-wider"
+                      >Biological Shield</strong
+                    >, що зробить субстрат вразливим до патогенів та гнилі.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </button>
-        <div class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500">
-          <div class="overflow-hidden">
-            <div class="px-5 md:px-6 pb-6 border-t border-slate-50 pt-4">
-              <p class="text-slate-600 text-sm md:text-base leading-relaxed border-l-2 border-emerald-500 pl-4 text-justify">
-                Категорично ні. Наші субстрати вже заселені корисною
-                мікрофлорою. Будь-яка термічна обробка (прожарювання в
-                духовці тощо) вб'є наш
-                <strong class="text-emerald-800 uppercase text-xs tracking-wider">Biological Shield</strong>, що зробить субстрат вразливим до патогенів та гнилі.
-              </p>
+
+          <!-- Питання 2 -->
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300"
+          >
+            <button
+              class="faq-btn flex w-full items-center justify-between p-5 md:p-6 cursor-pointer focus:outline-none"
+            >
+              <h3
+                class="font-bold text-slate-900 text-base md:text-lg pr-4 text-left"
+              >
+                Як працює галтована кора?
+              </h3>
+              <div
+                class="faq-icon text-emerald-600 transition-transform duration-500 shrink-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+            <div
+              class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500"
+            >
+              <div class="overflow-hidden">
+                <div class="px-5 md:px-6 pb-6 border-t border-slate-50 pt-4">
+                  <p
+                    class="text-slate-600 text-sm md:text-base leading-relaxed border-l-2 border-emerald-500 pl-4 text-justify"
+                  >
+                    Галтована кора проходить механічну обробку для згладжування
+                    гострих кутів. Це запобігає мікротравмам ніжних епіфітних
+                    коренів під час їхнього росту всередині горщика, що значно
+                    знижує ризик виникнення інфекцій.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Питання 3 -->
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300"
+          >
+            <button
+              class="faq-btn flex w-full items-center justify-between p-5 md:p-6 cursor-pointer focus:outline-none"
+            >
+              <h3
+                class="font-bold text-slate-900 text-base md:text-lg pr-4 text-left"
+              >
+                Чи підходить субстрат для інших рослин?
+              </h3>
+              <div
+                class="faq-icon text-emerald-600 transition-transform duration-500 shrink-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+            <div
+              class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500"
+            >
+              <div class="overflow-hidden">
+                <div class="px-5 md:px-6 pb-6 border-t border-slate-50 pt-4">
+                  <p
+                    class="text-slate-600 text-sm md:text-base leading-relaxed border-l-2 border-emerald-500 pl-4 text-justify"
+                  >
+                    Так, наш мікс ідеально підходить для будь-яких рослин, що
+                    потребують високої аерації коренів: хойї, наземні та
+                    епіфітні орхідеї, а також для папоротей та деяких видів
+                    бегоній.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Питання 2 -->
-      <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300">
-        <button class="faq-btn flex w-full items-center justify-between p-5 md:p-6 cursor-pointer focus:outline-none">
-          <h3 class="font-bold text-slate-900 text-base md:text-lg pr-4 text-left">
-            Як працює галтована кора?
-          </h3>
-          <div class="faq-icon text-emerald-600 transition-transform duration-500 shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
-        </button>
-        <div class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500">
-          <div class="overflow-hidden">
-            <div class="px-5 md:px-6 pb-6 border-t border-slate-50 pt-4">
-              <p class="text-slate-600 text-sm md:text-base leading-relaxed border-l-2 border-emerald-500 pl-4 text-justify">
-                Галтована кора проходить механічну обробку для згладжування
-                гострих кутів. Це запобігає мікротравмам ніжних епіфітних
-                коренів під час їхнього росту всередині горщика, що значно
-                знижує ризик виникнення інфекцій.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Питання 3 -->
-      <div class="faq-item bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300">
-        <button class="faq-btn flex w-full items-center justify-between p-5 md:p-6 cursor-pointer focus:outline-none">
-          <h3 class="font-bold text-slate-900 text-base md:text-lg pr-4 text-left">
-            Чи підходить субстрат для інших рослин?
-          </h3>
-          <div class="faq-icon text-emerald-600 transition-transform duration-500 shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
-        </button>
-        <div class="faq-content grid grid-rows-[0fr] opacity-0 transition-all duration-500">
-          <div class="overflow-hidden">
-            <div class="px-5 md:px-6 pb-6 border-t border-slate-50 pt-4">
-              <p class="text-slate-600 text-sm md:text-base leading-relaxed border-l-2 border-emerald-500 pl-4 text-justify">
-                Так, наш мікс ідеально підходить для будь-яких рослин, що
-                потребують високої аерації коренів: хойї, наземні та
-                епіфітні орхідеї, а також для папоротей та деяких видів
-                бегоній.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
     <!-- Order Zone -->
     <section id="order-zone" class="py-20 bg-white border-t border-slate-100">
       <div class="max-w-4xl mx-auto px-4 text-center">
@@ -1394,25 +1582,46 @@
       // Мобільна підсвітка карток при скролі
       // ==========================================
       if (window.innerWidth < 768) {
-        const productCards = document.querySelectorAll('.product-card');
-        
-        const cardObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            // Якщо 60% картки з'явилося на екрані
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-active');
-            } else {
-              entry.target.classList.remove('is-active');
-            }
-          });
-        }, {
-          threshold: 0.6 // Вмикати, коли видно 60% блоку
-        });
+        const productCards = document.querySelectorAll(".product-card");
 
-        productCards.forEach(card => {
+        const cardObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              // Якщо 60% картки з'явилося на екрані
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-active");
+              } else {
+                entry.target.classList.remove("is-active");
+              }
+            });
+          },
+          {
+            threshold: 0.6, // Вмикати, коли видно 60% блоку
+          },
+        );
+
+        productCards.forEach((card) => {
           cardObserver.observe(card);
         });
       }
+
+      // Логіка автоматичного слайдера для Hero
+      function initHeroSlider() {
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+          slides[currentSlide].classList.remove('active');
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.add('active');
+        }
+
+        // Зміна слайда кожні 6 секунд
+        setInterval(nextSlide, 6000);
+      }
+
+      // Запуск слайдера після завантаження
+      document.addEventListener('DOMContentLoaded', initHeroSlider);
     </script>
   </body>
 </html>
