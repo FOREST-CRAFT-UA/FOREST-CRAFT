@@ -141,7 +141,7 @@
       }
 
     </style>
-    
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
@@ -196,7 +196,7 @@
   <body
     class="antialiased selection:bg-emerald-200 selection:text-emerald-900 w-full"
   >
-    <nav
+   <nav
       id="main-nav"
       class="fixed w-full z-50 top-0 transition-all duration-500 bg-white/10 backdrop-blur-xl backdrop-saturate-150 border-b border-white/30 shadow-xl rounded-b-lg md:rounded-b-2xl overflow-hidden"
       style="
@@ -219,11 +219,13 @@
             />
             <div class="flex flex-col leading-tight">
               <span
-                class="font-playfair text-xl md:text-2xl font-bold text-emerald-950 tracking-wider"
+                id="nav-title"
+                class="font-playfair text-xl md:text-2xl font-bold text-white tracking-wider transition-colors duration-500"
                 >FOREST CRAFT</span
               >
               <span
-                class="text-[9.5px] md:text-[10px] font-bold text-emerald-700 uppercase tracking-[0.23em] md:tracking-[0.36em] block mr-[-0.22em] md:mr-[-0.35em]"
+                id="nav-subtitle"
+                class="text-[9.5px] md:text-[10px] font-bold text-emerald-300 uppercase tracking-[0.23em] md:tracking-[0.36em] block mr-[-0.22em] md:mr-[-0.35em] transition-colors duration-500"
                 >BOTANICAL SOLUTIONS</span
               >
             </div>
@@ -232,17 +234,17 @@
           <div class="hidden md:flex items-center space-x-8">
             <a
               href="#process"
-              class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest"
+              class="nav-item text-sm font-medium text-slate-200 hover:text-white transition-colors uppercase tracking-widest duration-500"
               >Виробництво</a
             >
             <a
               href="#about"
-              class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest"
+              class="nav-item text-sm font-medium text-slate-200 hover:text-white transition-colors uppercase tracking-widest duration-500"
               >Підхід</a
             >
             <a
               href="#products"
-              class="text-sm font-medium text-slate-700 hover:text-emerald-800 transition-colors uppercase tracking-widest"
+              class="nav-item text-sm font-medium text-slate-200 hover:text-white transition-colors uppercase tracking-widest duration-500"
               >Магазин</a
             >
           </div>
@@ -250,7 +252,7 @@
           <div class="md:hidden flex items-center">
             <button
               id="mobile-menu-btn"
-              class="text-slate-700 hover:text-emerald-800 p-4 bg-transparent rounded-xl transition-all focus:outline-none active:scale-95"
+              class="nav-item text-slate-200 hover:text-white p-4 bg-transparent rounded-xl transition-colors duration-500 focus:outline-none active:scale-95"
             >
               <svg
                 class="w-8 h-8"
@@ -294,52 +296,49 @@
       </div>
     </nav>
 
-    <header id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1a1714]">
-  
-  <!-- Фонові слайди -->
-  <div id="hero-slider" class="absolute inset-0">
-    <!-- Слайд 1 (Ліс) -->
-    <div class="hero-slide active">
-      <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Forest">
-    </div>
-    <!-- Слайд 2 (Макро листя) -->
-    <div class="hero-slide">
-      <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Monstera Close-up">
-    </div>
-    <!-- Слайд 3 (Текстура субстрату/природи) -->
-    <div class="hero-slide">
-      <img src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Nature Texture">
-    </div>
+   <header id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1a1714]">
+      <div id="hero-slider" class="absolute inset-0">
+        <div class="hero-slide active">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Forest">
+        </div>
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Monstera Close-up">
+        </div>
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Nature Texture">
+        </div>
 
-    <!-- Градієнти для злиття -->
-    <div class="absolute inset-0 bg-gradient-to-b from-[#fcfbf7]/40 via-transparent to-[#fcfbf7] z-10"></div>
-    <div class="absolute inset-0 vignette-overlay z-10"></div>
-  </div>
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-10"></div>
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-[#fcfbf7] via-transparent to-transparent z-10 h-full"></div>
+      </div>
 
-  <!-- Контент (залишається нерухомим) -->
-  <div class="hero-content max-w-6xl mx-auto px-4 text-center">
-    <div class="animate-reveal delay-1 inline-flex items-center gap-3 backdrop-blur-xl bg-white/30 px-5 py-2 rounded-full border border-white/50 shadow-sm mb-10">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-      <span class="text-emerald-950 font-bold tracking-[0.35em] uppercase text-[9px] sm:text-[11px]">Сила лісу, активована наукою</span>
-    </div>
+      <div class="hero-content max-w-6xl mx-auto px-4 text-center">
+        
+        <div class="animate-reveal delay-1 inline-flex items-center gap-3 backdrop-blur-md bg-white/10 px-5 py-2 rounded-full border border-white/20 shadow-sm mb-10">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
+          <span class="text-white font-bold tracking-[0.35em] uppercase text-[9px] sm:text-[11px] drop-shadow-md">Сила лісу, активована наукою</span>
+        </div>
 
-    <h1 class="animate-reveal delay-2 font-playfair text-5xl sm:text-7xl md:text-8xl lg:text-[105px] font-bold mb-8 text-slate-900 leading-[0.95] tracking-tighter">
-      Безкомпромісна якість <br />
-      <span class="italic font-normal text-emerald-900/80">для ідеального коріння</span>
-    </h1>
+        <h1 class="animate-reveal delay-2 font-playfair text-5xl sm:text-7xl md:text-8xl lg:text-[105px] font-bold mb-8 text-white leading-[0.95] tracking-tighter drop-shadow-2xl">
+          Безкомпромісна якість <br />
+          <span class="italic font-normal text-emerald-300 drop-shadow-xl">для ідеального коріння</span>
+        </h1>
 
-    <p class="animate-reveal delay-3 text-base md:text-xl text-slate-800 max-w-2xl mx-auto mb-12 font-medium leading-relaxed tracking-tight">
-      Професійні безторф’яні субстрати, створені для тих, хто цінує здоров'я кожної клітини своєї колекції.
-    </p>
+        <p class="animate-reveal delay-3 text-base md:text-xl text-slate-200 max-w-2xl mx-auto mb-12 font-medium leading-relaxed tracking-tight drop-shadow-md">
+          Професійні безторф’яні субстрати, створені для тих, хто цінує здоров'я кожної клітини своєї колекції.
+        </p>
 
-    <div class="animate-reveal delay-3 flex justify-center">
-      <a href="#products" class="glass-premium group relative inline-flex items-center justify-center px-12 py-5 rounded-2xl transition-all duration-700 font-bold uppercase tracking-[0.3em] text-[11px] text-white bg-emerald-950/90 backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(6,78,59,0.35)] hover:bg-emerald-900 hover:px-14 active:scale-95">
-        <span class="relative z-10">Почати досвід</span>
-        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      </a>
-    </div>
-  </div>
-</header>
+        <div class="animate-reveal delay-3 flex justify-center">
+          <a href="#products" class="glass-premium group relative inline-flex items-center justify-center px-12 py-5 rounded-2xl transition-all duration-700 font-bold uppercase tracking-[0.3em] text-[11px] text-white bg-emerald-600/80 backdrop-blur-md border border-emerald-400/30 shadow-[0_15px_40px_rgba(4,120,87,0.4)] hover:bg-emerald-500 hover:shadow-[0_15px_50px_rgba(16,185,129,0.6)] hover:px-14 active:scale-95">
+            <span class="relative z-10">Почати досвід</span>
+            <div class="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+          </a>
+        </div>
+      </div>
+    </header>
 
     <section
       id="process"
@@ -1408,26 +1407,95 @@
     </footer>
 
     <script>
-      // Елементи управління Aero-меню
+    // Елементи управління Aero-меню та адаптивними кольорами
+      const nav = document.getElementById("main-nav");
+      const navTitle = document.getElementById("nav-title");
+      const navSubtitle = document.getElementById("nav-subtitle");
+      const navItems = document.querySelectorAll(".nav-item");
       const btn = document.getElementById("mobile-menu-btn");
       const menu = document.getElementById("mobile-menu");
-      const nav = document.getElementById("main-nav");
       const mobileLinks = document.querySelectorAll(".mobile-link");
 
       const roundingClasses = ["rounded-b-lg", "md:rounded-b-2xl"];
-      const borderClasses = ["border-b", "border-emerald-400/20"];
-      // Клас фону для кнопки, коли меню відкрите
-      const btnActiveClass = "bg-emerald-900/10";
+      const borderClasses = ["border-b", "border-white/30"];
 
+      // SVG іконки для стану меню
+      const iconHamburger = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
+      const iconClose = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+
+      // Функція зміни кольорів тексту та фону активної кнопки
+      function updateNavbarState() {
+        const isMenuOpen = menu.style.maxHeight === "400px";
+
+        if (window.scrollY > 50) {
+          // Темний текст для світлого фону сторінки
+          navTitle.classList.remove("text-white");
+          navTitle.classList.add("text-emerald-950");
+          
+          navSubtitle.classList.remove("text-emerald-300");
+          navSubtitle.classList.add("text-emerald-700");
+          
+          navItems.forEach(item => {
+            item.classList.remove("text-slate-200", "hover:text-white");
+            item.classList.add("text-slate-700", "hover:text-emerald-800");
+          });
+
+          mobileLinks.forEach(link => {
+            link.classList.remove("text-white", "hover:text-emerald-300", "hover:bg-white/10");
+            link.classList.add("text-slate-800", "hover:text-emerald-700", "hover:bg-emerald-900/5");
+          });
+
+          // Якщо меню зараз відкрите, змінюємо фон активної кнопки на "темний"
+          if (isMenuOpen) {
+            btn.classList.remove("bg-white/20");
+            btn.classList.add("bg-emerald-900/10");
+          }
+        } else {
+          // Світлий текст для темного фону Хіро-секції
+          navTitle.classList.add("text-white");
+          navTitle.classList.remove("text-emerald-950");
+          
+          navSubtitle.classList.add("text-emerald-300");
+          navSubtitle.classList.remove("text-emerald-700");
+          
+          navItems.forEach(item => {
+            item.classList.add("text-slate-200", "hover:text-white");
+            item.classList.remove("text-slate-700", "hover:text-emerald-800");
+          });
+
+          mobileLinks.forEach(link => {
+            link.classList.remove("text-slate-800", "hover:text-emerald-700", "hover:bg-emerald-900/5");
+            link.classList.add("text-white", "hover:text-emerald-300", "hover:bg-white/10");
+          });
+
+          // Якщо меню зараз відкрите, змінюємо фон активної кнопки на "світлий"
+          if (isMenuOpen) {
+            btn.classList.remove("bg-emerald-900/10");
+            btn.classList.add("bg-white/20");
+          }
+        }
+      }
+
+      // Відслідковуємо скрол
+      window.addEventListener("scroll", updateNavbarState);
+      updateNavbarState();
+
+      // Логіка кліку по кнопці меню
       btn.addEventListener("click", () => {
-        const isOpening =
-          menu.style.maxHeight === "0px" || menu.style.maxHeight === "";
+        const isOpening = menu.style.maxHeight === "0px" || menu.style.maxHeight === "";
 
         if (isOpening) {
           nav.classList.remove(...roundingClasses, ...borderClasses);
+          
+          // 1. Змінюємо іконку на хрестик
+          btn.innerHTML = iconClose;
 
-          // Додаємо фон кнопці при відкритті
-          btn.classList.add(btnActiveClass);
+          // 2. Підсвічуємо кнопку залежно від позиції скролу
+          if (window.scrollY > 50) {
+            btn.classList.add("bg-emerald-900/10");
+          } else {
+            btn.classList.add("bg-white/20");
+          }
 
           menu.style.maxHeight = "400px";
           menu.classList.remove("opacity-0");
@@ -1449,10 +1517,13 @@
 
       function closeMenu() {
         nav.classList.add(...roundingClasses, ...borderClasses);
-
-        // ПРИМУСОВО ВИДАЛЯЄМО ФОН КНОПКИ ПРИ ЗАКРИТТІ
-        btn.classList.remove(btnActiveClass);
-        btn.blur(); // Знімаємо фокус для надійності
+        
+        // 1. Повертаємо іконку гамбургера
+        btn.innerHTML = iconHamburger;
+        
+        // 2. Вимикаємо "натиснутий" фон
+        btn.classList.remove("bg-emerald-900/10", "bg-white/20");
+        btn.blur();
 
         menu.style.maxHeight = "0px";
         menu.classList.remove("opacity-100");
@@ -1464,11 +1535,6 @@
         });
       }
 
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", closeMenu);
-      });
-
-      // Закриття при кліку на будь-яке посилання
       mobileLinks.forEach((link) => {
         link.addEventListener("click", closeMenu);
       });
@@ -1625,3 +1691,4 @@
     </script>
   </body>
 </html>
+
