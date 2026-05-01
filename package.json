@@ -1,0 +1,24 @@
+{
+  "name": "forest-craft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FOREST-CRAFT-UA/FOREST-CRAFT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FOREST-CRAFT-UA/FOREST-CRAFT/issues"
+  },
+  "homepage": "https://github.com/FOREST-CRAFT-UA/FOREST-CRAFT#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "tailwindcss": "^4.2.4"
+  }
+}
