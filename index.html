@@ -285,28 +285,7 @@
   <body
     class="antialiased selection:bg-emerald-200 selection:text-emerald-900 w-full"
   >
-
-  <!-- ==========================================
-         Preloader (Стартовий екран)
-         ========================================== -->
-    <div 
-      id="preloader" 
-      class="fixed inset-0 z-[99999] bg-[#1a1714] flex flex-col items-center justify-center transition-all duration-1000 ease-in-out"
-    >
-      <div class="flex flex-col items-center gap-6 animate-pulse">
-        <!-- Логотип (робимо його світлим та монохромним для преміального вигляду) -->
-        <img 
-          src="https://forest-craft-ua.github.io/FOREST-CRAFT/pictures/logo_site.png" 
-          alt="Forest Craft Lab" 
-          class="h-16 w-16 md:h-20 md:w-20 object-contain opacity-80 grayscale brightness-200"
-        />
-        <!-- Координати -->
-        <span class="font-mono text-emerald-500/70 text-[10px] md:text-xs tracking-[0.4em]">
-          49°01'39.4"N 23°50'12.1"E
-        </span>
-      </div>
-    </div>
-
+  
     <nav
       id="main-nav"
       class="fixed w-full z-50 top-0 transition-all duration-500 bg-white/10 backdrop-blur-xl backdrop-saturate-150 border-b border-white/30 shadow-xl rounded-b-lg md:rounded-b-2xl overflow-hidden"
@@ -449,14 +428,12 @@
         id="main-hero-content"
         class="hero-content max-w-6xl mx-auto px-4 text-center transition-all duration-1000"
       >
-        <div
-          class="animate-reveal delay-1 inline-flex items-center gap-3 backdrop-blur-md bg-white/10 px-5 py-2 rounded-full border border-white/20 shadow-sm mb-10"
-        >
-          <span
-            class="text-white font-bold tracking-[0.35em] uppercase text-[9px] sm:text-[11px] drop-shadow-md"
-            >Сила лісу, активована наукою</span
-          >
-        </div>
+        <div class="animate-reveal delay-1 inline-flex items-center mb-10">
+  <span
+    class="text-white font-bold tracking-[0.35em] uppercase text-[9px] sm:text-[11px] drop-shadow-md"
+    >Сила лісу, активована наукою</span
+  >
+</div>
 
         <h1
           class="animate-reveal delay-2 font-playfair text-5xl sm:text-7xl md:text-8xl lg:text-[105px] font-bold mb-8 text-white leading-[0.95] tracking-tighter drop-shadow-2xl"
@@ -2056,9 +2033,9 @@
       });
 
       // Знаходимо всі важливі блоки на сайті для плавної появи
-      const elementsToReveal = document.querySelectorAll(
-        "section .text-center, #process .max-w-5xl > div, #about .overflow-x-auto, .product-card, .faq-item, #order-zone h2, #order-zone p, #order-zone a, footer .grid > div"
-      );
+     const elementsToReveal = document.querySelectorAll(
+  "section:not(#about) .text-center, #process .max-w-5xl > div, .product-card, .faq-item, #order-zone h2, #order-zone p, #order-zone a, footer .grid > div"
+);
       
       // Застосовуємо анімацію до знайдених елементів
       elementsToReveal.forEach((el) => {
@@ -2066,25 +2043,6 @@
         scrollObserver.observe(el);
       });
       
-      // ==========================================
-      // Логіка Прелоадера
-      // ==========================================
-      // window.addEventListener("load", ...) чекає, поки завантажаться ВСІ картинки та шрифти
-      window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader");
-        
-        // Даємо мінімальну затримку (500мс), щоб око встигло зафіксувати логотип
-        setTimeout(() => {
-          // Плавно розчиняємо прелоадер (додаємо прозорість і трохи збільшуємо масштаб для ефекту польоту)
-          preloader.classList.add("opacity-0", "scale-110");
-          preloader.classList.remove("bg-[#1a1714]");
-          
-          // Коли анімація зникнення завершиться (через 1000мс), повністю прибираємо блок
-          setTimeout(() => {
-            preloader.style.display = "none";
-          }, 1000);
-        }, 500);
-      });
     </script>
   </body>
 </html>
