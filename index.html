@@ -140,6 +140,50 @@
         z-index: 20;
       }
 
+/* ==========================================
+         Преміальна анімація появи в Hero
+         ========================================== */
+      @keyframes fadeUpReveal {
+        0% {
+          opacity: 0;
+          transform: translateY(40px); /* Текст починає рух трохи нижче */
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-reveal {
+        opacity: 0; /* Приховуємо елементи до початку анімації */
+        /* cubic-bezier(0.16, 1, 0.3, 1) створює той самий "дорогий" плавний ефект гальмування */
+        animation: fadeUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* Затримки для послідовної появи (Каскад) */
+      .delay-1 { animation-delay: 0.2s; }
+      .delay-2 { animation-delay: 0.5s; }
+      .delay-3 { animation-delay: 0.8s; }
+      .delay-4 { animation-delay: 1.1s; }
+
+      /* ==========================================
+         Focus Mode (Клікнуті координати)
+         ========================================== */
+      .overlay-layer {
+        transition: opacity 1s ease-in-out;
+      }
+      
+      /* Коли секція у фокусі - приховуємо тіні та градієнти */
+      #top.is-focused .overlay-layer {
+        opacity: 0 !important;
+      }
+
+      /* Приховуємо центральний текст, він "злітає" вгору і зникає */
+      #top.is-focused #main-hero-content {
+        opacity: 0;
+        transform: translateY(-30px);
+        pointer-events: none; /* Щоб на невидимі кнопки не можна було клікнути */
+      }
     </style>
 
     <script type="application/ld+json">
@@ -308,14 +352,14 @@
           <img src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Nature Texture">
         </div>
 
-        <div class="absolute inset-0 bg-black/40 z-10"></div>
-        
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-10"></div>
-        
-        <div class="absolute inset-0 bg-gradient-to-t from-[#fcfbf7] via-transparent to-transparent z-10 h-full"></div>
+        <!-- ДОДАНО КЛАС overlay-layer ДО ВСІХ ЗАТЕМНЕНЬ -->
+        <div class="absolute inset-0 bg-black/40 z-10 overlay-layer"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-10 overlay-layer"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#fcfbf7] via-transparent to-transparent z-10 h-full overlay-layer"></div>
       </div>
 
-      <div class="hero-content max-w-6xl mx-auto px-4 text-center">
+      <!-- ЗМІНЕНО: додано id "main-hero-content" для керування прозорістю -->
+      <div id="main-hero-content" class="hero-content max-w-6xl mx-auto px-4 text-center transition-all duration-1000">
         
         <div class="animate-reveal delay-1 inline-flex items-center gap-3 backdrop-blur-md bg-white/10 px-5 py-2 rounded-full border border-white/20 shadow-sm mb-10">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
@@ -331,15 +375,22 @@
           Професійні безторф’яні субстрати, створені для тих, хто цінує здоров'я кожної клітини своєї колекції.
         </p>
 
-        <div class="animate-reveal delay-3 flex justify-center">
+        <div class="animate-reveal delay-4 flex justify-center">
           <a href="#products" class="glass-premium group relative inline-flex items-center justify-center px-12 py-5 rounded-2xl transition-all duration-700 font-bold uppercase tracking-[0.3em] text-[11px] text-white bg-emerald-600/80 backdrop-blur-md border border-emerald-400/30 shadow-[0_15px_40px_rgba(4,120,87,0.4)] hover:bg-emerald-500 hover:shadow-[0_15px_50px_rgba(16,185,129,0.6)] hover:px-14 active:scale-95">
             <span class="relative z-10">Почати досвід</span>
             <div class="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
           </a>
         </div>
       </div>
-    </header>
 
+      <!-- НОВА КНОПКА КООРДИНАТ (знаходиться внизу екрана) -->
+      <button id="focus-btn" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group opacity-70 hover:opacity-100 transition-opacity duration-500">
+        <span id="focus-text" class="font-mono text-white text-[10px] tracking-[0.3em] transition-all duration-500">
+          49°01'39.4"N 23°50'12.1"E
+        </span>
+      </button>
+
+    </header>
     <section
       id="process"
       class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
@@ -1658,23 +1709,91 @@
         });
       }
 
-      // Логіка автоматичного слайдера для Hero
-      function initHeroSlider() {
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
+      // ==========================================
+      // Слайдер та Focus Mode (Координати)
+      // ==========================================
+      const slides = document.querySelectorAll('.hero-slide');
+      const focusBtn = document.getElementById('focus-btn');
+      const focusText = document.getElementById('focus-text');
+      const heroSection = document.getElementById('top');
+      
+      let currentSlide = 0;
+      let sliderInterval; 
+      let isFocused = false;
 
-        function nextSlide() {
-          slides[currentSlide].classList.remove('active');
-          currentSlide = (currentSlide + 1) % slides.length;
-          slides[currentSlide].classList.add('active');
+      // Функція перемикання слайдів
+      function nextSlide() {
+        // Ховаємо поточний слайд
+        slides[currentSlide].classList.remove('active');
+        
+        // Визначаємо наступний слайд
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Показуємо новий слайд
+        slides[currentSlide].classList.add('active');
+
+        // === НОВА ЛОГІКА ПОЯВИ КООРДИНАТ ===
+        if (currentSlide === 0) {
+          // Якщо це перше фото (Ліс) — плавно показуємо кнопку
+          focusBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+          focusBtn.classList.add('opacity-70');
+        } else {
+          // На всіх інших фото — плавно ховаємо кнопку і вимикаємо клік
+          focusBtn.classList.remove('opacity-70', 'opacity-100');
+          focusBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
         }
-
-        // Зміна слайда кожні 6 секунд
-        setInterval(nextSlide, 6000);
       }
 
-      // Запуск слайдера після завантаження
-      document.addEventListener('DOMContentLoaded', initHeroSlider);
+      function startSlider() {
+        sliderInterval = setInterval(nextSlide, 6000);
+      }
+
+      function stopSlider() {
+        clearInterval(sliderInterval);
+      }
+
+      // Запускаємо при завантаженні сторінки
+      startSlider();
+
+      // Логіка натискання на координати
+      focusBtn.addEventListener('click', () => {
+        isFocused = !isFocused;
+
+        if (isFocused) {
+          // ВМИКАЄМО РЕЖИМ СПОГЛЯДАННЯ
+          stopSlider(); 
+          heroSection.classList.add('is-focused');
+          
+          // Робимо саму кнопку на 100% непрозорою, поки ми в цьому режимі
+          focusBtn.classList.replace('opacity-70', 'opacity-100'); 
+          
+          // Змінюємо текст і стиль
+          focusText.style.opacity = '0';
+          setTimeout(() => {
+            focusText.innerText = "ТУТ ВСЕ ПОЧИНАЄТЬСЯ";
+            focusText.classList.remove('font-mono', 'tracking-[0.3em]');
+            focusText.classList.add('font-playfair', 'tracking-[0.1em]', 'text-xs', 'italic');
+            focusText.style.opacity = '1';
+          }, 250);
+
+        } else {
+          // ПОВЕРТАЄМОСЯ В НОРМАЛЬНИЙ РЕЖИМ
+          startSlider(); 
+          heroSection.classList.remove('is-focused');
+          
+          // Повертаємо базову прозорість кнопці
+          focusBtn.classList.replace('opacity-100', 'opacity-70'); 
+          
+          // Повертаємо координати
+          focusText.style.opacity = '0';
+          setTimeout(() => {
+            focusText.innerText = "49°01'39.4\"N 23°50'12.1\"E"; // Ваші координати
+            focusText.classList.add('font-mono', 'tracking-[0.3em]');
+            focusText.classList.remove('font-playfair', 'tracking-[0.1em]', 'text-xs', 'italic');
+            focusText.style.opacity = '1';
+          }, 250);
+        }
+      });
     </script>
   </body>
 </html>
