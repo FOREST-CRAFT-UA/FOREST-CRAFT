@@ -194,100 +194,6 @@
         transform: translateY(-30px);
         pointer-events: none; /* Щоб на невидимі кнопки не можна було клікнути */
       }
-
-      /* ==========================================
-         Преміальні скрол-анімації
-         ========================================== */
-
-      /* 1. Blur In (для текстів) */
-      .reveal-blur {
-        opacity: 0;
-        filter: blur(10px);
-        transform: translateY(20px);
-        transition:
-          opacity 0.2s ease-out,
-          filter 0.2s ease-out,
-          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-blur.is-visible {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateY(0);
-      }
-
-      /* 2. Curtain Reveal (завіса для фотографій) */
-      .reveal-curtain {
-        position: relative;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(20px);
-        transition:
-          opacity 0.5s ease,
-          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-curtain.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      /* Сама "шторка" кольору фону сайту */
-      .reveal-curtain::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: #fcfbf7; /* Колір фону вашого сайту */
-        transform-origin: top;
-        transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
-        transition-delay: 0.2s; /* Легка затримка після появи */
-        z-index: 10;
-      }
-      .reveal-curtain.is-visible::after {
-        transform: scaleY(0);
-      }
-
-      /* 3. Staggered Cascade (каскад для карток і кнопок) */
-      .reveal-fade-up {
-        opacity: 0;
-        transform: translateY(40px);
-        transition:
-          opacity 0.2s ease,
-          transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-fade-up.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      /* Класи для створення "драбинки" */
-      .delay-step-1 {
-        transition-delay: 0.05s;
-      }
-      .delay-step-2 {
-        transition-delay: 0.1s;
-      }
-      .delay-step-3 {
-        transition-delay: 0.15s;
-      }
-      /* ==========================================
-         Slow Scale Reveal (для фотографій)
-         ========================================== */
-      .reveal-scale-wrapper {
-        /* Обгортка має обрізати все, що виходить за її межі під час збільшення */
-        overflow: hidden;
-      }
-
-      .reveal-scale-img {
-        opacity: 0;
-        transform: scale(1.15); /* Фотографію на старті збільшено на 15% */
-        /* Плавний перехід: прозорість з'являється швидше, а масштаб довго "сідає" на місце */
-        transition:
-          opacity 1s ease-out,
-          transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      /* Коли скрипт бачить обгортку, він дає команду картинці всередині */
-      .reveal-scale-wrapper.is-visible .reveal-scale-img {
-        opacity: 1;
-        transform: scale(1); /* Фото стає нормального розміру */
-      }
     </style>
 
     <script type="application/ld+json">
@@ -546,16 +452,16 @@
       >
         <div class="text-center mb-16 md:mb-20">
           <span
-            class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block reveal-blur delay-step-1"
+            class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block"
             >Manufacturing Protocol</span
           >
           <h2
-            class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6 reveal-blur delay-step-2"
+            class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6"
           >
             Від сировини до біо-активного субстрату
           </h2>
           <p
-            class="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto reveal-blur delay-step-3"
+            class="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
           >
             Ми не просто змішуємо інгредієнти. Ми готуємо кожен компонент на
             молекулярному та біологічному рівнях, щоб ви отримали передбачуваний
@@ -564,54 +470,40 @@
         </div>
 
         <div class="relative space-y-12 md:space-y-20 max-w-5xl mx-auto">
-          <!-- КРОК 1 -->
           <div
             class="relative flex flex-col md:flex-row items-center md:justify-between group"
           >
-            <!-- Фото десктоп -->
             <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <div
-                class="reveal-scale-wrapper w-full h-64 lg:h-80 rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Кора"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Кора"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
             </div>
-
             <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
               <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden reveal-blur delay-step-1"
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >01</span
               >
-              <!-- Фото мобайл -->
-              <div
-                class="reveal-scale-wrapper md:hidden w-full h-56 rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Кора"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Кора"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur delay-step-1"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
               >
                 Гідротермічна підготовка кори
               </h3>
               <p
-                class="text-slate-600 text-sm leading-relaxed text-justify mb-2 reveal-blur delay-step-2"
+                class="text-slate-600 text-sm leading-relaxed text-justify mb-2"
               >
                 Замість звичайної сухої кори ми використовуємо
                 <strong>екстракцію виварюванням</strong>.
               </p>
-              <p
-                class="text-slate-600 text-sm leading-relaxed text-justify reveal-blur delay-step-3"
-              >
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
                 Тривала термічна обробка розм'якшує важкий лігнін і вимиває
                 зайві смоли та дубильні речовини, які в сирому стані пригнічують
                 ріст коріння. Ви отримуєте чистий «дихаючий» каркас.
@@ -619,49 +511,37 @@
             </div>
           </div>
 
-          <!-- КРОК 2 -->
           <div
             class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
           >
-            <!-- Фото десктоп -->
             <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <div
-                class="reveal-scale-wrapper w-full h-64 lg:h-80 rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Опад"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Опад"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
             </div>
-
             <div
               class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
             >
               <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden reveal-blur delay-step-1"
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >02</span
               >
-              <!-- Фото мобайл -->
-              <div
-                class="reveal-scale-wrapper md:hidden w-full h-56 rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Опад"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Опад"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur delay-step-1"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
               >
                 Азотна стабілізація опаду
               </h3>
               <p
-                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify reveal-blur delay-step-2"
+                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify"
               >
                 Будь-яка лісова органіка при розкладанні забирає азот із ґрунту.
                 Ми запобігаємо цьому шляхом
@@ -672,48 +552,34 @@
             </div>
           </div>
 
-          <!-- КРОК 3 -->
           <div
             class="relative flex flex-col md:flex-row items-center md:justify-between group"
           >
-            <!-- Фото десктоп -->
             <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <div
-                class="reveal-scale-wrapper w-full h-64 lg:h-80 rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Мох"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Мох"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
             </div>
-
             <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
               <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden reveal-blur delay-step-1"
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >03</span
               >
-              <!-- Фото мобайл -->
-              <div
-                class="reveal-scale-wrapper md:hidden w-full h-56 rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Мох"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Мох"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur delay-step-1"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
               >
                 Термічна стерилізація моху
               </h3>
-              <p
-                class="text-slate-600 text-sm leading-relaxed text-justify reveal-blur delay-step-2"
-              >
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
                 Мох Sphagnum — ідеальний акумулятор вологи, але він часто
                 приховує личинки шкідників. Ми застосовуємо метод
                 <strong>керованого термічного шоку</strong> (обробка окропом).
@@ -723,49 +589,37 @@
             </div>
           </div>
 
-          <!-- КРОК 4 -->
           <div
             class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
           >
-            <!-- Фото десктоп -->
             <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <div
-                class="reveal-scale-wrapper w-full h-64 lg:h-80 rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Вугілля"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Вугілля"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
             </div>
-
             <div
               class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
             >
               <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden reveal-blur delay-step-1"
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >04</span
               >
-              <!-- Фото мобайл -->
-              <div
-                class="reveal-scale-wrapper md:hidden w-full h-56 rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Вугілля"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Вугілля"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur delay-step-1"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
               >
                 Реторний піроліз вугілля
               </h3>
               <p
-                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify reveal-blur delay-step-2"
+                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify"
               >
                 Замість звичайного паливного вугілля ми використовуємо
                 <strong>крафтовий піролізат дуба</strong>. Випалювання при 450°C
@@ -776,48 +630,34 @@
             </div>
           </div>
 
-          <!-- КРОК 5 -->
           <div
             class="relative flex flex-col md:flex-row items-center md:justify-between group"
           >
-            <!-- Фото десктоп -->
             <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <div
-                class="reveal-scale-wrapper w-full h-64 lg:h-80 rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Цеоліт"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Цеоліт"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
+              />
             </div>
-
             <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
               <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden reveal-blur delay-step-1"
+                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >05</span
               >
-              <!-- Фото мобайл -->
-              <div
-                class="reveal-scale-wrapper md:hidden w-full h-56 rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Цеоліт"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Цеоліт"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
+              />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur delay-step-1"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
               >
                 Активація іонообмінного буфера
               </h3>
-              <p
-                class="text-slate-600 text-sm leading-relaxed text-justify reveal-blur delay-step-2"
-              >
+              <p class="text-slate-600 text-sm leading-relaxed text-justify">
                 Ми використовуємо активований мінерал — цеоліт. Він проходить
                 <strong>багаторазову деспірацію</strong> (промивання від
                 мікропилу) та термічну сушку. Це дозволяє йому працювати як
@@ -827,49 +667,37 @@
             </div>
           </div>
 
-          <!-- КРОК 6 -->
           <div
             class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
           >
-            <!-- Фото десктоп -->
             <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <div
-                class="reveal-scale-wrapper w-full h-64 lg:h-80 rounded-2xl shadow-md border border-emerald-500/50 group-hover:shadow-lg transition-all duration-300"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Мікробіом"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Мікробіом"
+                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-500/50 group-hover:shadow-lg transition-all duration-300"
+              />
             </div>
-
             <div
               class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
             >
               <span
-                class="text-emerald-600 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden reveal-blur delay-step-1"
+                class="text-emerald-600 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >06</span
               >
-              <!-- Фото мобайл -->
-              <div
-                class="reveal-scale-wrapper md:hidden w-full h-56 rounded-2xl mb-5 shadow-sm border border-emerald-500/50 mt-4"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
-                  loading="lazy"
-                  alt="Мікробіом"
-                  class="reveal-scale-img w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
+                loading="lazy"
+                alt="Мікробіом"
+                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-500/50 mt-4"
+              />
               <h3
-                class="font-bold text-emerald-800 text-xl mb-3 uppercase tracking-wide reveal-blur delay-step-1"
+                class="font-bold text-emerald-800 text-xl mb-3 uppercase tracking-wide"
               >
                 Біо-інокуляція (Biological Shield)
               </h3>
               <div
-                class="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl shadow-sm text-justify md:text-right reveal-blur delay-step-2"
+                class="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl shadow-sm text-justify md:text-right"
               >
                 <p class="text-slate-700 text-sm leading-relaxed">
                   Фінальний і найскладніший крок. Кожна порція субстрату
@@ -897,16 +725,16 @@
         <div class="max-w-5xl mx-auto w-full">
           <div class="text-center mb-12">
             <span
-              class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block reveal-blur"
+              class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block"
               >Quality Control</span
             >
             <h2
-              class="font-playfair text-3xl md:text-4xl font-bold text-slate-900 mb-4 reveal-blur"
+              class="font-playfair text-3xl md:text-4xl font-bold text-slate-900 mb-4"
             >
               Лабораторний паспорт
             </h2>
             <p
-              class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto reveal-blur"
+              class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto"
             >
               Кожна партія субстрату проходить фізико-хімічний контроль. Ми
               гарантуємо стабільність показників, які є критичними для здоров'я
@@ -915,7 +743,7 @@
           </div>
 
           <div
-            class="flex justify-end items-center gap-2 mb-3 md:hidden text-[10px] font-bold uppercase tracking-widest text-emerald-500 animate-pulse reveal-blur"
+            class="flex justify-end items-center gap-2 mb-3 md:hidden text-[10px] font-bold uppercase tracking-widest text-emerald-500 animate-pulse"
           >
             <span>Свайпніть таблицю</span>
             <svg
@@ -933,7 +761,7 @@
             </svg>
           </div>
 
-          <div class="relative reveal-fade-up delay-step-1">
+          <div class="relative">
             <div
               class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none md:hidden z-10 rounded-r-2xl"
             ></div>
@@ -1110,7 +938,7 @@
             </div>
           </div>
 
-          <div class="mt-4 text-right reveal-fade-up delay-step-2">
+          <div class="mt-4 text-right">
             <span
               class="text-[10px] uppercase tracking-widest text-slate-400 font-bold"
               >* Дані отримані на основі контрольних замірів Forest Craft
@@ -1129,30 +957,26 @@
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto"
       >
         <div class="max-w-6xl mx-auto w-full">
-          <!-- ЗАГОЛОВКИ (BLUR CASCADING) -->
           <div class="text-center mb-12 md:mb-16">
             <span
-              class="reveal-blur delay-step-1 text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block"
+              class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block"
               >Каталог субстратів</span
             >
             <h2
-              class="reveal-blur delay-step-2 font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4"
+              class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-4"
             >
               Оберіть свій ідеальний мікс
             </h2>
-            <p
-              class="reveal-blur delay-step-3 text-slate-500 max-w-2xl mx-auto text-base md:text-lg"
-            >
+            <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">
               Оптимальні рішення для професійного вирощування колекційних
               рослин.
             </p>
           </div>
 
-          <!-- КАРТКИ (FADE UP CASCADING) -->
           <div class="grid md:grid-cols-2 gap-8 md:gap-10">
             <!-- Картка JUNIOR MIX -->
-            <div class="relative h-full reveal-fade-up delay-step-1">
-              <!-- ПОВЕРНУТО НЕОНОВУ ТІНЬ ТА ЗЕЛЕНИЙ БОРДЕР -->
+            <div class="relative h-full">
+              <!-- ЗМІНЕНО: rgba(16,185,129,0.75) для hover та is-active -->
               <div
                 class="product-card bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(52,211,153,0.35)] hover:shadow-[0_0_60px_rgba(16,185,129,0.75)] [&.is-active]:shadow-[0_0_60px_rgba(16,185,129,0.75)] transition-shadow duration-500 border border-emerald-100 flex flex-col h-full group relative z-10"
               >
@@ -1164,7 +988,7 @@
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div
-                    class="absolute top-4 left-4 bg-emerald-700/90 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md"
+                    class="absolute top-4 left-4 bg-emerald-700 text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md"
                   >
                     Фракція 8 - 15 мм
                   </div>
@@ -1230,7 +1054,7 @@
 
                   <button
                     onclick="selectProduct('Junior Mix')"
-                    class="w-full bg-emerald-700 text-white py-4 rounded-xl hover:bg-emerald-800 transition-all font-bold text-sm tracking-widest uppercase shadow-md hover:shadow-lg"
+                    class="w-full bg-emerald-700 text-white py-4 rounded-xl hover:bg-emerald-800 transition-all font-bold text-sm tracking-widest uppercase shadow-lg"
                   >
                     Замовити Junior Mix
                   </button>
@@ -1239,8 +1063,8 @@
             </div>
 
             <!-- Картка ADULT MIX -->
-            <div class="relative h-full reveal-fade-up delay-step-2">
-              <!-- ПОВЕРНУТО НЕОНОВУ ТІНЬ ТА ПОМАРАНЧЕВИЙ БОРДЕР -->
+            <div class="relative h-full">
+              <!-- Оранжевий залишається як був, бо він і так інтенсивний -->
               <div
                 class="product-card bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(251,146,60,0.3)] hover:shadow-[0_0_60px_rgba(234,88,12,0.5)] [&.is-active]:shadow-[0_0_60px_rgba(234,88,12,0.5)] transition-shadow duration-500 border border-orange-100 flex flex-col h-full group relative z-10"
               >
@@ -1252,7 +1076,7 @@
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div
-                    class="absolute top-4 left-4 bg-[#744210]/90 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md"
+                    class="absolute top-4 left-4 bg-[#744210] text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md"
                   >
                     Фракція 15 - 25 мм
                   </div>
@@ -1317,7 +1141,7 @@
 
                   <button
                     onclick="selectProduct('Adult Mix')"
-                    class="w-full bg-[#744210] text-white py-4 rounded-xl hover:bg-[#59320c] transition-all font-bold text-sm tracking-widest uppercase shadow-md hover:shadow-lg"
+                    class="w-full bg-[#744210] text-white py-4 rounded-xl hover:bg-[#59320c] transition-all font-bold text-sm tracking-widest uppercase shadow-lg"
                   >
                     Замовити Adult Mix
                   </button>
@@ -1600,7 +1424,7 @@
       </div>
     </section>
 
-    <footer class="bg-[#1a1714] py-16 border-t border-white/5">
+   <footer class="bg-[#1a1714] py-16 border-t border-white/5">
       <div
         class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center"
       >
@@ -2062,31 +1886,6 @@
           }, 250);
         }
       });
-
-      // ==========================================
-      // Універсальний Scroll Observer для преміум-анімацій
-      // ==========================================
-      const revealElements = document.querySelectorAll(
-        ".reveal-blur, .reveal-curtain, .reveal-fade-up, .reveal-scale-wrapper",
-      );
-
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target); // Робимо анімацію лише один раз (при першому скролі)
-            }
-          });
-        },
-        {
-          root: null,
-          threshold: 0.15, // Анімація стартує, коли видно 15% елемента
-          rootMargin: "0px 0px -50px 0px",
-        },
-      );
-
-      revealElements.forEach((el) => revealObserver.observe(el));
     </script>
   </body>
 </html>
