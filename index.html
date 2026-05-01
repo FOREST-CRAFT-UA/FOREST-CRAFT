@@ -125,7 +125,9 @@
         position: absolute;
         inset: 0;
         opacity: 0;
-        transition: opacity 1.5s ease-in-out, transform 8s linear;
+        transition:
+          opacity 1.5s ease-in-out,
+          transform 8s linear;
         z-index: 0;
       }
 
@@ -140,7 +142,7 @@
         z-index: 20;
       }
 
-/* ==========================================
+      /* ==========================================
          Преміальна анімація появи в Hero
          ========================================== */
       @keyframes fadeUpReveal {
@@ -161,10 +163,18 @@
       }
 
       /* Затримки для послідовної появи (Каскад) */
-      .delay-1 { animation-delay: 0.2s; }
-      .delay-2 { animation-delay: 0.5s; }
-      .delay-3 { animation-delay: 0.8s; }
-      .delay-4 { animation-delay: 1.1s; }
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+      .delay-2 {
+        animation-delay: 0.5s;
+      }
+      .delay-3 {
+        animation-delay: 0.8s;
+      }
+      .delay-4 {
+        animation-delay: 1.1s;
+      }
 
       /* ==========================================
          Focus Mode (Клікнуті координати)
@@ -172,7 +182,7 @@
       .overlay-layer {
         transition: opacity 1s ease-in-out;
       }
-      
+
       /* Коли секція у фокусі - приховуємо тіні та градієнти */
       #top.is-focused .overlay-layer {
         opacity: 0 !important;
@@ -240,7 +250,7 @@
   <body
     class="antialiased selection:bg-emerald-200 selection:text-emerald-900 w-full"
   >
-   <nav
+    <nav
       id="main-nav"
       class="fixed w-full z-50 top-0 transition-all duration-500 bg-white/10 backdrop-blur-xl backdrop-saturate-150 border-b border-white/30 shadow-xl rounded-b-lg md:rounded-b-2xl overflow-hidden"
       style="
@@ -340,62 +350,106 @@
       </div>
     </nav>
 
-   <header id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1a1714]">
+    <header
+      id="top"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1a1714]"
+    >
       <div id="hero-slider" class="absolute inset-0">
         <div class="hero-slide active">
-          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Forest">
+          <img
+            src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop"
+            class="w-full h-full object-cover"
+            alt="Forest"
+          />
         </div>
         <div class="hero-slide">
-          <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Monstera Close-up">
+          <img
+            src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=2000&auto=format&fit=crop"
+            class="w-full h-full object-cover"
+            alt="Monstera Close-up"
+          />
         </div>
         <div class="hero-slide">
-          <img src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Nature Texture">
+          <img
+            src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=2000&auto=format&fit=crop"
+            class="w-full h-full object-cover"
+            alt="Nature Texture"
+          />
         </div>
 
         <!-- ДОДАНО КЛАС overlay-layer ДО ВСІХ ЗАТЕМНЕНЬ -->
         <div class="absolute inset-0 bg-black/40 z-10 overlay-layer"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-10 overlay-layer"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#fcfbf7] via-transparent to-transparent z-10 h-full overlay-layer"></div>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-10 overlay-layer"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[#fcfbf7] via-transparent to-transparent z-10 h-full overlay-layer"
+        ></div>
       </div>
 
       <!-- ЗМІНЕНО: додано id "main-hero-content" для керування прозорістю -->
-      <div id="main-hero-content" class="hero-content max-w-6xl mx-auto px-4 text-center transition-all duration-1000">
-        
-        <div class="animate-reveal delay-1 inline-flex items-center gap-3 backdrop-blur-md bg-white/10 px-5 py-2 rounded-full border border-white/20 shadow-sm mb-10">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
-          <span class="text-white font-bold tracking-[0.35em] uppercase text-[9px] sm:text-[11px] drop-shadow-md">Сила лісу, активована наукою</span>
+      <div
+        id="main-hero-content"
+        class="hero-content max-w-6xl mx-auto px-4 text-center transition-all duration-1000"
+      >
+        <div
+          class="animate-reveal delay-1 inline-flex items-center gap-3 backdrop-blur-md bg-white/10 px-5 py-2 rounded-full border border-white/20 shadow-sm mb-10"
+        >
+          <span
+            class="text-white font-bold tracking-[0.35em] uppercase text-[9px] sm:text-[11px] drop-shadow-md"
+            >Сила лісу, активована наукою</span
+          >
         </div>
 
-        <h1 class="animate-reveal delay-2 font-playfair text-5xl sm:text-7xl md:text-8xl lg:text-[105px] font-bold mb-8 text-white leading-[0.95] tracking-tighter drop-shadow-2xl">
+        <h1
+          class="animate-reveal delay-2 font-playfair text-5xl sm:text-7xl md:text-8xl lg:text-[105px] font-bold mb-8 text-white leading-[0.95] tracking-tighter drop-shadow-2xl"
+        >
           Безкомпромісна якість <br />
-          <span class="italic font-normal text-emerald-300 drop-shadow-xl">для ідеального коріння</span>
+          <span class="italic font-normal text-emerald-300 drop-shadow-xl"
+            >для ідеального коріння</span
+          >
         </h1>
 
-        <p class="animate-reveal delay-3 text-base md:text-xl text-slate-200 max-w-2xl mx-auto mb-12 font-medium leading-relaxed tracking-tight drop-shadow-md">
-          Професійні безторф’яні субстрати, створені для тих, хто цінує здоров'я кожної клітини своєї колекції.
+        <p
+          class="animate-reveal delay-3 text-base md:text-xl text-slate-200 max-w-2xl mx-auto mb-12 font-medium leading-relaxed tracking-tight drop-shadow-md"
+        >
+          Професійні безторф’яні субстрати, створені для тих, хто цінує здоров'я
+          кожної клітини своєї колекції.
         </p>
 
         <div class="animate-reveal delay-4 flex justify-center">
-          <a href="#products" class="glass-premium group relative inline-flex items-center justify-center px-12 py-5 rounded-2xl transition-all duration-700 font-bold uppercase tracking-[0.3em] text-[11px] text-white bg-emerald-600/80 backdrop-blur-md border border-emerald-400/30 shadow-[0_15px_40px_rgba(4,120,87,0.4)] hover:bg-emerald-500 hover:shadow-[0_15px_50px_rgba(16,185,129,0.6)] hover:px-14 active:scale-95">
+          <a
+            href="#products"
+            class="glass-premium group relative inline-flex items-center justify-center px-12 py-5 rounded-2xl transition-all duration-700 font-bold uppercase tracking-[0.3em] text-[11px] text-white bg-emerald-600/80 backdrop-blur-md border border-emerald-400/30 shadow-[0_15px_40px_rgba(4,120,87,0.4)] hover:bg-emerald-500 hover:shadow-[0_15px_50px_rgba(16,185,129,0.6)] hover:px-14 active:scale-95"
+          >
             <span class="relative z-10">Почати досвід</span>
-            <div class="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+            ></div>
           </a>
         </div>
       </div>
 
       <!-- НОВА КНОПКА КООРДИНАТ (знаходиться внизу екрана) -->
-      <button id="focus-btn" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group opacity-70 hover:opacity-100 transition-opacity duration-500">
-        <span id="focus-text" class="font-mono text-white text-[10px] tracking-[0.3em] transition-all duration-500">
+      <button
+        id="focus-btn"
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group opacity-70 hover:opacity-100 transition-opacity duration-500"
+      >
+        <span
+          id="focus-text"
+          class="font-mono text-white text-[10px] tracking-[0.3em] transition-all duration-500"
+        >
           49°01'39.4"N 23°50'12.1"E
         </span>
       </button>
-
     </header>
     <section
       id="process"
       class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto"
+      >
         <div class="text-center mb-16 md:mb-20">
           <span
             class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block"
@@ -665,7 +719,9 @@
       id="about"
       class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto"
+      >
         <div class="max-w-5xl mx-auto w-full">
           <div class="text-center mb-12">
             <span
@@ -897,7 +953,9 @@
       id="products"
       class="scroll-mt-0 py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto"
+      >
         <div class="max-w-6xl mx-auto w-full">
           <div class="text-center mb-12 md:mb-16">
             <span
@@ -1443,7 +1501,7 @@
     </footer>
 
     <script>
-    // ==========================================
+      // ==========================================
       // Елементи управління Aero-меню та адаптивними кольорами
       // ==========================================
       const nav = document.getElementById("main-nav");
@@ -1460,7 +1518,7 @@
       // Розумна перевірка: чи наїхала біла секція на нашу шапку?
       // window.innerHeight - це висота екрану пристрою. 80 - висота самої шапки в пікселях.
       function isPastHeroSection() {
-        return window.scrollY > (window.innerHeight - 80);
+        return window.scrollY > window.innerHeight - 80;
       }
 
       // Головна функція, яка керує кольорами
@@ -1471,18 +1529,26 @@
           // 1. Темний текст (шапка виїхала на світлий фон)
           navTitle.classList.remove("text-white");
           navTitle.classList.add("text-emerald-950");
-          
+
           navSubtitle.classList.remove("text-emerald-300");
           navSubtitle.classList.add("text-emerald-700");
-          
-          navItems.forEach(item => {
+
+          navItems.forEach((item) => {
             item.classList.remove("text-slate-200", "hover:text-white");
             item.classList.add("text-slate-700", "hover:text-emerald-800");
           });
 
-          mobileLinks.forEach(link => {
-            link.classList.remove("text-white", "hover:text-emerald-300", "hover:bg-white/10");
-            link.classList.add("text-slate-800", "hover:text-emerald-700", "hover:bg-emerald-900/5");
+          mobileLinks.forEach((link) => {
+            link.classList.remove(
+              "text-white",
+              "hover:text-emerald-300",
+              "hover:bg-white/10",
+            );
+            link.classList.add(
+              "text-slate-800",
+              "hover:text-emerald-700",
+              "hover:bg-emerald-900/5",
+            );
           });
 
           // Якщо меню відкрите на світлому фоні — кнопка темнішає
@@ -1494,18 +1560,26 @@
           // 2. Світлий текст (шапка досі знаходиться на темному лісі)
           navTitle.classList.add("text-white");
           navTitle.classList.remove("text-emerald-950");
-          
+
           navSubtitle.classList.add("text-emerald-300");
           navSubtitle.classList.remove("text-emerald-700");
-          
-          navItems.forEach(item => {
+
+          navItems.forEach((item) => {
             item.classList.add("text-slate-200", "hover:text-white");
             item.classList.remove("text-slate-700", "hover:text-emerald-800");
           });
 
-          mobileLinks.forEach(link => {
-            link.classList.remove("text-slate-800", "hover:text-emerald-700", "hover:bg-emerald-900/5");
-            link.classList.add("text-white", "hover:text-emerald-300", "hover:bg-white/10");
+          mobileLinks.forEach((link) => {
+            link.classList.remove(
+              "text-slate-800",
+              "hover:text-emerald-700",
+              "hover:bg-emerald-900/5",
+            );
+            link.classList.add(
+              "text-white",
+              "hover:text-emerald-300",
+              "hover:bg-white/10",
+            );
           });
 
           // Якщо меню відкрите на фоні лісу — кнопка стає білуватою
@@ -1518,17 +1592,18 @@
 
       // Відслідковуємо скрол
       window.addEventListener("scroll", updateNavbarState);
-      
+
       // Запускаємо одразу
       updateNavbarState();
 
       // Логіка кліку по гамбургеру
       btn.addEventListener("click", () => {
-        const isOpening = menu.style.maxHeight === "0px" || menu.style.maxHeight === "";
+        const isOpening =
+          menu.style.maxHeight === "0px" || menu.style.maxHeight === "";
 
         if (isOpening) {
           nav.classList.remove(...roundingClasses, ...borderClasses);
-          
+
           // Підсвічуємо кнопку правильно, залежно від того, де ми відкриваємо меню
           if (isPastHeroSection()) {
             btn.classList.add("bg-emerald-900/10");
@@ -1548,7 +1623,7 @@
                 link.classList.remove("opacity-0", "translate-y-4");
                 link.classList.add("opacity-100", "translate-y-0");
               },
-              100 * (index + 1)
+              100 * (index + 1),
             );
           });
         } else {
@@ -1559,7 +1634,7 @@
       // Логіка закриття меню
       function closeMenu() {
         nav.classList.add(...roundingClasses, ...borderClasses);
-        
+
         btn.classList.remove("bg-emerald-900/10", "bg-white/20");
         btn.blur();
 
@@ -1712,35 +1787,43 @@
       // ==========================================
       // Слайдер та Focus Mode (Координати)
       // ==========================================
-      const slides = document.querySelectorAll('.hero-slide');
-      const focusBtn = document.getElementById('focus-btn');
-      const focusText = document.getElementById('focus-text');
-      const heroSection = document.getElementById('top');
-      
+      const slides = document.querySelectorAll(".hero-slide");
+      const focusBtn = document.getElementById("focus-btn");
+      const focusText = document.getElementById("focus-text");
+      const heroSection = document.getElementById("top");
+
       let currentSlide = 0;
-      let sliderInterval; 
+      let sliderInterval;
       let isFocused = false;
 
       // Функція перемикання слайдів
       function nextSlide() {
         // Ховаємо поточний слайд
-        slides[currentSlide].classList.remove('active');
-        
+        slides[currentSlide].classList.remove("active");
+
         // Визначаємо наступний слайд
         currentSlide = (currentSlide + 1) % slides.length;
-        
+
         // Показуємо новий слайд
-        slides[currentSlide].classList.add('active');
+        slides[currentSlide].classList.add("active");
 
         // === НОВА ЛОГІКА ПОЯВИ КООРДИНАТ ===
         if (currentSlide === 0) {
           // Якщо це перше фото (Ліс) — плавно показуємо кнопку
-          focusBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-          focusBtn.classList.add('opacity-70');
+          focusBtn.classList.remove(
+            "opacity-0",
+            "pointer-events-none",
+            "translate-y-4",
+          );
+          focusBtn.classList.add("opacity-70");
         } else {
           // На всіх інших фото — плавно ховаємо кнопку і вимикаємо клік
-          focusBtn.classList.remove('opacity-70', 'opacity-100');
-          focusBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+          focusBtn.classList.remove("opacity-70", "opacity-100");
+          focusBtn.classList.add(
+            "opacity-0",
+            "pointer-events-none",
+            "translate-y-4",
+          );
         }
       }
 
@@ -1756,45 +1839,53 @@
       startSlider();
 
       // Логіка натискання на координати
-      focusBtn.addEventListener('click', () => {
+      focusBtn.addEventListener("click", () => {
         isFocused = !isFocused;
 
         if (isFocused) {
           // ВМИКАЄМО РЕЖИМ СПОГЛЯДАННЯ
-          stopSlider(); 
-          heroSection.classList.add('is-focused');
-          
+          stopSlider();
+          heroSection.classList.add("is-focused");
+
           // Робимо саму кнопку на 100% непрозорою, поки ми в цьому режимі
-          focusBtn.classList.replace('opacity-70', 'opacity-100'); 
-          
+          focusBtn.classList.replace("opacity-70", "opacity-100");
+
           // Змінюємо текст і стиль
-          focusText.style.opacity = '0';
+          focusText.style.opacity = "0";
           setTimeout(() => {
             focusText.innerText = "ТУТ ВСЕ ПОЧИНАЄТЬСЯ";
-            focusText.classList.remove('font-mono', 'tracking-[0.3em]');
-            focusText.classList.add('font-playfair', 'tracking-[0.1em]', 'text-xs', 'italic');
-            focusText.style.opacity = '1';
+            focusText.classList.remove("font-mono", "tracking-[0.3em]");
+            focusText.classList.add(
+              "font-playfair",
+              "tracking-[0.1em]",
+              "text-xs",
+              "italic",
+            );
+            focusText.style.opacity = "1";
           }, 250);
-
         } else {
           // ПОВЕРТАЄМОСЯ В НОРМАЛЬНИЙ РЕЖИМ
-          startSlider(); 
-          heroSection.classList.remove('is-focused');
-          
+          startSlider();
+          heroSection.classList.remove("is-focused");
+
           // Повертаємо базову прозорість кнопці
-          focusBtn.classList.replace('opacity-100', 'opacity-70'); 
-          
+          focusBtn.classList.replace("opacity-100", "opacity-70");
+
           // Повертаємо координати
-          focusText.style.opacity = '0';
+          focusText.style.opacity = "0";
           setTimeout(() => {
             focusText.innerText = "49°01'39.4\"N 23°50'12.1\"E"; // Ваші координати
-            focusText.classList.add('font-mono', 'tracking-[0.3em]');
-            focusText.classList.remove('font-playfair', 'tracking-[0.1em]', 'text-xs', 'italic');
-            focusText.style.opacity = '1';
+            focusText.classList.add("font-mono", "tracking-[0.3em]");
+            focusText.classList.remove(
+              "font-playfair",
+              "tracking-[0.1em]",
+              "text-xs",
+              "italic",
+            );
+            focusText.style.opacity = "1";
           }, 250);
         }
       });
     </script>
   </body>
 </html>
-
