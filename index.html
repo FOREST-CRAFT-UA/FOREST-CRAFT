@@ -194,6 +194,65 @@
         transform: translateY(-30px);
         pointer-events: none; /* Щоб на невидимі кнопки не можна було клікнути */
       }
+
+      /* ==========================================
+         Преміальні скрол-анімації
+         ========================================== */
+      
+      /* 1. Blur In (для текстів) */
+      .reveal-blur {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(20px);
+        transition: opacity 1.2s ease-out, filter 1.2s ease-out, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-blur.is-visible {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+
+      /* 2. Curtain Reveal (завіса для фотографій) */
+      .reveal-curtain {
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-curtain.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Сама "шторка" кольору фону сайту */
+      .reveal-curtain::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: #fcfbf7; /* Колір фону вашого сайту */
+        transform-origin: top;
+        transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        transition-delay: 0.2s; /* Легка затримка після появи */
+        z-index: 10;
+      }
+      .reveal-curtain.is-visible::after {
+        transform: scaleY(0);
+      }
+
+      /* 3. Staggered Cascade (каскад для карток і кнопок) */
+      .reveal-fade-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-fade-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Класи для створення "драбинки" */
+      .delay-step-1 { transition-delay: 0.1s; }
+      .delay-step-2 { transition-delay: 0.2s; }
+      .delay-step-3 { transition-delay: 0.3s; }
     </style>
 
     <script type="application/ld+json">
@@ -452,16 +511,16 @@
       >
         <div class="text-center mb-16 md:mb-20">
           <span
-            class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block"
+            class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block reveal-blur"
             >Manufacturing Protocol</span
           >
           <h2
-            class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6 reveal-blur"
           >
             Від сировини до біо-активного субстрату
           </h2>
           <p
-            class="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
+            class="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto reveal-blur"
           >
             Ми не просто змішуємо інгредієнти. Ми готуємо кожен компонент на
             молекулярному та біологічному рівнях, щоб ви отримали передбачуваний
@@ -493,17 +552,17 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur"
               >
                 Гідротермічна підготовка кори
               </h3>
               <p
-                class="text-slate-600 text-sm leading-relaxed text-justify mb-2"
+                class="text-slate-600 text-sm leading-relaxed text-justify mb-2 reveal-blur"
               >
                 Замість звичайної сухої кори ми використовуємо
                 <strong>екстракцію виварюванням</strong>.
               </p>
-              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+              <p class="text-slate-600 text-sm leading-relaxed text-justify reveal-blur">
                 Тривала термічна обробка розм'якшує важкий лігнін і вимиває
                 зайві смоли та дубильні речовини, які в сирому стані пригнічують
                 ріст коріння. Ви отримуєте чистий «дихаючий» каркас.
@@ -536,12 +595,12 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur"
               >
                 Азотна стабілізація опаду
               </h3>
               <p
-                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify"
+                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify reveal-blur"
               >
                 Будь-яка лісова органіка при розкладанні забирає азот із ґрунту.
                 Ми запобігаємо цьому шляхом
@@ -575,11 +634,11 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur"
               >
                 Термічна стерилізація моху
               </h3>
-              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+              <p class="text-slate-600 text-sm leading-relaxed text-justify reveal-blur">
                 Мох Sphagnum — ідеальний акумулятор вологи, але він часто
                 приховує личинки шкідників. Ми застосовуємо метод
                 <strong>керованого термічного шоку</strong> (обробка окропом).
@@ -614,12 +673,12 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur"
               >
                 Реторний піроліз вугілля
               </h3>
               <p
-                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify"
+                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify reveal-blur"
               >
                 Замість звичайного паливного вугілля ми використовуємо
                 <strong>крафтовий піролізат дуба</strong>. Випалювання при 450°C
@@ -653,11 +712,11 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide reveal-blur"
               >
                 Активація іонообмінного буфера
               </h3>
-              <p class="text-slate-600 text-sm leading-relaxed text-justify">
+              <p class="text-slate-600 text-sm leading-relaxed text-justify reveal-blur" >
                 Ми використовуємо активований мінерал — цеоліт. Він проходить
                 <strong>багаторазову деспірацію</strong> (промивання від
                 мікропилу) та термічну сушку. Це дозволяє йому працювати як
@@ -692,14 +751,14 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-500/50 mt-4"
               />
               <h3
-                class="font-bold text-emerald-800 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-emerald-800 text-xl mb-3 uppercase tracking-wide reveal-blur"
               >
                 Біо-інокуляція (Biological Shield)
               </h3>
               <div
                 class="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl shadow-sm text-justify md:text-right"
               >
-                <p class="text-slate-700 text-sm leading-relaxed">
+                <p class="text-slate-700 text-sm leading-relaxed reveal-blur">
                   Фінальний і найскладніший крок. Кожна порція субстрату
                   заселяється живими спорами
                   <strong>Bacillus subtilis</strong> та
@@ -725,16 +784,16 @@
         <div class="max-w-5xl mx-auto w-full">
           <div class="text-center mb-12">
             <span
-              class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block"
+              class="text-emerald-600 font-bold tracking-widest uppercase text-xs mb-2 block reveal-blur"
               >Quality Control</span
             >
             <h2
-              class="font-playfair text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+              class="font-playfair text-3xl md:text-4xl font-bold text-slate-900 mb-4 reveal-blur"
             >
               Лабораторний паспорт
             </h2>
             <p
-              class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto"
+              class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto reveal-blur"
             >
               Кожна партія субстрату проходить фізико-хімічний контроль. Ми
               гарантуємо стабільність показників, які є критичними для здоров'я
@@ -743,7 +802,7 @@
           </div>
 
           <div
-            class="flex justify-end items-center gap-2 mb-3 md:hidden text-[10px] font-bold uppercase tracking-widest text-emerald-500 animate-pulse"
+            class="flex justify-end items-center gap-2 mb-3 md:hidden text-[10px] font-bold uppercase tracking-widest text-emerald-500 animate-pulse reveal-blur"
           >
             <span>Свайпніть таблицю</span>
             <svg
@@ -773,12 +832,12 @@
                 <thead>
                   <tr class="bg-slate-900 text-white">
                     <th
-                      class="py-4 px-6 font-bold uppercase tracking-wider text-sm w-2/5"
+                      class="py-4 px-6 font-bold uppercase tracking-wider text-sm w-2/5 reveal-blur"
                     >
                       Показник досліджень
                     </th>
                     <th
-                      class="py-4 px-6 font-bold uppercase tracking-wider text-sm text-center w-1/4 border-l border-slate-700"
+                      class="py-4 px-6 font-bold uppercase tracking-wider text-sm text-center w-1/4 border-l border-slate-700 reveal-blur"
                     >
                       Junior Mix
                     </th>
@@ -792,10 +851,10 @@
                 <tbody class="divide-y divide-slate-200/60">
                   <tr class="hover:bg-white transition-colors">
                     <td class="py-4 px-6">
-                      <div class="font-bold text-slate-900">
+                      <div class="font-bold text-slate-900" reveal-blur>
                         Кислотність (pH)
                       </div>
-                      <div class="text-xs text-slate-500 mt-1">
+                      <div class="text-xs text-slate-500 mt-1 reveal-blur">
                         Оптимальний рівень для засвоєння мікроелементів
                       </div>
                     </td>
@@ -1424,7 +1483,7 @@
       </div>
     </section>
 
-    <footer class="bg-[#1a1714] py-16 border-t-4 border-emerald-800">
+   <footer class="bg-[#1a1714] py-16 border-t border-white/5">
       <div
         class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center"
       >
@@ -1886,6 +1945,26 @@
           }, 250);
         }
       });
+
+      // ==========================================
+      // Універсальний Scroll Observer для преміум-анімацій
+      // ==========================================
+      const revealElements = document.querySelectorAll(".reveal-blur, .reveal-curtain, .reveal-fade-up");
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target); // Робимо анімацію лише один раз (при першому скролі)
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.15, // Анімація стартує, коли видно 15% елемента
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
     </script>
   </body>
 </html>
