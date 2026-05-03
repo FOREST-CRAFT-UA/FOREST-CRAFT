@@ -467,6 +467,83 @@
       </button>
     </header>
     
+
+    <!-- Philosophy Section -->
+<section
+  id="philosophy"
+  class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto"
+  >
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      
+      <!-- Зображення (Ваше фото з компонентами на руці) -->
+      <div class="w-full lg:w-1/2 relative group">
+        <div class="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-emerald-50/50">
+          <!-- Місце для вашого фото -->
+          <img 
+            src="ВАШЕ_ФОТО_ТУТ.jpg" 
+            alt="Склад субстрату Forest Craft" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <!-- Легкий градієнт поверх фото для преміальності -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60"></div>
+        </div>
+        
+        <!-- Плашка-акцент -->
+        <div class="absolute -bottom-4 -right-4 bg-emerald-700 text-white p-6 rounded-xl hidden md:block shadow-xl border border-white/10">
+          <p class="font-playfair italic text-xl tracking-wide">Handcrafted Quality</p>
+        </div>
+      </div>
+
+      <!-- Текст -->
+      <div class="w-full lg:w-1/2">
+        <h2 class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+         Концепція продукту<br/>
+        </h2>
+        
+        <div class="space-y-8">
+          <!-- Теза 1 -->
+          <div class="flex gap-4">
+            <div class="shrink-0 w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 text-xs font-bold border border-emerald-100">01</div>
+            <div>
+              <h4 class="font-bold text-slate-900 uppercase tracking-widest text-[11px] mb-2">Природна автентичність</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Ми створюємо середовище, де рослина почувається як у <strong>природних умовах</strong> зростання. Ніякого торфу — лише компоненти, до яких коріння ароїдних звикло за мільйони років еволюції.
+              </p>
+            </div>
+          </div>
+
+          <!-- Теза 2 -->
+          <div class="flex gap-4">
+            <div class="shrink-0 w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 text-xs font-bold border border-emerald-100">02</div>
+            <div>
+              <h4 class="font-bold text-slate-900 uppercase tracking-widest text-[11px] mb-2">Ручна робота (Craft)</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Кожен складник — від кори до моху — <strong>зібраний власноруч</strong> та пройшов ретельну селекцію. Ми особисто гарантуємо якість кожної фракції у вашому замовленні.
+              </p>
+            </div>
+          </div>
+
+          <!-- Теза 3 -->
+          <div class="flex gap-4">
+            <div class="shrink-0 w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 text-xs font-bold border border-emerald-100">03</div>
+            <div>
+              <h4 class="font-bold text-slate-900 uppercase tracking-widest text-[11px] mb-2">Біостерильність</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Забудьте про шкідників. Наші компоненти <strong>максимально стерильні</strong> завдяки лабораторній підготовці, але при цьому «живі» завдяки корисній мікрофлорі.
+              </p>
+            </div>
+          </div>
+        </div>
+
+       
+      
+    </div>
+  </div>
+</section>
+
     <section
       id="process"
       class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
@@ -482,15 +559,9 @@
           <h2
             class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6"
           >
-            Від сировини до біо-активного субстрату
+            Етапи створення субстрату
           </h2>
-          <p
-            class="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
-          >
-            Ми не просто змішуємо інгредієнти. Ми готуємо кожен компонент на
-            молекулярному та біологічному рівнях, щоб ви отримали передбачуваний
-            результат.
-          </p>
+          
         </div>
 
         <div class="relative space-y-12 md:space-y-20 max-w-5xl mx-auto">
@@ -517,20 +588,13 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
               >
-                Гідротермічна підготовка кори
+                Гідротермічна стерилізація кори
               </h3>
-              <p
-                class="text-slate-600 text-sm leading-relaxed text-justify mb-2"
-              >
-                Замість звичайної сухої кори ми використовуємо
-                <strong>екстракцію виварюванням</strong>.
-              </p>
+             
               <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                Тривала термічна обробка розм'якшує важкий лігнін і вимиває
-                зайві смоли та дубильні речовини, які в сирому стані пригнічують
-                ріст коріння. Ви отримуєте чистий «дихаючий» каркас.
+                Кора проходить шлях повної трансформації: від подрібнення та м’якого галтування для округлення гострих країв до точного калібрування на фракції. Гідротермічне виварювання вимиває агресивні смоли, а делікатне сушіння завершує створення чистого «дихаючого» каркаса.
               </p>
             </div>
           </div>
@@ -560,18 +624,14 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
               >
                 Азотна стабілізація опаду
               </h3>
               <p
-                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify"
+                class="text-slate-600 text-sm leading-relaxed text-justify"
               >
-                Будь-яка лісова органіка при розкладанні забирає азот із ґрунту.
-                Ми запобігаємо цьому шляхом
-                <strong>превентивного насичення</strong> опаду розчином
-                карбаміду. Це вирівнює баланс C:N (вуглець/азот), роблячи
-                субстрат безпечним для живлення з першої секунди.
+                Подвійний цикл обробки — проварювання та насичення карбамідом — вирівнює баланс C:N. Це зупиняє поглинання азоту з субстрату, перетворюючи опад на безпечне джерело стартового живлення для коріння.
               </p>
             </div>
           </div>
@@ -599,16 +659,12 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
               >
-                Термічна стерилізація моху
+                Гідротермічний шок моху
               </h3>
               <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                Мох Sphagnum — ідеальний акумулятор вологи, але він часто
-                приховує личинки шкідників. Ми застосовуємо метод
-                <strong>керованого термічного шоку</strong> (обробка окропом).
-                Це гарантує стерильність волокон без руйнування їхньої
-                капілярної структури.
+                Короткочасна обробка окропом надійно очищує мох від патогенів та комах. Це гарантує повну безпеку компонента без пошкодження ніжних волокон. Результат — чистий, гігроскопічний матеріал, готовий забезпечити ідеальну вологість кореневої зони.
               </p>
             </div>
           </div>
@@ -638,19 +694,14 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
               >
-                Реторний піроліз вугілля
+                Реторне випалювання вугілля
               </h3>
               <p
-                class="text-slate-600 text-sm leading-relaxed md:text-right text-justify"
+                class="text-slate-600 text-sm leading-relaxed text-justify"
               >
-                Замість звичайного паливного вугілля ми використовуємо
-                <strong>крафтовий піролізат дуба</strong>. Випалювання при 450°C
-                без доступу кисню створює мільйони мікропор. Це потужний
-                адсорбент, що поглинає продукти метаболізму рослин і очищує зону
-                коріння.
-              </p>
+                Використання дубового вугілля власного випалу та безкисневий метод дозволяють отримати матеріал з високою пористістю. Він працює як природний адсорбент, очищуючи зону коріння від токсинів та підтримуючи бездоганну гігієну субстрату.
             </div>
           </div>
 
@@ -677,16 +728,12 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
               />
               <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
               >
-                Активація іонообмінного буфера
+                Термічна активація мінерального буфера
               </h3>
               <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                Ми використовуємо активований мінерал — цеоліт. Він проходить
-                <strong>багаторазову деспірацію</strong> (промивання від
-                мікропилу) та термічну сушку. Це дозволяє йому працювати як
-                «інтелектуальний акумулятор» добрив, віддаючи іони металів саме
-                тоді, коли рослина їх потребує.
+               Деспірація та прожарювання активують здатність цеоліту утримувати поживні елементи. Мінерал стає надійним фільтром та резервуаром живлення, який дозовано віддає мікроелементи корінню, запобігаючи засоленню субстрату.
               </p>
             </div>
           </div>
@@ -716,21 +763,13 @@
                 class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-500/50 mt-4"
               />
               <h3
-                class="font-bold text-emerald-800 text-xl mb-3 uppercase tracking-wide"
+                class="font-bold text-xl mb-3 uppercase tracking-wide text-center"
               >
-                Біо-інокуляція (Biological Shield)
+                Біоінокуляція (Biological Shield)
               </h3>
-              <div
-                class="bg-emerald-50 border border-emerald-100 p-5 rounded-2xl shadow-sm text-justify md:text-right"
-              >
-                <p class="text-slate-700 text-sm leading-relaxed">
-                  Фінальний і найскладніший крок. Кожна порція субстрату
-                  заселяється живими спорами
-                  <strong>Bacillus subtilis</strong> та
-                  <strong>Trichoderma spp.</strong> Ми створюємо активну
-                  біо-мережу, яка захищає коріння від гнилі на біологічному
-                  рівні. Це не просто ґрунт, це
-                  <strong>імунна система</strong> вашої рослини.
+            
+                <p class="text-slate-700 text-sm leading-relaxed text-justify">
+                 Заселення субстрату живими спорами <span class="italic">Bacillus subtilis</span> та <span class="italic">Trichoderma spp.</span> створює активну біомережу. Цей «біологічний щит» працює як імунна система рослини: пригнічує патогени та захищає коріння від гнилі на клітинному рівні.
                 </p>
               </div>
             </div>
@@ -933,7 +972,7 @@
                         не менше 10<sup>9</sup>
                         <span
                           class="text-[10px] font-sans text-slate-500 font-normal uppercase"
-                          >КУО/л</span
+                          >Куо/л</span
                         >
                       </div>
                       <div
@@ -942,12 +981,12 @@
                         <div
                           class="text-[8px] text-slate-500 uppercase font-bold tracking-widest italic opacity-80"
                         >
-                          Trichoderma spp.
+                          <span class="italic">Trichoderma spp.</span>
                         </div>
                         <div
                           class="text-[8px] text-slate-500 uppercase font-bold tracking-widest border-l border-slate-200/60 pl-3 italic opacity-80"
                         >
-                          Bacillus subtilis
+                          <span class="italic">Bacillus subtilis</span>
                         </div>
                       </div>
                       <div
@@ -1932,7 +1971,6 @@
               "font-playfair",
               "tracking-[0.1em]",
               "text-xs",
-              "italic",
             );
             focusText.style.opacity = "1";
           }, 250);
