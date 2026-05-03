@@ -218,17 +218,6 @@
         background: #10b981; /* Смарагдовий при наведенні */
       }
 
-      /* Базовий клас для елементів, які будуть з'являтися */
-      .reveal-up {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      /* Клас, який додаватиметься скриптом, коли елемент в зоні видимості */
-      .reveal-up.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
     </style>
 
     <script type="application/ld+json">
@@ -2014,33 +2003,6 @@
             analytics_storage: "denied",
           });
         }
-      });
-
-      // ==========================================
-      // Анімація появи контенту при скролі
-      // ==========================================
-      const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            // Опціонально: розкоментуйте рядок нижче, якщо хочете, щоб анімація програвалася лише 1 раз
-            // scrollObserver.unobserve(entry.target); 
-          }
-        });
-      }, {
-        threshold: 0.15, // Елемент має з'явитися на 15%, щоб спрацювала анімація
-        rootMargin: "0px 0px -50px 0px"
-      });
-
-      // Знаходимо всі важливі блоки на сайті для плавної появи
-     const elementsToReveal = document.querySelectorAll(
-  "section:not(#about) .text-center, #process .max-w-5xl > div, .product-card, .faq-item, #order-zone h2, #order-zone p, #order-zone a, footer .grid > div"
-);
-      
-      // Застосовуємо анімацію до знайдених елементів
-      elementsToReveal.forEach((el) => {
-        el.classList.add("reveal-up");
-        scrollObserver.observe(el);
       });
       
     </script>
