@@ -572,255 +572,153 @@
       <!-- ДОДАНО ЦЕЙ ЗАКРИВАЮЧИЙ DIV -->
     </section>
 
-    <section
-      id="process"
-      class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-200 rounded-3xl shadow-sm py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto"
-      >
-        <div class="text-center mb-16 md:mb-20">
-          <span
-            class="text-emerald-600 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block"
-            >Manufacturing Protocol</span
-          >
-          <h2
-            class="font-playfair text-3xl md:text-5xl font-bold text-slate-900 mb-6"
-          >
-            Етапи створення субстрату
-          </h2>
-        </div>
+    <!-- Interactive Scheme Section (Exploded View) -->
+<section id="process" class="py-8 md:py-16 bg-[#fcfbf7] relative overflow-hidden md:px-8 lg:px-12">
+  <!-- Темний заокруглений контейнер-картка -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#1a1714] border border-white/5 rounded-3xl shadow-2xl py-12 md:py-20 relative z-10 mx-4 sm:mx-8 md:mx-auto">
+    
+    <!-- Заголовок -->
+    <div class="text-center mb-12 md:mb-16">
+      <span class="text-emerald-500 font-bold tracking-[0.3em] uppercase text-[10px] mb-2 block">
+        Deconstructed Protocol
+      </span>
+      <h2 class="font-playfair text-3xl md:text-5xl font-bold text-white mb-4">
+        Анатомія субстрату
+      </h2>
+      <p class="text-slate-400 text-sm md:text-base max-w-xl mx-auto">
+        Натисніть на компонент, щоб дізнатися, як ми перетворюємо лісову органіку на безпечний інструмент для росту.
+      </p>
+    </div>
 
-        <div class="relative space-y-12 md:space-y-20 max-w-5xl mx-auto">
-          <div
-            class="relative flex flex-col md:flex-row items-center md:justify-between group"
-          >
-            <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <img
-                src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Кора"
-                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              />
+    <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+      
+      <!-- ЛІВА ЧАСТИНА: Зображення вибух-схеми з точками -->
+      <div class="w-full lg:w-3/5 relative h-[50vh] md:h-[600px] bg-white/5 rounded-3xl border border-white/10 flex items-center justify-center p-4">
+        
+        <!-- ЗОБРАЖЕННЯ ВИБУХ-СХЕМИ -->
+        <img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&q=80&w=800" 
+             alt="Exploded View" 
+             class="max-w-full max-h-full object-contain opacity-80 mix-blend-luminosity" />
+
+        <!-- Точки (Hotspots) -->
+        <!-- Точка 1: Кора -->
+        <button onclick="showComponent('bark')" class="hotspot-btn absolute top-[20%] left-[40%] group focus:outline-none">
+          <div class="relative flex items-center justify-center w-8 h-8">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-[#1a1714] group-hover:scale-150 transition-transform duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
+          </div>
+        </button>
+
+        <!-- Точка 2: Опад -->
+        <button onclick="showComponent('leaves')" class="hotspot-btn absolute top-[35%] left-[60%] group focus:outline-none">
+          <div class="relative flex items-center justify-center w-8 h-8">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-[#1a1714] group-hover:scale-150 transition-transform duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
+          </div>
+        </button>
+
+        <!-- Точка 3: Мох -->
+        <button onclick="showComponent('moss')" class="hotspot-btn absolute top-[50%] left-[30%] group focus:outline-none">
+          <div class="relative flex items-center justify-center w-8 h-8">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-[#1a1714] group-hover:scale-150 transition-transform duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
+          </div>
+        </button>
+
+        <!-- Точка 4: Вугілля та Цеоліт -->
+        <button onclick="showComponent('minerals')" class="hotspot-btn absolute top-[70%] left-[50%] group focus:outline-none">
+          <div class="relative flex items-center justify-center w-8 h-8">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-[#1a1714] group-hover:scale-150 transition-transform duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
+          </div>
+        </button>
+
+        <!-- Точка 5: Біоінокуляція -->
+        <button onclick="showComponent('bio')" class="hotspot-btn absolute top-[85%] left-[45%] group focus:outline-none">
+          <div class="relative flex items-center justify-center w-8 h-8">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-[#1a1714] group-hover:scale-150 transition-transform duration-300 shadow-[0_0_15px_#10b981]"></span>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- ПРАВА ЧАСТИНА: Панель інформації (Динамічна) -->
+      <div class="w-full lg:w-2/5 min-h-[300px]">
+        <div id="info-panel" class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-500 transform translate-y-0 opacity-100 h-full flex flex-col justify-center">
+          
+          <!-- Дефолтний стан (До кліку) -->
+          <div id="content-default" class="block">
+            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6 shadow-inner">
+              <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
             </div>
-            <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
-              <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
-                >01</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1596489370617-6db195cba279?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Кора"
-                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              />
-              <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
-              >
-                Гідротермічна стерилізація кори
-              </h3>
+            <h3 class="font-playfair text-2xl font-bold text-white mb-3">Інтерактивна схема</h3>
+            <p class="text-slate-400 leading-relaxed">
+              Оберіть будь-який компонент на схемі ліворуч, щоб переглянути детальний протокол його підготовки та стабілізації.
+            </p>
+          </div>
 
-              <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                Кора проходить шлях повної трансформації: від подрібнення та
-                м’якого галтування для округлення гострих країв до точного
-                калібрування на фракції. Гідротермічне виварювання вимиває
-                агресивні смоли, а делікатне сушіння завершує створення чистого
-                «дихаючого» каркаса.
-              </p>
+          <!-- Контент: Кора -->
+          <div id="content-bark" class="hidden">
+            <span class="text-emerald-400 font-bold tracking-widest text-xs uppercase mb-2 block drop-shadow-md">Етап 01</span>
+            <h3 class="font-playfair text-3xl font-bold text-white mb-4">Гідротермічна обробка кори</h3>
+            <p class="text-slate-300 leading-relaxed mb-6">
+              Кора проходить шлях від подрібнення та м’якого галтування до точного калібрування. Виварювання вимиває агресивні смоли, а делікатне сушіння завершує створення чистого «дихаючого» каркаса.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg border border-white/20 text-xs text-slate-300 font-medium">Без смол</span>
+              <span class="px-3 py-1 rounded-lg border border-white/20 text-xs text-slate-300 font-medium">Галтована</span>
             </div>
           </div>
 
-          <div
-            class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
-          >
-            <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <img
-                src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Опад"
-                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              />
+          <!-- Контент: Опад -->
+          <div id="content-leaves" class="hidden">
+            <span class="text-emerald-400 font-bold tracking-widest text-xs uppercase mb-2 block drop-shadow-md">Етап 02</span>
+            <h3 class="font-playfair text-3xl font-bold text-white mb-4">Азотна стабілізація опаду</h3>
+            <p class="text-slate-300 leading-relaxed mb-6">
+              Подвійний цикл обробки — проварювання та насичення карбамідом — вирівнює баланс C:N. Це зупиняє поглинання азоту з субстрату, перетворюючи опад на джерело стартового живлення.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg border border-white/20 text-xs text-slate-300 font-medium">Баланс C:N</span>
             </div>
-            <div
-              class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
-            >
-              <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
-                >02</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1616428786016-521b4a377035?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Опад"
-                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              />
-              <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
-              >
-                Азотна стабілізація опаду
-              </h3>
-              <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                Подвійний цикл обробки — проварювання та насичення карбамідом —
-                вирівнює баланс C:N. Це зупиняє поглинання азоту з субстрату,
-                перетворюючи опад на безпечне джерело стартового живлення для
-                коріння.
-              </p>
+          </div>
+          
+          <!-- Контент: Мох -->
+          <div id="content-moss" class="hidden">
+            <span class="text-emerald-400 font-bold tracking-widest text-xs uppercase mb-2 block drop-shadow-md">Етап 03</span>
+            <h3 class="font-playfair text-3xl font-bold text-white mb-4">Гідротермічний шок моху</h3>
+            <p class="text-slate-300 leading-relaxed mb-6">
+              Короткочасна обробка окропом надійно очищує мох від патогенів та комах, зберігаючи ніжні волокна для ідеальної вологості кореневої зони.
+            </p>
+          </div>
+
+          <!-- Контент: Мінерали -->
+          <div id="content-minerals" class="hidden">
+            <span class="text-emerald-400 font-bold tracking-widest text-xs uppercase mb-2 block drop-shadow-md">Етап 04-05</span>
+            <h3 class="font-playfair text-3xl font-bold text-white mb-4">Мінеральний буфер та Вугілля</h3>
+            <p class="text-slate-300 leading-relaxed mb-6">
+              Реторне випалювання дубового вугілля забезпечує пористість та адсорбцію токсинів. Прожарювання цеоліту активує його здатність дозовано віддавати поживні елементи.
+            </p>
+          </div>
+
+          <!-- Контент: Біоінокуляція -->
+          <div id="content-bio" class="hidden">
+            <span class="text-emerald-400 font-bold tracking-widest text-xs uppercase mb-2 block drop-shadow-md">Етап 06</span>
+            <h3 class="font-playfair text-3xl font-bold text-white mb-4">Біоінокуляція (Bio Shield)</h3>
+            <p class="text-slate-300 leading-relaxed mb-6">
+              Заселення субстрату живими спорами <i class="text-emerald-100">Bacillus subtilis</i> та <i class="text-emerald-100">Trichoderma spp.</i> створює імунну систему для коренів, пригнічуючи патогени.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/50 text-xs text-emerald-300 font-bold uppercase tracking-wider">Жива мікрофлора</span>
             </div>
           </div>
 
-          <div
-            class="relative flex flex-col md:flex-row items-center md:justify-between group"
-          >
-            <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <img
-                src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Мох"
-                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              />
-            </div>
-            <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
-              <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
-                >03</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1632342084992-0b31dcc63b21?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Мох"
-                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              />
-              <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
-              >
-                Гідротермічний шок моху
-              </h3>
-              <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                Короткочасна обробка окропом надійно очищує мох від патогенів та
-                комах. Це гарантує повну безпеку компонента без пошкодження
-                ніжних волокон. Результат — чистий, гігроскопічний матеріал,
-                готовий забезпечити ідеальну вологість кореневої зони.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
-          >
-            <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <img
-                src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Вугілля"
-                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              />
-            </div>
-            <div
-              class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
-            >
-              <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
-                >04</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1590082725330-8a70659eb8a1?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Вугілля"
-                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              />
-              <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
-              >
-                Реторне випалювання вугілля
-              </h3>
-              <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                Використання дубового вугілля власного випалу та безкисневий
-                метод дозволяють отримати матеріал з високою пористістю. Він
-                працює як природний адсорбент, очищуючи зону коріння від
-                токсинів та підтримуючи бездоганну гігієну субстрату.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="relative flex flex-col md:flex-row items-center md:justify-between group"
-          >
-            <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <img
-                src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Цеоліт"
-                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-100 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300"
-              />
-            </div>
-            <div class="md:w-1/2 md:pl-8 lg:pl-12 mt-2 md:mt-0 w-full">
-              <span
-                class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
-                >05</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1615152865487-73d09a85d263?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Цеоліт"
-                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-100 mt-4"
-              />
-              <h3
-                class="font-bold text-slate-900 text-xl mb-3 uppercase tracking-wide text-center"
-              >
-                Термічна активація мінерального буфера
-              </h3>
-              <p class="text-slate-600 text-sm leading-relaxed text-justify">
-                Деспірація та прожарювання активують здатність цеоліту
-                утримувати поживні елементи. Мінерал стає надійним фільтром та
-                резервуаром живлення, який дозовано віддає мікроелементи
-                корінню, запобігаючи засоленню субстрату.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
-          >
-            <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <img
-                src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Мікробіом"
-                class="w-full h-64 lg:h-80 object-cover rounded-2xl shadow-md border border-emerald-500/50 group-hover:shadow-lg transition-all duration-300"
-              />
-            </div>
-            <div
-              class="md:w-1/2 md:pr-8 lg:pr-12 md:text-right mt-2 md:mt-0 w-full"
-            >
-              <span
-                class="text-emerald-600 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
-                >06</span
-              >
-              <img
-                src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
-                loading="lazy"
-                alt="Мікробіом"
-                class="md:hidden w-full h-56 object-cover rounded-2xl mb-5 shadow-sm border border-emerald-500/50 mt-4"
-              />
-              <h3
-                class="font-bold text-xl mb-3 uppercase tracking-wide text-center"
-              >
-                Біоінокуляція (Biological Shield)
-              </h3>
-
-              <p class="text-slate-700 text-sm leading-relaxed text-justify">
-                Заселення субстрату живими спорами
-                <span class="italic">Bacillus subtilis</span> та
-                <span class="italic">Trichoderma spp.</span> створює активну
-                біомережу. Цей «біологічний щит» працює як імунна система
-                рослини: пригнічує патогени та захищає коріння від гнилі на
-                клітинному рівні.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
 
     <section
       id="about"
@@ -2087,6 +1985,32 @@
           });
         }
       });
+
+      function showComponent(componentId) {
+    const panel = document.getElementById('info-panel');
+    const allContents = panel.querySelectorAll('div[id^="content-"]');
+    
+    // Анімація зникнення
+    panel.style.opacity = '0';
+    panel.style.transform = 'translateY(10px)';
+    
+    setTimeout(() => {
+      // Ховаємо всі
+      allContents.forEach(el => el.classList.add('hidden'));
+      allContents.forEach(el => el.classList.remove('block'));
+      
+      // Показуємо потрібний
+      const target = document.getElementById(`content-${componentId}`);
+      if (target) {
+        target.classList.remove('hidden');
+        target.classList.add('block');
+      }
+
+      // Анімація появи
+      panel.style.opacity = '1';
+      panel.style.transform = 'translateY(0)';
+    }, 200); // 200ms - час на зникнення
+  }
     </script>
   </body>
 </html>
