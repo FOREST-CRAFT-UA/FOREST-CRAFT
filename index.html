@@ -1798,9 +1798,8 @@
         // Відкриває саме ваш діалог і закидає текст у поле введення (працює на смартфонах та ПК)
         document.getElementById("tg-link").href = `https://t.me/${tgNick}?text=${encodedMessage}`;
         
-        // 2. ПРАВИЛЬНИЙ ФОРМАТ ДЛЯ VIBER (на мобільних відкриває вікно "поділитись/надіслати")
-        document.getElementById("viber-link").href = 
-          `viber://forward?text=${encodedMessage}`;
+        // 2. ПРАВИЛЬНИЙ ФОРМАТ ДЛЯ VIBER (на мобільних відкриває вікно "поділитись/надіслати"
+        document.getElementById("viber-link").href = `https://msng.link/o?380990634984=vi`;
 
         const showSuccessMessage = () => {
           setTimeout(() => {
