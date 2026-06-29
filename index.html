@@ -1792,11 +1792,15 @@
           "Привіт! Я хочу замовити професійний субстрат " + productName;
         const encodedMessage = encodeURIComponent(message);
 
-        const tgNick = "forestcraft_ua";
-        document.getElementById("tg-link").href =
-          `https://t.me/forestcraft_ua?text=${encodedMessage}`;
-        document.getElementById("viber-link").href =
-          `viber://chat?number=%2B380990634984&text=${encodedMessage}`;
+       const tgNick = "forestcraft_ua"; // ваш правильний юзернейм
+        
+        // 1. ПРАВИЛЬНИЙ ФОРМАТ ДЛЯ TELEGRAM (текст підставиться в поле введення як чернетка)
+        document.getElementById("tg-link").href = 
+          `https://t.me/share/url?url=https://t.me/${tgNick}&text=${encodedMessage}`;
+        
+        // 2. ПРАВИЛЬНИЙ ФОРМАТ ДЛЯ VIBER (на мобільних відкриває вікно "поділитись/надіслати")
+        document.getElementById("viber-link").href = 
+          `viber://forward?text=${encodedMessage}`;
 
         const showSuccessMessage = () => {
           setTimeout(() => {
