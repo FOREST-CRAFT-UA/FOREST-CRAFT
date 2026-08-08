@@ -217,6 +217,10 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #10b981; /* Смарагдовий при наведенні */
       }
+
+      #main-nav, #main-nav *, #site-logo {
+  transition: color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease, filter 0.4s ease;
+}
     </style>
 
     <script type="application/ld+json">
@@ -373,8 +377,9 @@
       </div>
     </nav>
 
-    <header
+   <header
       id="top"
+      data-theme="dark"
       class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1a1714]"
     >
       <div id="hero-slider" class="absolute inset-0">
@@ -468,7 +473,7 @@
           <div class="w-full lg:w-1/2 relative group">
             <div
               class="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-emerald-50/50"
-            >
+            data-theme="dark">
               <!-- Місце для вашого фото -->
               <img
                 src="pictures/logo_site.png"
@@ -596,7 +601,7 @@
             class="relative flex flex-col md:flex-row items-center md:justify-between group"
           >
             <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Кора"
@@ -608,7 +613,7 @@
                 class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >01</span
               >
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Кора"
@@ -634,7 +639,7 @@
             class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
           >
             <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Опад"
@@ -648,7 +653,7 @@
                 class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >02</span
               >
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Опад"
@@ -672,7 +677,7 @@
             class="relative flex flex-col md:flex-row items-center md:justify-between group"
           >
             <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Мох"
@@ -684,7 +689,7 @@
                 class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >03</span
               >
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Мох"
@@ -708,7 +713,7 @@
             class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
           >
             <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Вугілля"
@@ -722,7 +727,7 @@
                 class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >04</span
               >
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Вугілля"
@@ -746,7 +751,7 @@
             class="relative flex flex-col md:flex-row items-center md:justify-between group"
           >
             <div class="hidden md:block md:w-1/2 md:pr-8 lg:pr-12">
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Цеоліт"
@@ -758,7 +763,7 @@
                 class="text-emerald-300 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >05</span
               >
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Цеоліт"
@@ -782,7 +787,7 @@
             class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group"
           >
             <div class="hidden md:block md:w-1/2 md:pl-8 lg:pl-12">
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Мікробіом"
@@ -796,7 +801,7 @@
                 class="text-emerald-600 font-playfair text-5xl font-bold opacity-30 absolute right-4 top-0 md:hidden"
                 >06</span
               >
-              <img
+              <img data-theme="dark"
                 src="pictures/logo_site.png"
                 loading="lazy"
                 alt="Мікробіом"
@@ -1088,7 +1093,7 @@
                 class="product-card bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(52,211,153,0.35)] hover:shadow-[0_0_60px_rgba(16,185,129,0.75)] [&.is-active]:shadow-[0_0_60px_rgba(16,185,129,0.75)] transition-shadow duration-500 border border-emerald-100 flex flex-col h-full group relative z-10"
               >
                 <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
-                  <img
+                  <img data-theme="dark"
                     src="pictures/logo_site.png"
                     loading="lazy"
                     alt="Substrate CLASSIC"
@@ -1159,7 +1164,7 @@
                 class="product-card bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(251,146,60,0.3)] hover:shadow-[0_0_60px_rgba(234,88,12,0.5)] [&.is-active]:shadow-[0_0_60px_rgba(234,88,12,0.5)] transition-shadow duration-500 border border-orange-100 flex flex-col h-full group relative z-10"
               >
                 <div class="h-64 sm:h-72 bg-slate-200 relative overflow-hidden">
-                  <img
+                  <img data-theme="dark"
                     src="pictures/logo_site.png"
                     loading="lazy"
                     alt="Substrate CHUNKY"
@@ -1618,8 +1623,8 @@
     </div>
 
     <script>
-      // ==========================================
-      // Елементи управління Aero-меню та адаптивними кольорами
+     // ==========================================
+      // Елементи управління та адаптивними кольорами (через IntersectionObserver)
       // ==========================================
       const nav = document.getElementById("main-nav");
       const navTitle = document.getElementById("nav-title");
@@ -1628,22 +1633,20 @@
       const btn = document.getElementById("mobile-menu-btn");
       const menu = document.getElementById("mobile-menu");
       const mobileLinks = document.querySelectorAll(".mobile-link");
+      const logoImg = document.getElementById("site-logo");
 
       const roundingClasses = ["rounded-b-lg", "md:rounded-b-2xl"];
       const borderClasses = [];
 
-      // Розумна перевірка: чи наїхала біла секція на нашу шапку?
-      // window.innerHeight - це висота екрану пристрою. 80 - висота самої шапки в пікселях.
-      function isPastHeroSection() {
-        return window.scrollY > window.innerHeight - 80;
-      }
+      let isCurrentHeaderDark = true; // Початковий стан (над темним Hero)
 
-      // Головна функція, яка керує кольорами
-      function updateNavbarState() {
+      // Головна функція керування кольорами хедера
+      function setHeaderDarkTheme(isDark) {
+        isCurrentHeaderDark = isDark;
         const isMenuOpen = menu.style.maxHeight === "400px";
 
-        if (isPastHeroSection()) {
-          // 1. Темний текст (шапка виїхала на світлий фон)
+        if (!isDark) {
+          // 1. Шапка виїхала на світлий фон -> робимо текст темним
           navTitle.classList.remove("text-white");
           navTitle.classList.add("text-emerald-950");
 
@@ -1656,25 +1659,16 @@
           });
 
           mobileLinks.forEach((link) => {
-            link.classList.remove(
-              "text-white",
-              "hover:text-emerald-300",
-              "hover:bg-white/10",
-            );
-            link.classList.add(
-              "text-slate-800",
-              "hover:text-emerald-700",
-              "hover:bg-emerald-900/5",
-            );
+            link.classList.remove("text-white", "hover:text-emerald-300", "hover:bg-white/10");
+            link.classList.add("text-slate-800", "hover:text-emerald-700", "hover:bg-emerald-900/5");
           });
 
-          // Якщо меню відкрите на світлому фоні — кнопка темнішає
           if (isMenuOpen) {
             btn.classList.remove("bg-white/20");
             btn.classList.add("bg-emerald-900/10");
           }
         } else {
-          // 2. Світлий текст (шапка досі знаходиться на темному лісі)
+          // 2. Шапка на темному фото (Hero) -> робимо текст світлим
           navTitle.classList.add("text-white");
           navTitle.classList.remove("text-emerald-950");
 
@@ -1687,19 +1681,10 @@
           });
 
           mobileLinks.forEach((link) => {
-            link.classList.remove(
-              "text-slate-800",
-              "hover:text-emerald-700",
-              "hover:bg-emerald-900/5",
-            );
-            link.classList.add(
-              "text-white",
-              "hover:text-emerald-300",
-              "hover:bg-white/10",
-            );
+            link.classList.remove("text-slate-800", "hover:text-emerald-700", "hover:bg-emerald-900/5");
+            link.classList.add("text-white", "hover:text-emerald-300", "hover:bg-white/10");
           });
 
-          // Якщо меню відкрите на фоні лісу — кнопка стає білуватою
           if (isMenuOpen) {
             btn.classList.remove("bg-emerald-900/10");
             btn.classList.add("bg-white/20");
@@ -1707,47 +1692,73 @@
         }
       }
 
-      // Відслідковуємо скрол
-      window.addEventListener("scroll", updateNavbarState);
+     // Підключення сучасного IntersectionObserver з підтримкою кількох елементів
+const darkSections = document.querySelectorAll('[data-theme="dark"]');
+const activeDarkElements = new Set();
 
-      // Запускаємо одразу
-      updateNavbarState();
+const observerOptions = {
+  root: null,
+  rootMargin: "-10px 0px -95% 0px", // Зробили зону спрацювання більш збалансованою для фото та хіро
+  threshold: 0
+};
 
-      // Логіка кліку по гамбургеру
-      btn.addEventListener("click", () => {
-        const isOpening =
-          menu.style.maxHeight === "0px" || menu.style.maxHeight === "";
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const isDesktop = window.innerWidth >= 768;
+    const isHero = entry.target.id === 'top';
 
-        if (isOpening) {
-          nav.classList.remove(...roundingClasses, ...borderClasses);
+    // На десктопі ігноруємо все, крім хіро-секції
+    if (isDesktop && !isHero) return;
 
-          // Підсвічуємо кнопку правильно, залежно від того, де ми відкриваємо меню
-          if (isPastHeroSection()) {
-            btn.classList.add("bg-emerald-900/10");
-          } else {
-            btn.classList.add("bg-white/20");
-          }
+    // Додаємо або видаляємо елемент із множини активних залежно від перетину
+    if (entry.isIntersecting) {
+      activeDarkElements.add(entry.target);
+    } else {
+      activeDarkElements.delete(entry.target);
+    }
+  });
 
-          menu.style.maxHeight = "400px";
-          menu.classList.remove("opacity-0");
-          menu.classList.add("opacity-100");
+  // 📌 Головна логіка: якщо в зоні видимості є хоча б один темний елемент — вмикаємо білий текст
+  setHeaderDarkTheme(activeDarkElements.size > 0);
 
-          updateNavbarState();
+}, observerOptions);
 
-          mobileLinks.forEach((link, index) => {
-            setTimeout(
-              () => {
-                link.classList.remove("opacity-0", "translate-y-4");
-                link.classList.add("opacity-100", "translate-y-0");
-              },
-              100 * (index + 1),
-            );
-          });
-        } else {
-          closeMenu();
-        }
-      });
+darkSections.forEach(section => observer.observe(section));
 
+// Логіка кліку по гамбургеру
+btn.addEventListener("click", () => {
+  const isOpening =
+    menu.style.maxHeight === "0px" || menu.style.maxHeight === "";
+
+  if (isOpening) {
+    nav.classList.remove(...roundingClasses, ...borderClasses);
+
+    // Підсвічуємо кнопку залежно від того, де відкривається меню
+    if (!isCurrentHeaderDark) {
+      btn.classList.add("bg-emerald-900/10");
+    } else {
+      btn.classList.add("bg-white/20");
+    }
+
+    menu.style.maxHeight = "400px";
+    menu.classList.remove("opacity-0");
+    menu.classList.add("opacity-100");
+
+    setHeaderDarkTheme(isCurrentHeaderDark);
+
+    mobileLinks.forEach((link, index) => {
+      setTimeout(
+        () => {
+          link.classList.remove("opacity-0", "translate-y-4");
+          link.classList.add("opacity-100", "translate-y-0");
+        },
+        100 * (index + 1),
+      );
+    });
+  } else {
+    closeMenu();
+  }
+});
       // Логіка закриття меню
       function closeMenu() {
         nav.classList.add(...roundingClasses, ...borderClasses);
