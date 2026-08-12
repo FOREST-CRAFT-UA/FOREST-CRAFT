@@ -1714,7 +1714,7 @@
       updateNavbarState();
 
       // Логіка кліку по гамбургеру
-      btn.addEventListener("click", () => {
+      btn.addEventListener("touchstart", (e) => {
         const isOpening =
           menu.style.maxHeight === "0px" || menu.style.maxHeight === "";
 
@@ -1746,7 +1746,7 @@
         } else {
           closeMenu();
         }
-      });
+     }, { passive: true });
 
       // Логіка закриття меню
       function closeMenu() {
